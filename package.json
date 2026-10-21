@@ -1,5 +1,5 @@
 {
-  "name": "patryktrajder.com",
+  "name": "hemar",
   "version": "1.0.0",
   "description": "Youtuber's portfolio website",
   "main": "index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JakubJanowski/patryktrajder.com.git"
+    "url": "git+https://github.com/patryktrajder/hemar.git"
   },
   "keywords": [
     "portfolio"
@@ -22,9 +22,9 @@
   "author": "Jakub Janowski",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/JakubJanowski/patryktrajder.com/issues"
+    "url": "https://github.com/patryktrajder/hemar/issues"
   },
-  "homepage": "https://github.com/JakubJanowski/patryktrajder.com#readme",
+  "homepage": "https://github.com/patryktrajder/hemar#readme",
   "private": true,
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",

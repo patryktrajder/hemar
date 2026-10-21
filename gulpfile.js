@@ -168,23 +168,6 @@ gulp.task("clean", function () {
   });
 });
 
-gulp.task("deploy-acc", function () {
-  return spawn(
-    "cd " +
-    distDir +
-    " && git init" +
-    " && git add ." +
-    ' && git commit -m "deploy"' +
-    " && git remote add origin https://github.com/JakubJanowski/acceptance.git" +
-    " && git push --force origin main:" +
-    deployBranch +
-    " && rimraf .git" +
-    " && cd ..",
-    [],
-    { shell: true, stdio: "inherit" }
-  );
-});
-
 gulp.task("deploy", function () {
   return spawn(
     "cd " +
@@ -192,7 +175,7 @@ gulp.task("deploy", function () {
     " && git init" +
     " && git add ." +
     ' && git commit -m "deploy"' +
-    " && git remote add origin https://github.com/JakubJanowski/patryktrajder.com.git" +
+    " && git remote add origin https://github.com/patryktrajder/hemar.git" +
     " && git push --force origin main:" +
     deployBranch +
     " && rimraf .git" +
@@ -232,15 +215,6 @@ gulp.task(
 gulp.task(
   "dev",
   gulp.series("clean", gulp.parallel("assets", privacyPolicy, terms, "srcDev"))
-);
-
-gulp.task(
-  "acc",
-  gulp.series(
-    "clean",
-    gulp.parallel("assets", cnameAcc, privacyPolicy, terms, "src"),
-    "deploy-acc"
-  )
 );
 
 gulp.task(
