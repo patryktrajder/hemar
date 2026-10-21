@@ -1,0 +1,47 @@
+{% macro reviewCard(review, isHidden) %}
+  <div class="product-opinion-card js-review-card"{% if isHidden %} hidden{% endif %}>
+    <div class="product-opinion-card__header">
+      <div class="product-opinion-card__author-line">
+        <span class="product-opinion-card__author"><strong>{{ review.author }}</strong></span>
+
+        {% if review.country %}
+          <span class="product-opinion-card__meta">({{ review.country }})</span>
+        {% endif %}
+
+        {% if review.flag %}
+          <svg class="flag icon" aria-hidden="true">
+            <use xlink:href="#{{ review.flag }}"></use>
+          </svg>
+        {% endif %}
+      </div>
+
+      <div class="product-opinion-card__rating-line">
+        <div class="product-opinion-card__stars" aria-hidden="true">
+          {% for star in [1, 2, 3, 4, 5] %}
+            <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+          {% endfor %}
+        </div>
+
+        <span class="product-opinion-card__score">{{ review.score or "5/5" }}</span>
+
+        {% if review.productLabel %}
+          <span class="product-opinion-card__product">{{ review.productLabel }}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <p class="product-opinion-card__text">
+      {{ review.text | safe }}
+    </p>
+
+    {% if review.images and review.images.length %}
+      <div class="product-opinion-gallery">
+        {% for image in review.images %}
+          <button class="product-opinion-gallery__item" type="button" data-full="{{ image.src }}">
+            <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy" decoding="async">
+          </button>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}

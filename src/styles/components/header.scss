@@ -1,0 +1,341 @@
+@import "../variables";
+
+body {
+  padding-top: 11.75rem;
+
+  > header {
+    background: white;
+    box-shadow: 0px 1px 5px $silverSand;
+    height: 11.75rem;
+    margin: 0px -10px;
+    min-height: 4rem;
+    padding: 0px 10px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    &.horizontal {
+      > div {
+        padding-bottom: 0.75rem;
+
+        h1 {
+          opacity: 0;
+
+          &.second-logo {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .menu {
+          nav {
+            transform: translateX(50%);
+
+            ul {
+              transform: translateX(-50%);
+            }
+          }
+        }
+      }
+    }
+
+    &.animate {
+      h1 {
+        -webkit-transition: opacity 0.5s 0.2s linear;
+        -moz-transition: opacity 0.5s 0.2s linear;
+        -ms-transition: opacity 0.5s 0.2s linear;
+        -o-transition: opacity 0.5s 0.2s linear;
+        transition: opacity 0.5s 0.2s linear;
+
+        &.second-logo {
+          -webkit-transition: opacity 0.2s linear, visibility 0s 0.2s;
+          -moz-transition: opacity 0.2s linear, visibility 0s 0.2s;
+          -ms-transition: opacity 0.2s linear, visibility 0s 0.2s;
+          -o-transition: opacity 0.2s linear, visibility 0s 0.2s;
+          transition: opacity 0.2s linear, visibility 0s 0.2s;
+        }
+      }
+
+      &.horizontal {
+        h1 {
+          -webkit-transition: opacity 0.5s linear;
+          -moz-transition: opacity 0.5s linear;
+          -ms-transition: opacity 0.5s linear;
+          -o-transition: opacity 0.5s linear;
+          transition: opacity 0.5s linear;
+
+          &.second-logo {
+            -webkit-transition: opacity 0.5s linear;
+            -moz-transition: opacity 0.5s linear;
+            -ms-transition: opacity 0.5s linear;
+            -o-transition: opacity 0.5s linear;
+            transition: opacity 0.5s linear;
+          }
+        }
+      }
+
+      nav {
+        -webkit-transition: transform 0.2s ease-out;
+        -moz-transition: transform 0.2s ease-out;
+        -ms-transition: transform 0.2s ease-out;
+        -o-transition: transform 0.2s ease-out;
+        transition: transform 0.2s ease-out;
+
+        ul {
+          -webkit-transition: transform 0.2s ease-out;
+          -moz-transition: transform 0.2s ease-out;
+          -ms-transition: transform 0.2s ease-out;
+          -o-transition: transform 0.2s ease-out;
+          transition: transform 0.2s ease-out;
+        }
+      }
+    }
+
+    > div {
+      left: 10px;
+      right: 10px;
+      bottom: 0;
+      margin: 0 auto;
+      max-width: 70rem;
+      padding: 2rem 1rem;
+      position: absolute;
+
+      h1 {
+        color: $eerieBlack;
+        font-weight: 100;
+
+        @media (max-width: 330px) {
+          font-size: 1.875rem;
+        }
+
+        &.second-logo {
+          bottom: 0.25rem;
+          opacity: 0;
+          margin: 0;
+          padding-bottom: inherit;
+          position: absolute;
+          visibility: hidden;
+        }
+      }
+
+      .menu {
+        nav {
+          padding-bottom: 0;
+
+          ul {
+            display: inline-block;
+
+            li {
+              padding: 0 0.35rem;
+
+              @media (min-width: 900px) {
+                > a {
+                  color: $eerieBlack;
+                  font-size: 16px;
+                  font-weight: 600;
+                  letter-spacing: 0.03em;
+                  text-transform: uppercase;
+                  transition: color 0.16s ease;
+                }
+
+                &.current > a {
+                  color: $azure;
+                  font-weight: 800;
+                }
+              }
+
+              @media (min-width: 900px) and (hover: hover) and (pointer: fine) {
+                > a:hover {
+                  color: $azure;
+                }
+              }
+            }
+          }
+        }
+
+        .menu-button {
+          background-color: transparent;
+          display: none;
+          padding-left: 13px;
+          position: relative;
+          transition-duration: 0.15s;
+          transition-property: opacity, filter;
+          transition-timing-function: linear;
+          width: 66px;
+          height: 50px;
+
+          > span {
+            border-radius: 4px;
+            background-color: black;
+            display: block;
+            margin-top: -2px;
+            position: absolute;
+            transition-duration: 0.22s;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            width: 40px;
+            height: 4px;
+
+            &:after {
+              background-color: black;
+              border-radius: 4px;
+              bottom: -10px;
+              content: "";
+              display: block;
+              position: absolute;
+              transition: bottom 0.1s ease-in 0.25s,
+                transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+              width: 40px;
+              height: 4px;
+            }
+
+            &:before {
+              background-color: black;
+              border-radius: 4px;
+              content: "";
+              display: block;
+              position: absolute;
+              top: -10px;
+              transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+              width: 40px;
+              height: 4px;
+            }
+          }
+        }
+
+        &.open {
+          .menu-button {
+            > span {
+              transform: rotate(225deg);
+              transition-delay: 0.12s;
+              transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+              &:after {
+                bottom: 0;
+                transition: bottom 0.1s ease-out,
+                  transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+                transform: rotate(-90deg);
+              }
+
+              &:before {
+                opacity: 0;
+                top: 0;
+                transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 899px) {
+      height: 7rem;
+
+      > div {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 1rem;
+        top: 0;
+
+        h1 {
+          margin-bottom: 0.5rem;
+          -webkit-transition: none;
+          -moz-transition: none;
+          -ms-transition: none;
+          -o-transition: none;
+          transition: none;
+
+          &.second-logo {
+            -webkit-transition: none;
+            -moz-transition: none;
+            -ms-transition: none;
+            -o-transition: none;
+            transition: none;
+          }
+        }
+
+        .menu {
+          z-index: 1;
+
+          .menu-button {
+            display: inline-block;
+          }
+
+          nav {
+            background: rgba($azure, 0.98);
+            box-shadow: 0 8px 5px -7px $silverSand inset;
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            -webkit-transition: height 0.5s, top 0.2s ease-out;
+            -moz-transition: height 0.5s, top 0.2s ease-out;
+            -ms-transition: height 0.5s, top 0.2s ease-out;
+            -o-transition: height 0.5s, top 0.2s ease-out;
+            transition: height 0.5s, top 0.2s ease-out;
+
+            ul {
+              opacity: 0;
+              -webkit-transition: 0.5s;
+              -moz-transition: 0.5s;
+              -ms-transition: 0.5s;
+              -o-transition: 0.5s;
+              transition: 0.5s;
+
+              li {
+                color: white;
+                display: block;
+                padding: 0 0.35rem 4.5rem 0.35rem;     //  odstep pomiedzy wierszami
+
+                a {
+                  color: white;
+                  display: inline-block;
+                  position: relative;
+                  font-size: 1.35rem;
+                  font-weight: 700;
+                  letter-spacing: 0.08em;
+                  text-transform: uppercase;
+                  text-shadow: 0 2px 10px rgba(#061f35, 0.18);
+                }
+              }
+            }
+          }
+
+&.open {
+  nav {
+    ul {
+      opacity: 1;
+      padding-top: 2rem;
+      transform: translateY(6rem);   // odstep od gory
+    }
+
+    &.opened {
+      min-height: 100%;
+    }
+  }
+}
+        }
+      }
+    }
+  }
+
+  @media (max-width: 899px) {
+    padding-top: 7rem;
+
+    &.hide-overflow {
+      overflow: hidden;
+    }
+  }
+}

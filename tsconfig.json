@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "baseUrl": "src/scripts",
+    "lib": ["ES6", "DOM"],
+    "module": "ES6",
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "outDir": "dist/src/",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5"
+  },
+  "exclude": ["node_modules", "**/*.spec.ts", "dist", "**/*.d.ts"]
+}

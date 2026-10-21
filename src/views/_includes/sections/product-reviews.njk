@@ -1,0 +1,89 @@
+{% from "components/review-card.njk" import reviewCard %}
+
+{% set reviewsLangCode = reviewsLang or "pl" %}
+
+{% set reviewsInitialVisible = reviewsInitialVisible or 3 %}
+{% set reviewsRevealBatches = reviewsRevealBatches or reviewsRevealBatch or [5, 5, 10] %}
+
+{# 
+  Opcjonalne nadpisanie nagłówka.
+  Na produktach nic nie ustawiasz — zostanie domyślne "Opinie" / "Reviews" / "Bewertungen".
+  Na stronie głównej ustawiasz np.:
+  {% set reviewsHeading = "Wybrane opinie" %}
+#}
+{% set reviewsHeadingOverride = reviewsHeading or reviewsTitle %}
+
+{% if reviewsLangCode === "en" %}
+  {% set reviewsHeadingText = reviewsHeadingOverride or "Reviews" %}
+  {% set reviewsShowMoreText = reviewsShowMoreLabel or "Show more reviews" %}
+  {% set reviewsInviteTitleText = reviewsInviteTitle or "Would you like to share your experience too?" %}
+  {% set reviewsAddButtonText = reviewsAddButtonLabel or "Add your review" %}
+  {% set reviewsAddButtonUrl = reviewsAddButtonHref or "/en-gb/add-review/" %}
+
+{% elif reviewsLangCode === "de" %}
+  {% set reviewsHeadingText = reviewsHeadingOverride or "Bewertungen" %}
+  {% set reviewsShowMoreText = reviewsShowMoreLabel or "Mehr Bewertungen anzeigen" %}
+  {% set reviewsInviteTitleText = reviewsInviteTitle or "Möchtest du deine Erfahrung auch teilen?" %}
+  {% set reviewsAddButtonText = reviewsAddButtonLabel or "Bewertung hinzufügen" %}
+  {% set reviewsAddButtonUrl = reviewsAddButtonHref or "/de/add-review/" %}
+
+{% else %}
+  {% set reviewsHeadingText = reviewsHeadingOverride or "Opinie" %}
+  {% set reviewsShowMoreText = reviewsShowMoreLabel or "Pokaż więcej opinii" %}
+  {% set reviewsInviteTitleText = reviewsInviteTitle or "Również chcesz podzielić się własnymi doświadczeniami z zakupu?" %}
+  {% set reviewsAddButtonText = reviewsAddButtonLabel or "Dodaj swoją opinię" %}
+  {% set reviewsAddButtonUrl = reviewsAddButtonHref or "/add-review/" %}
+{% endif %}
+
+{% if productReviews %}
+  <section
+    id="opinions-section"
+    class="product-anchor-section product-reviews-section homepage-reviews{% if reviewsSectionClass and reviewsSectionClass !== 'homepage-reviews' %} {{ reviewsSectionClass }}{% endif %}"
+    data-reviews-section
+    data-reviews-batches="{{ reviewsRevealBatches | join(',') }}"
+  >
+    <h1>{{ reviewsHeadingText }}</h1>
+
+    {% if reviewsIntro %}
+      <p class="product-reviews-section__intro">{{ reviewsIntro }}</p>
+    {% endif %}
+
+    {% for reviewCode in productReviews %}
+      {% set review = reviews[reviewCode] %}
+
+      {% if review %}
+        {{ reviewCard(review, loop.index > reviewsInitialVisible) }}
+      {% endif %}
+    {% endfor %}
+
+    {% if (productReviews | length) > reviewsInitialVisible %}
+      <div class="centered-text product-reviews-show-more-wrap" data-reviews-show-more-wrap>
+        <button type="button" class="btn-reviews-more" data-reviews-show-more>
+          {{ reviewsShowMoreText }}
+        </button>
+      </div>
+    {% endif %}
+
+    <div class="centered-text">
+      <p class="single-out">{{ reviewsInviteTitleText }}</p>
+
+      <p class="gap-top">
+        <a href="{{ reviewsAddButtonUrl }}" class="btn-reviews-more">
+          {{ reviewsAddButtonText }}
+        </a>
+      </p>
+    </div>
+
+    <div class="product-review-lightbox" id="product-review-lightbox" hidden>
+      <div class="product-review-lightbox__backdrop" data-close-review-lightbox></div>
+
+      <div class="product-review-lightbox__dialog">
+        <button class="product-review-lightbox__close" type="button" aria-label="Close image" data-close-review-lightbox>
+          ×
+        </button>
+
+        <img id="product-review-lightbox-image" src="" alt="Enlarged customer review photo">
+      </div>
+    </div>
+  </section>
+{% endif %}

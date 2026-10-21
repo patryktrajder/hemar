@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#007cf0">
+        {% block meta %}{% endblock %}
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/src/main.css"/>
+        <link rel="manifest" href="/manifest_de.json">
+        <script defer="defer" src="/src/main.js"></script>
+        {% block head %}{% endblock %}
+
+        <script defer="defer" src="https://www.googletagmanager.com/gtag/js?id=G-ZYTND6L39E"></script>
+    </head>
+    <body>
+        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <defs>
+                {% include "vectors/arrow-drop-down.sym" %}
+                {% include "vectors/arrow-drop-up.sym" %}
+                {% include "vectors/facebook.sym" %}
+                {% include "vectors/flag-de.sym" %}
+                {% include "vectors/flag-en-gb.sym" %}
+                {% include "vectors/flag-pl.sym" %}
+                {% include "vectors/instagram.sym" %}
+                {% include "vectors/messenger.sym" %}
+                {% include "vectors/mobile.sym" %}
+                {% include "vectors/youtube.sym" %}
+                {% block vectors %}{% endblock %}
+            </defs>
+        </svg>
+
+        <header>
+            <div>
+
+
+          <h1 class="main-logo" style="line-height: 1;">
+                    <a href="/de" title="Startseite" style="text-decoration: none; font-family: 'Arial Black', Gadget, sans-serif; font-weight: 900; text-transform: uppercase; display: inline-flex; align-items: baseline;">
+                        <span style="color: #1a1a1a; font-size: 42px; letter-spacing: 2px;">TRAJDER</span>
+                        <sup style="color: #0056b3; font-size: 16px; position: relative; top: -20px; margin-left: 3px; font-weight: 700;">&copy;</sup>
+                    </a>
+                </h1>
+
+                <h1 class="second-logo" style="margin: 0; line-height: 1;">
+                    <a href="/de" title="Startseite" style="text-decoration: none; font-family: 'Arial Black', Gadget, sans-serif; font-weight: 900; text-transform: uppercase; display: inline-flex; align-items: baseline;">
+                        <span style="color: #1a1a1a; font-size: 32px; letter-spacing: 1px;">TRAJDER</span>
+                        <sup style="color: #0056b3; font-size: 12px; position: relative; top: -15px; margin-left: 2px;">&copy;</sup>
+                    </a>
+                </h1>
+
+
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            {# <li {% if tab === "home" %} class="current" {% endif %}>
+                                <a href="/de/" title="Homepage">Home</a>
+                            </li>
+                            <li {% if tab === "about" %} class="current" {% endif %}>
+                                <a href="/de/about/" title="Lernen wir uns besser kennen!">Über mich</a>
+                            </li> #}
+                            <li {% if tab === "Produkte" %} class="aktuell" {% endif %}>
+                                <a href="/de/products/">Produkte</a>
+                            </li>
+                            <li {% if tab === "projekte" %} class="aktuell" {% endif %}>
+                                <a href="/de/projects/">Ratgeber</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Kontakt</a>
+                            </li>
+                            <li>
+                                <div class="language-dropdown">
+                                    <button class="current" title="Sprache ändern">
+                                        <svg class="icon flag">
+                                            <use xlink:href="#icon-flag-de"></use>
+                                        </svg>
+                                        <svg class="icon arrow">
+                                            <use xlink:href="#icon-arrow-drop-down"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="list">
+                                        <button data-lang="en-gb" title="Englisch">
+                                            <svg class="icon">
+                                                <use xlink:href="#icon-flag-en-gb"></use>
+                                            </svg>
+                                        </button>
+                                        <button data-lang="pl" title="Polnisch">
+                                            <svg class="icon">
+                                                <use xlink:href="#icon-flag-pl"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <button class="menu-button" aria-label="Menü">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        {% block body %}{% endblock %}
+
+        <footer>
+            <section id="contact" class="container">
+                <div class="social-media">
+                    <a href="https://www.youtube.com/patryktrajder" rel="noopener" target="_blank" title="Mein Youtube-Kanal">
+                        <svg class="icon youtube">
+                            <use xlink:href="#icon-youtube"></use>
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com/patryktrajder" rel="noopener" target="_blank" title="Meine Fanpage auf Facebook">
+                        <svg class="icon facebook">
+                            <use xlink:href="#icon-facebook"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/patryktrajder" rel="noopener" target="_blank" title="Mein Instagram-Profil">
+                        <svg class="icon">
+                            <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="links row">
+                    <div>
+                        <h3>Kaufanfragen:</h3>
+                        <p>
+                            <a href="mailto:shop@trajder.com" rel="nofollow noopener" target="_blank" title="shop@trajder.com">shop@trajder.com</a>
+                        </p>
+                        <p class="messenger">
+                            <svg class="icon">
+                                <use xlink:href="#icon-messenger"></use>
+                            </svg>
+                            <a href="https://www.messenger.com/t/patryktrajder" rel="noopener" target="_blank" title="Schreiben Sie mir im Messenger">m.me/patryktrajder</a>
+                        </p>
+                        <p class="phone">
+                            <svg class="icon">
+                                <use xlink:href="#icon-mobile"></use>
+                            </svg>
+                            <a href="tel:+48602106170" rel="nofollow noopener" target="_blank">+48 602 106 170</a>
+                            <span class="small">&#32;(Anrufe nur in englischer oder polnischer Sprache).</span></p>
+                    </div>
+                    <div>
+                        <h3>Kollaboration:</h3>
+                        <p>
+                            <a href="mailto:patryk@trajder.com" rel="nofollow noopener" target="_blank" title="patryk@trajder.com">patryk@trajder.com</a>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Rechtliches:</h3>
+                         <p>
+                            <a href="/impressum-de.pdf" target="_blank">Impressum</a>
+                        </p>
+
+                         <p>
+                            <a href="/terms-of-service-de.pdf" target="_blank">AGB</a>
+                         </p>
+
+                        <p>
+                         <a href="/privacy-policy-de.pdf" target="_blank">Datenschutzerklärung</a>
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+            <div class="copyright">
+                <div>
+                    <ul class="separated-list">
+                        <li>&copy; Patryk Trajder. All rights reserved.</li>
+                        <li>
+                            Design & development:&#32;
+                            <a href="https://jakubjanowski.com/" rel="noopener" target="_blank" title="Brauchen Sie eine Website?">Jakub Janowski</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+     
+<template id="cookies-notice-template">
+  <div id="cookies-backdrop" class="cookies-backdrop-hidden"></div>
+
+  <div id="cookies-notice" class="cookies-hidden">
+    <div class="heading">Wir schätzen Ihre Privatsphäre</div>
+     <p>
+        Wir verwenden Cookies für statistische, werbliche und funktionale Zwecke.
+        Sie können deren Verwendung akzeptieren oder ablehnen. Detaillierte Informationen finden Sie in unserer&nbsp;
+         <a href="/privacy-policy-de.pdf" target="_blank" rel="noopener">Datenschutzerklärung</a>.
+      </p>
+    <div class="cookies-actions">
+      <button class="reject secondary" type="button">Ablehnen</button>
+      <button class="accept primary" type="button">Akzeptieren</button>
+    </div>
+  </div>
+</template>
+
+{% include "scripts/product-scroller.njk" %}
+    </body>
+</html>

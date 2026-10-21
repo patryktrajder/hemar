@@ -1,0 +1,837 @@
+{% extends "templates/layout-de.njk" %}
+{% set tab = "projekte" %}
+
+{% block meta %}
+    <link rel="canonical" href="https://patryktrajder.com/de/projects/hydraulic-cylinder/"/>
+    <title>Wie man einen Hydraulikzylinder baut | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+    {% include "vectors/arrow-right.sym" %}
+    {% include "vectors/chevron-up.sym" %}
+    {% include "vectors/chevron-down.sym" %}
+    {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <article>
+            <section class="gap-top">
+                <header>
+                    <nav class="breadcrumbs">
+                        <span>
+                            <a href="/de/" title="Homepage">
+                                <svg class="home icon">
+                                    <use xlink:href="#icon-home"></use>
+                                </svg>
+                            </a>
+                            <svg class="icon">
+                                <use xlink:href="#icon-arrow-right"></use>
+                            </svg>
+                        </span>
+                        <span>
+                            <a href="/de/projects/">Projekte</a>
+                            <svg class="icon">
+                                <use xlink:href="#icon-arrow-right"></use>
+                            </svg>
+                        </span>
+                        <a href="/de/projects/hydraulic-cylinder/">
+                            <b>Hydraulikzylinder</b>
+                        </a>
+                    </nav>
+                    <h1>Wie man einen Hydraulikzylinder baut</h1>
+                </header>
+                <div class="row gap-top">
+                    <div>
+                        <p>
+                            Im heutigen Artikel / Anleitung werde ich versuchen, den Bau des Aktuators zu erklären. Leider hatte ich, wie schon beim letzten Projekt, viele Probleme, weil ich keine Freunde hatte, die sich mit dem Thema befassen wollten. Da ich oft nach den Kosten für ein bestimmtes Projekt gefragt werde, ist die Liste unten aufgeführt.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/thumb.jpg" srcset="/assets/images/projects/hydraulic-cylinder/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-cylinder/thumb-w768. jpg 768w, /assets/images/projects/hydraulic-cylinder/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="Hydraulikzylinder"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expander materials shrink">
+                    <header>
+                        <p>Die benötigten Materialien</p>
+                    </header>
+                    <div class="container">
+                        <ul class="dots">
+                            <li>
+                                <p>Zylinder (d.h. Rohr): Ø110x130 L550 - 400 PLN</p>
+                            </li>
+                            <li>
+                                <p>Oberflächengehärtete Stange: Ø60 L600 - 400 PLN</p>
+                            </li>
+                            <li>
+                                <p>Kolben: Ø110 - 100 PLN</p>
+                            </li>
+                            <li>
+                                <p>Handschuh: Außen Ø115; Innen Ø60 - 150 PLN</p>
+                            </li>
+                            <li>
+                                <p>Der Rücklaufzettel, die Aderendhülsen usw. - 50 PLN</p>
+                            </li>
+                            <li>
+                                <p>Muttermaterial: Ø220 L50 - 150 PLN</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Material auf einem Abziehbild: Ø140 L40 - 60 PLN</p>
+                            </li>
+                            <li>
+                                <p>Material für austauschbare Kappe: Ø70 L60 - 20 PLN</p>
+                            </li>
+                            <li>
+                                <p>Dichtungen - 200 PLN</p>
+                            </li>
+                            <li>
+                                <p>Farbe, Aufkleber - 100 PLN</p>
+                            </li>
+                        </ul>
+                        <p class="single-out">
+                            1630 PLN insgesamt
+                        </p>
+                    </div>
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="#icon-chevron-down"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="expander shrink tools gap-top">
+                    <header>
+                        <p>Benötigte Werkzeuge</p>
+                    </header>
+                    <div class="container">
+                        <ul class="dots">
+                            <li>
+                                <p>Latte,</p>
+                            </li>
+                            <li>
+                                <p>Drehmaschinenwerkzeuge:</p>
+                                <ul class="dots">
+                                    <li>
+                                        <p>Augenstück für Drehmaschine</p>
+                                    </li>
+                                    <li>
+                                        <p>Walrossflossenbits,</p>
+                                    </li>
+                                    <li>
+                                        <p>Außengewindemesser,</p>
+                                    </li>
+                                    <li>
+                                        <p>Ein Innengewindeschneider,</p>
+                                    </li>
+                                    <li>
+                                        <p>Ein Bohrmesser,</p>
+                                    </li>
+                                    <li>
+                                        <p>Planungsmesser,</p>
+                                    </li>
+                                    <li>
+                                        <p>Ein Längsrollmesser,</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Winkelschleifer + Scheiben 1; 2,5; 4 mm,</p>
+                            </li>
+                            <li>
+                                <p>Schweißmaschine mit Schweißeinrichtung zum Schweißen von schwarzem Stahl,</p>
+                            </li>
+                            <li>
+                                <p>Eine Tischbohrmaschine,</p>
+                            </li>
+                            <li>
+                                <p>Gasbrenner,</p>
+                            </li>
+                            <li>
+                                <p>Ein Schraubendreher oder eine Bohrmaschine,</p>
+                            </li>
+                            <li>
+                                <p>Laserthermometer</p>
+                            </li>
+                            <li>
+                                <p>M8x1,25 Gewindebohrer,</p>
+                            </li>
+                            <li>
+                                <p>M22x1,5-Gewindebohrer,</p>
+                            </li>
+                            <li>
+                                <p>Knauf für Gewindebohrer der Reihe M1-M10,</p>
+                            </li>
+                            <li>
+                                <p>Knopf für Gewindebohrer M13-M32,</p>
+                            </li>
+                            <li>
+                                <p>Kegel-/Kegeleindringkörper,</p>
+                            </li>
+                            <li>
+                                <p>Öler,</p>
+                            </li>
+                            <li>
+                                <p>Stanze,</p>
+                            </li>
+                            <li>
+                                <p>Holzbearbeitungszwingen,</p>
+                            </li>
+                            <li>
+                                <p>eine Fächerscheibe (Schleifpapier für die Bohrmaschine),</p>
+                            </li>
+                            <li>
+                                <p>Blaues Spray,</p>
+                            </li>
+                            <li>
+                                <p>Orangespray,</p>
+                            </li>
+                            <li>
+                                <p>Feilen, Hämmer und andere typische Handwerkzeuge.</p>
+                            </li>
+                        </ul>
+
+                        <p class="single-out gap-top">Messwerkzeuge:</p>
+                        <ul class="dots">
+                            <li>
+                                <p>Detektor,</p>
+                            </li>
+                            <li>
+                                <p>Durchmesserskala im Bereich 100-140,</p>
+                            </li>
+                            <li>
+                                <p>Meter 25-50,</p>
+                            </li>
+                            <li>
+                                <p>Meter 50-75,</p>
+                            </li>
+                            <li>
+                                <p>Meter 100-125,</p>
+                            </li>
+                            <li>
+                                <p>Meter 125-150,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Universal-Schieblehre 0-150,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Universal-Schieblehre 0-250,</p>
+                            </li>
+                            <li>
+                                <p>Gewindekontrolle.</p>
+                            </li>
+                        </ul>
+
+                        <p class="single-out gap-top">Spezialisierte Werkzeuge:</p>
+                        <ul class="dots">
+                            <li>
+                                <p>Ein Frühstücksbrettchen mit Blumen.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="#icon-chevron-down"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="gap-top">
+                    Zu Beginn möchte ich darauf hinweisen, dass ich persönlich einen vorgefertigten Kolben und eine Stopfbuchse gekauft habe. Ich habe das getan, weil sie billiger waren als das Material, das ich kaufen müsste, um sie herzustellen. (Ich weiß - komisch) Man kann es auch damit erklären, dass ich es nicht konnte und den einfachen Weg gewählt habe ;) Beim Bau eines Aktors spielt die Reihenfolge der Aktionen bis zu einem bestimmten Zeitpunkt keine Rolle, aber ich werde alles nach meinem Film beschreiben.
+                </p>
+            </div>
+
+            <div class="row gap-top">
+                <div>
+                    <div class="image-loading ratio28to39">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail28-h1120.jpg" alt="Zylinderrohr"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Beginnen Sie, indem Sie den Zylinder auf beiden Seiten aufschlagen und unter den Ring sinken lassen. Achtung! Die für den Bau der Zylinder vorgesehenen Rohre sind innen poliert und haben eine vollkommen glatte und ebene Oberfläche. Wenn Sie ein Rohr für die oben genannte Bearbeitung in eine Drehbank einspannen, müssen Sie immer nach innen zentrieren. Wenn es um die Ringnut geht, müssen Sie diese so lang machen, wie Sie sie später einspannen wollen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading ratio28to39">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail27-h1120.jpg" alt="Zylinderrohr"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Denken Sie aber daran, dass der Mindestabstand so groß ist, dass er in die Rücklaufbegegnung passt. In meinem Fall waren es etwa 16cm. Es wäre schön, wenn die ganze Bucht mindestens 1mm tief pro Seite wäre, damit der Ring dann beim Schweißen standhalten kann. (Anmerkung: Diese Behandlung sollte nicht in meinem Film gezeigt werden, da ich die Aufnahme verloren habe)
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail1-h1120.jpg" alt="Welle an der Drehmaschine montiert"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+
+                        Jetzt können Sie zum nächsten Schritt übergehen, nämlich zum Walzen des Rings, den Sie später an den Zylinder schweißen. Bevor ich beschreibe, wie ich es gemacht habe, möchte ich noch hinzufügen, dass Sie es auch in Form einer Mutter machen können, indem Sie den Zylinder und den Ring mit einem Gewinde versehen, so dass Sie nichts schweißen müssen und sich keine Sorgen um das Biegen des Materials machen müssen. Aber es wird viel mehr Arbeit sein.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail26-h1120.jpg" alt="Drehwelle"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Okay, los geht's. Sie müssen ein grobes Loch in der Mitte rollen, die anderen Ebenen ausspucken und nivellieren. Ganz zum Schluss müssen Sie das Loch mit einer Durchmesserlehre rollen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail2-h1120.jpg" alt="Durchmesser-Messung"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Achtung! Das Innenmaß muss 3-4 Hundertstel kleiner sein als das Maß, das Sie vorher auf dem Zylinder versenkt haben. Die Idee ist, einen festen Sitz zu haben. Dies wird sich beim Schweißen als äußerst wichtig erweisen. Auf diese Weise vermeiden Sie Verformungen (an dieser Stelle habe ich vielleicht Ihre bisherige Konstruktion gerettet).
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail3-h1120.jpg" alt="Wellenloch"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Bevor Sie das Material aus der Drehbank nehmen, habe ich noch einen kleinen Tipp für Sie. Schlagen Sie mit einem Drehmesser einen Kreis an, der die Mitte der Befestigungslöcher durchschneidet. Sie werden mir für das weitere Fräsen sehr dankbar sein. (zumindest hoffe ich das ;))
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail29-h1120.jpg" alt="Löcher in die Welle ritzen"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        In einen vorbereiteten Kreis drücken Sie die Befestigungslöcher, ich habe 4 in gleichen Abständen gemacht. Dazu können Sie die Zahlen auf dem Messschieber platzieren, bis an allen vier Punkten das gleiche Maß übereinstimmt. Wenn Sie gerne zählen und die Trial-and-Error-Methode nichts für Sie ist, können Sie das folgende Diagramm verwenden.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail30-h1120.jpg" alt="Anreißen von Löchern"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Berechnen Sie zunächst den Radius und dann die Länge des Kreises. Sobald Sie herausgefunden haben, wie lang der Kreis ist, teilen Sie ihn einfach durch 4. (Im Grunde war es nichts Aufschlussreiches)
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail4-h1120.jpg" alt="bohrwelle"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Die Löcher sind schon gepresst, also weiter mit dem Bohren. Hm ... Bohren. Klingt cool, oder? Nicht ganz. Da der Kragen 5 cm dick ist, grenzt es eher an ein Wunder, dass man diese Löcher mit einem Handbohrer machen kann (es sei denn, man ist ein Nachfahre von Pudzian, gekreuzt mit dem Hulk, und sein Bohrer ist so stark, dass, wenn man etwas bohrt, es im ganzen Dorf keinen Strom gibt)
+                    </p>
+                </div>
+            </div>
+
+            <div class="row gap-top">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail5-h1120.jpg" alt="Präsentation des fertigen Rings"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Eine Tischbohrmaschine wird hier gut funktionieren, aber wenn Sie keine haben, empfehle ich, dass Sie sie jemand anderem geben. Es ist Ihre Sache, ob es ein Kumpel sein wird, der es für vier Packungen macht, oder eine Firma für zwei Groschen.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail7-h1120.jpg" alt="Heizring"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Der fertige Ring muss leicht erwärmt werden, bevor er auf den Zylinder aufgesetzt wird. Versuchen Sie, dies so gleichmäßig wie möglich zu tun.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row gap-top">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail8-h1120.jpg" alt="Den Ring auf den Zylinder setzen"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Am besten ist es, den Ring etwas stärker zu erwärmen, damit die Hülse nicht auf halber Strecke steht, denn dann haben Sie ein Problem, im Ernst.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail10-h1120.jpg" alt="Schweißzylinder"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Sie können jetzt zum Schweißen gehen. Ich weiß, dass es von Fachleuten und Menschen gelesen wird, aber nur zur Erinnerung: Wir hieven quer und schweißen auch. Machen Sie alles so schnell wie möglich (hier ist die Zeit Ihr Feind), damit keine Verformungen auftreten können. Denken Sie daran, dass Sie in der Mitte des Zylinders bereits das Maß parat haben.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail11-h1120.jpg" alt="Schweißnahtschleifen"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Dieser Punkt ist nur für diejenigen, die, wie ich, ihre Arbeit mit dem Schleifer erledigen müssen 😉.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail12-h1120.jpg" alt="Anreißen der Bohrung"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Im nächsten Schritt wird die Stelle unter der Ölrücklauföffnung vorsichtig eingedrückt
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail13-h1120.jpg" alt="Lochbohrung"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        und bohren Sie es vorsichtig auf (bohren Sie nicht bis zum Ende, denn Sie werden hier gleich rollen, und wie Sie wissen, mag ein Drehmesser keine Löcher)
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail14-h1120.jpg" alt="Mutterschweißung"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Dann schweißen Sie die Rücklaufspitze an. Das ist jetzt umso wichtiger, weil ein späteres Schweißen hier das Gewinde verderben kann, das Sie gerade machen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail15-h1120.jpg" alt="Zylinder an Drehmaschine montieren"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+
+                        Jetzt geht es an die Drehbank.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail16-h1120.jpg" alt="Niederdrücken eines Drehpferdes"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Im Film habe ich genau gezeigt, wie man den Sockel für das Okular vorbereiten muss, damit alles im Inneren zentriert ist. Sie müssen den Deckel verwenden, auf dem Sie eine ebene Unterlage für das Okular herstellen werden.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail17-h1120.jpg" alt="cylinder turning"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Wenn Sie die Brille aufgesetzt haben, können Sie zum Gewindedrehen übergehen usw.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail18-h1120.jpg" alt="Gewindedrehen"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Ich kann Ihnen an dieser Stelle nicht die fertigen Maße nennen, da Sie diese aus der Drüse verschieben müssen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail19-h1120.jpg" alt="Gewindedrehen - eine weitere Aufnahme"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Denken Sie auch daran, alle Enden mit einem sehr sanften Ausgang zu versehen, damit die spätere Montage des Kolbens mit Dichtungen einfacher ist.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail20-h1120.jpg" alt="Wellenbefestigung"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Nun ist es an der Zeit, die Kolbenstange zu bearbeiten.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail22-h1120.jpg" alt="rollend"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Ziehen Sie hier auch die Maße von der gekauften Kolbenstange ab (jede ist anders).
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail23-h1120.jpg" alt="Gewindedrehen"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Machen Sie ein Gewinde hinein.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail25-h1120.jpg" alt="andere Seite der Walze"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Auf der anderen Seite der Kolbenstange machen Sie die Befestigung für das Zubehör, das Sie benötigen (es gibt viele verschiedene Arten von Endstücken, die Sie machen können, je nach Ihren Bedürfnissen) Ich habe mich für eine einfache Variante entschieden und ein gewöhnliches Loch gemacht ;)
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail31-h1120.jpg" alt="Befestigung des Deckels an der Kolbenstange"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Im Bild daneben sehen Sie ein Beispiel für einen austauschbaren Deckel,
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail32-h1120.jpg" alt="Schraubdeckel"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Die Druckschrauben, so genannte Schnecken, funktionieren hier perfekt ;)
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail33-h1120.jpg" alt="deckelbeschlag"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Im nächsten Schritt werden wir einen Fassaufkleber anfertigen.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail34-h1120.jpg" alt="Abrollen des Hauptzylinderdeckels"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Rollen des Abziehbildes, erinnern wir uns an die große Phase unter der Schweißnaht
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail35-h1120.jpg" alt="Herstellung eines Innengewindes"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Um keine&#32;<q>Gewindestifte</q>&#32;zusätzlich zu schweißen, empfehle ich, ein Gewinde im Deckel selbst herzustellen, aber denken Sie daran, dass es ausreichend&#32;<q>dick</q>&#32;sein muss, damit später die eingeschraubte Reduzierung nicht durchgeht
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail36-h1120.jpg" alt="Anschweißen des Deckels an den Hydraulikzylinder"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Wie beim vorherigen Schweißen, machen wir es hier über Kreuz und so schnell wie möglich
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail37-h1120.jpg" alt="Schweißnahtschleifen"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Ich persönlich musste die Schweißnaht auf&#32;<q>Null</q>&#32;schleifen, damit der Antrieb in meine Presse passt,
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail38-h1120.jpg" alt="Montage der Dichtungen"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Zeit für den Einbau der Stopfbuchsen</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail39-h1120.jpg" alt="Einbau der Dichtungen in den Kolben"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            und Kolbenstangen ;)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail40-h1120.jpg" alt="Montage der Stopfbuchse auf der Welle"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Montage der Stopfbuchse an der Kolbenstange...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail41-h1120.jpg" alt="Einbau einer Wellenverschraubung"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>..und schieben Sie sie nach unten, um Platz für den Kolben zu schaffen.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail42-h1120.jpg" alt="Befestigung des Kolbens an der Welle"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Verschrauben des Kolbens mit der Kolbenstange
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail43-h1120.jpg" alt="Montage des Vorstücks am Zylinder"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Zeit, die Kolbenstange mit Kolben und Stopfbuchse an den Zylinder zu montieren. Das ist ohne spezielle Ausrüstung eine ziemliche Herausforderung...</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail44-h1120.jpg" alt="Montage des Vorstücks am Zylinder"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Ich habe ein normales Frühstücksbrettchen in den Blumen verwendet, damit die Dichtmittel am Kolben in den Zylinder "springen"</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail45-h1120.jpg" alt="Montage des Vorstücks am Zylinder eine weitere Aufnahme"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Schieben Sie die Stange langsam in den Zylinder</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail46-h1120.jpg" alt="Schraubkappenverschraubung"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Um die Stopfbuchsen anzuziehen, braucht man theoretisch einen Hakenschlüssel, da ich aber keinen solchen habe, habe ich dieses Element mit einer Hydraulikzange (auch der Name passt), sogenannten "Fröschen", angezogen</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail47-h1120.jpg" alt="Lackierung des Zylinders"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Der Hydraulikzylinder ist fast fertig. Jetzt müssen Sie ihn nur noch in Ihren Lieblingsfarben lackieren...</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail48-h1120.jpg" alt="Kleben von Aufklebern"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>..und Aufkleber kleben, um unsere Arbeit professioneller zu machen 🙂</p>
+                    </div>
+                </div>
+
+                <section class="gap-top-medium">
+                    <h1>Rechtzeitig fertiggestellt</h1>
+
+                    <div class="row">
+                        <div>
+                            <div class="image-loading">
+                                <img src="/assets/images/projects/hydraulic-cylinder/detail50-h1120.jpg" alt="Darstellung des fertigen Zylinders"/>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                Den obigen Artikel stelle ich kostenlos zur Verfügung, ohne eine Gegenleistung zu erwarten. Dennoch werde ich mich sehr freuen, wenn Sie mir nach dem Bau Ihres Gerätes ein Bild von Ihrem Projekt schicken, zu dem ich, als ob ich es nicht gesehen hätte, einige Ratschläge hinzugefügt habe 🙂 Das wird die beste Gegenleistung sein und ein Zeichen für mich, dass das, was ich tue, Sinn macht.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="gap-top">
+                        <h3>Ich präsentiere Ihnen hier einen Film über den Aufbau des Antriebs ;)
+                        </h3>
+                    </p>
+
+                    <div class="yt-video">
+                        <div>
+                            <iframe src="https://www.youtube-nocookie.com/embed/T_36mR8bN5M?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" title="Wie man einen Hydraulikzylinder herstellt - DIY"></iframe>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+        </article>
+    </main>
+
+{% endblock %}

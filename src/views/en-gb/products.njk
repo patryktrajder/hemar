@@ -1,0 +1,192 @@
+{% extends "templates/layout-en-gb.njk" %}
+{% set tab = "products" %}
+
+{% block meta %}
+  <link rel="canonical" href="https://patryktrajder.com/en-gb/products/"/>
+  <title>Shop | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+  {% include "vectors/arrow-right.sym" %}
+  {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+  {# <div class="banner">
+    <div class="container">
+      <div class="image-placeholder" style="padding-top: 25.104166666%;">
+        <img src="/assets/images/products-banner-w1920.jpg" srcset="/assets/images/products-banner-w768.jpg 768w, /assets/images/products-banner-w1920.jpg 1920w" alt="Tools on the workshop wall"/>
+      </div>
+    </div>
+  </div> #}
+
+<main class="products-page-main">
+
+  <nav class="breadcrumbs gap-top">
+    <span>
+      <a href="/en-gb/" title="Homepage">
+        <svg class="home icon">
+          <use xlink:href="#icon-home"></use>
+        </svg>
+      </a>
+
+      <svg class="icon">
+        <use xlink:href="#icon-arrow-right"></use>
+      </svg>
+    </span>
+
+    <a href="/en-gb/products/">
+      <b>Shop</b>
+    </a>
+  </nav>
+
+  <article id="diy-tools" class="gap-top preview-list" data-product-shop>
+
+    {% from "components/product-card-en.njk" import productCardEn %}
+
+    {#
+      Available types:
+      - projects = DXF/PDF plans
+      - diy      = DIY kits
+      - ready    = Ready-made products
+    #}
+    {% set productListEn = [
+      { code: "TN01", type: "diy" },
+      { code: "dWT04", type: "projects" },
+      { code: "dWT02", type: "projects" },
+      { code: "dWT01", type: "projects" },
+      { code: "dWT03", type: "projects" },
+      { code: "dWTA01", type: "projects" },
+      { code: "dWTA02", type: "projects" },
+      { code: "dWS02", type: "projects" },
+      { code: "dWS01", type: "projects" },
+      { code: "dWTA03", type: "projects" },
+      { code: "oac01", type: "projects" }
+    ] %}
+
+    {#
+      SHOP TABS
+
+      These are separate classes for the shop page.
+      We do not use .product-section-nav from product pages,
+      so filtering the shop does not mix with product-page scrolling.
+    #}
+    <nav class="product-shop-tabs" aria-label="Product categories">
+      <button
+        type="button"
+        class="product-shop-tabs__button is-active"
+        data-product-tab="all"
+        aria-pressed="true"
+      >
+        All
+      </button>
+
+      <button
+        type="button"
+        class="product-shop-tabs__button"
+        data-product-tab="projects"
+        aria-pressed="false"
+      >
+        DXF/PDF Plans
+      </button>
+
+      <button
+        type="button"
+        class="product-shop-tabs__button"
+        data-product-tab="diy"
+        aria-pressed="false"
+      >
+        DIY Kits
+      </button>
+
+      <button
+        type="button"
+        class="product-shop-tabs__button"
+        data-product-tab="ready"
+        aria-pressed="false"
+      >
+        Ready Products
+      </button>
+    </nav>
+
+    <p class="product-shop-empty" data-product-empty hidden>
+      Products in this category will be available soon.
+    </p>
+
+    <div class="product-cards-container">
+      {% for item in productListEn %}
+        {% set product = productsEn[item.code] %}
+
+        {% if product %}
+          <div class="product-shop-item" data-product-type="{{ item.type }}">
+            {{ productCardEn(product) }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </article>
+
+</main>
+
+<script>
+  /*
+    SIMPLE JS FOR SHOP TABS
+
+    - works only inside [data-product-shop]
+    - does not affect product-page section tabs
+    - does not change the URL
+    - does not assign categories automatically
+  */
+  (function () {
+    var shop = document.querySelector("[data-product-shop]");
+
+    if (!shop) {
+      return;
+    }
+
+    var tabs = shop.querySelectorAll("[data-product-tab]");
+    var items = shop.querySelectorAll("[data-product-type]");
+    var emptyMessage = shop.querySelector("[data-product-empty]");
+
+    if (!tabs.length || !items.length) {
+      return;
+    }
+
+    function showTab(activeTab) {
+      var visibleCount = 0;
+
+      tabs.forEach(function (tab) {
+        var tabName = tab.getAttribute("data-product-tab");
+        var isActive = tabName === activeTab;
+
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      items.forEach(function (item) {
+        var productType = item.getAttribute("data-product-type");
+        var shouldShow = activeTab === "all" || productType === activeTab;
+
+        item.hidden = !shouldShow;
+
+        if (shouldShow) {
+          visibleCount++;
+        }
+      });
+
+      if (emptyMessage) {
+        emptyMessage.hidden = visibleCount > 0;
+      }
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        showTab(tab.getAttribute("data-product-tab"));
+      });
+    });
+
+    showTab("all");
+  })();
+</script>
+{% endblock %}

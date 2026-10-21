@@ -1,0 +1,28 @@
+{% from "components/product-card-de.njk" import productCardDe %}
+
+{% if recommendedProducts %}
+  <section class="gap-top-medium homepage-products product-anchor-section section-title-center">
+    <h1>Das könnte auch nützlich sein</h1>
+
+    <p>
+      <br>
+      <a href="/en-gb/products/" title="Shop"><strong>[Alle ansehen]</strong></a>
+    </p>
+
+    <div class="product-scroller">
+      <div class="product-scroller__track">
+
+        {% for productCode in recommendedProducts %}
+          {% set product = productsDe[productCode] %}
+
+          {% if product %}
+            {{ productCardDe(product) }}
+          {% else %}
+            {# Missing product in productsDe.json: {{ productCode }} #}
+          {% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+{% endif %}

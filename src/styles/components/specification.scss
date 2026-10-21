@@ -1,0 +1,20 @@
+table.specification {
+  font-size: 18px;
+  line-height: 24px;
+
+  td {
+    border: 1px solid black;
+    padding: 13px 18px;
+
+    & + td {
+      color: black;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  th {
+    font-weight: 600;
+    padding: 13px 18px
+  }
+}

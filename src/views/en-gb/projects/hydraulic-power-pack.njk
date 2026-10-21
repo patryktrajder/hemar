@@ -1,0 +1,863 @@
+{% extends "templates/layout-en-gb.njk" %}
+{% set tab = "projects" %}
+
+{% block meta %}
+  <link rel="canonical" href="https://patryktrajder.com/en-gb/projects/hydraulic-power-pack/"/>
+  <title>How to build a mobile hydraulic unit | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+  {% include "vectors/arrow-right.sym" %}
+  {% include "vectors/chevron-up.sym" %}
+  {% include "vectors/chevron-down.sym" %}
+  {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+  <main>
+    <article>
+      <section class="gap-top">
+        <header>
+          <nav class="breadcrumbs">
+            <span>
+              <a href="/en-gb/" title="Homepage">
+                <svg class="home icon">
+                  <use xlink:href="#icon-home"></use>
+                </svg>
+              </a>
+              <svg class="icon">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </span>
+            <span>
+              <a href="/en-gb/projects/">Projects</a>
+              <svg class="icon">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </span>
+            <a href="/en-gb/projects/hydraulic-power-pack/">
+              <b>Hydraulic power pack</b>
+            </a>
+          </nav>
+          <h1>How to build a mobile hydraulic unit</h1>
+        </header>
+        <div class="row">
+          <div>
+            <p>
+              When I started building the unit I had no idea about hydraulics. I assumed it was a very simple subject. I quickly realized that even for such a seemingly simple construction, once again (horrible!) I need math, which I didn't want to learn at school thinking&#32;<q>it won't do me any good anyway</q>. Gathering experience in this field was extremely difficult for me because of the lack of friends in the industry and poor access to information. After exhaustive research on the Internet and books, after 2-3 weeks I was ready to start working. Because of the information and insights I gained I give you&#32;<q>on a plate</q>&#32;I hope that you armed with my tips and head on your neck you will gain this secret knowledge in 10 minutes. 🙂 I also hope that you will avoid unnecessary expenses, accidents and save time. Most of the advice is&#32;<q>taken from life</q>&#32;and is based on my mistakes. I don't take responsibility for what you do in your own workshop, so be careful - there are no jokes with plumbers. 😀
+            </p>
+          </div>
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/thumb.jpg" srcset="/assets/images/projects/hydraulic-power-pack/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-power-pack/thumb-w768.jpg 768w, /assets/images/projects/hydraulic-power-pack/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="ready-made hydraulic power unit"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="expander materials shrink">
+          <header>
+            <p>The materials needed</p>
+          </header>
+          <div class="container">
+            <ul class="dots">
+              <li>
+                <p>Electric motor,</p>
+              </li>
+              <li>
+                <p>
+                  hydraulic pump,</p>
+              </li>
+              <li>
+                <p>bell switch,</p>
+              </li>
+              <li>
+                <p>
+                  claw clutch,</p>
+              </li>
+              <li>
+                <p>the divider,</p>
+              </li>
+              <li>
+                <p>
+                  hydraulic lines,</p>
+              </li>
+              <li>
+                <p>
+                  sheet metal sheet (for tank construction),</p>
+              </li>
+              <li>
+                <p>thermometer with oil level indicator,</p>
+              </li>
+              <li>
+                <p>
+                  wheels,</p>
+              </li>
+              <li>
+                <p>Drain plug,</p>
+              </li>
+              <li>
+                <p>fill bark,</p>
+              </li>
+              <li>
+                <p>an oil filter,</p>
+              </li>
+              <li>
+                <p>
+                  bulkhead switch,</p>
+              </li>
+              <li>
+                <p>a net sucker,</p>
+              </li>
+              <li>
+                <p>manometer,</p>
+              </li>
+              <li>
+                <p>electrical switch,</p>
+              </li>
+              <li>
+                <p>
+                  hydraulic oil,</p>
+              </li>
+              <li>
+                <p>
+                  stickers and paint 😉</p>
+              </li>
+            </ul>
+          </div>
+          <button>
+            <svg class="icon">
+              <use xlink:href="#icon-chevron-down"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="expander shrink tools gap-top">
+          <header>
+            <p>The tools needed</p>
+          </header>
+          <div class="container">
+            <ul class="dots">
+              <li>
+                <p>tooker,</p>
+              </li>
+              <li>
+                <p>
+                  lathe tooling:</p>
+                <ul class="dots">
+                  <li>
+                    <p>
+                      walrus fin drills,</p>
+                  </li>
+                  <li>
+                    <p>
+                      a boring knife,</p>
+                  </li>
+                  <li>
+                    <p>planning knife,</p>
+                  </li>
+                  <li>
+                    <p>The longitudinal rolling knife,</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  angle grinder + discs 1; 2,5; 4 mm,</p>
+              </li>
+              <li>
+                <p>welding machine with welding equipment for black steel,</p>
+              </li>
+              <li>
+                <p>
+                  table drill,</p>
+              </li>
+              <li>
+                <p>
+                  gas burner,</p>
+              </li>
+              <li>
+                <p>a screwdriver or drill,</p>
+              </li>
+              <li>
+                <p>treader M10x1.50</p>
+              </li>
+              <li>
+                <p>Treading knob in the range M1-M10,</p>
+              </li>
+              <li>
+                <p>phasier / cone penetrator,</p>
+              </li>
+              <li>
+                <p>an oiler,</p>
+              </li>
+              <li>
+                <p>point,</p>
+              </li>
+              <li>
+                <p>constitution clamps,</p>
+              </li>
+              <li>
+                <p>flap disk (abrasive paper for the drill),</p>
+              </li>
+              <li>
+                <p>spray blue,</p>
+              </li>
+              <li>
+                <p>Orangespray,</p>
+              </li>
+              <li>
+                <p>motors, hammers and other typical hand tools.</p>
+              </li>
+            </ul>
+
+            <p class="single-out gap-top">Tools:</p>
+            <ul class="dots">
+              <li>
+                <p>detector,</p>
+              </li>
+              <li>
+                <p>
+                  universal slide calliper 0-150,</p>
+              </li>
+              <li>
+                <p>
+                  universal slide calliper 0-250,</p>
+              </li>
+            </ul>
+
+            <p class="single-out gap-top">Specialist tools:</p>
+            <ul class="dots">
+              <li>
+                <p>digger for hydraulic hoses</p>
+              </li>
+            </ul>
+          </div>
+          <button>
+            <svg class="icon">
+              <use xlink:href="#icon-chevron-down"></use>
+            </svg>
+          </button>
+        </div>
+
+        <p class="gap-top">
+          The best way to start work is to connect the electric motor to the pump. This is a very easy task if you have a larger budget, because there are ready-made parts available for this purpose. You need to buy a motor with flange mounting, bell coupling, claw coupling, and pump. However, make sure that all parts are compatible with each other.
+        </p>
+
+        <div class="row gap-top">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail1-m1120.jpg" alt="shows the electric motor"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              I used a recovered engine I found on scrap metal in my project. I made the bell switch myself, because the original one would not fit my engine. Fortunately, I managed to use the original clutch.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail4-m1120.jpg" alt="parts for building the pump"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              When choosing a pump and motor you must first consider what you want to use them for. This is important because of the expected parameters, i.e. working pressure and litre capacity per minute. The first parameter concerns power and the second the piston stroke.
+
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail3-m1120.jpg" alt="checking if the parts are fitting"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              For example, if you want to use a press unit, you should buy a pump with as much maximum pressure as possible and as little flow as possible per minute. In this way you will get a slow, accurate operation and at the same time high power. When building a shovel, the opposite is true - you will need a very fast piston stroke, with relatively little power.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail5-m1120.jpg" alt="checking if the parts are fitting"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              My unit is designed to serve both press and slate, so I made a compromise and chose the parameters in between; however, as is well known,&#32;<q>if something is good for everything, then it is good for nothing</q>.😉
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail6-m1120.jpg" alt="ready-made pump and motor assembly"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Remember also that increasing power parameters or litres per minute increases directly proportionally the demand for the size of the electric motor. To make things easier I present a mathematical formula I used:
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/wzory.jpg" alt="calculations"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              For the extension speed<br>For the power in tons that we will get<br>What kind of engine do we need (will soon supplement the article)
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <p class="single-out">The hardest part is behind you. To move on to the next stage of construction you will need the following parts:
+          </p>
+
+          <ul class="dots">
+            <li>
+              <p>tank construction sheet</p>
+            </li>
+            <li>
+              <p>
+                Wheels</p>
+            </li>
+            <li>
+              <p>Oil drain plug</p>
+            </li>
+            <li>
+              <p>Blue paint, stickers ;)
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="row gap-top">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail7-m1120.jpg" alt="gas burner"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Once you have the above elements, you can move on to building the tank. Remember to pre-match all components.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail9-m1120.jpg" alt="oxygen burner cutting"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              To design a tank you need to know several values:
+              <br>
+              the capacity of your cylinder, (or all cylinders to be supplied) at maximum extension.
+              <br>
+              You can use a pattern for this: π(d/2)&#178;-l, where:
+              <br>d - inner diameter of the cylinder
+              <br>l - length of our cylinder
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail13-w1120.jpg" alt="welding of the oil tank"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Once you know that you need, for example, 20l of oil for the cylinders and cables themselves, I recommend that you increase this value at least three times. (WTF?) Why?
+              <br>
+              I'll explain.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <p class="single-out">First:</p>
+
+          <p class="indent">
+            Do not attach the pump suction cup at the bottom of the tank so that it does not draw dirt from the bottom.</p>
+
+          <p class="single-out">
+            Second:</p>
+
+          <p class="indent">The oil heats up while the unit is running and there will be more oil. When there is more oil, it will heat up longer.</p>
+
+          <p class="single-out">Third:</p>
+
+          <p class="indent">
+            Even a new actuator causes gentle oil loss. The bigger the stock we have, the less often we have to refill it.</p>
+
+          <p class="single-out">Fourth:</p>
+
+          <p class="indent">Future-thinking ahead - if you ever want to connect a larger actuator, you won't have to rework the tank.</p>
+
+          <p class="gap-top">
+            Of course, a large tank is not only an advantage, but also a disadvantage. As you can easily guess, a larger tank will be heavier and thus less mobile. In addition, it will need more oil to work, so the unit cost of buying oil will be higher.
+          </p>
+        </div>
+
+        <div class="row gap-top">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail14-w1120.jpg" alt="welding of reinforcements to the oil tank"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              If you already know the capacity of your tank, the next step will be to calculate its size. For the tank itself you can use your old LPG tank. I personally do not recommend such a solution if you do not know about it. I mean your safety, of course. (Cutting the tank can be compared to mushrooming. Apparently, a poisonous mushroom can be eaten, but only once. So is you know what.) The formula for a 60l cylindrical tank:
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail15-w1120.jpg" alt="welding reinforcements"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              However, once you have realised that using an LPG tank could nominate you for the Darwin Award, I recommend that you build a tank with a cuboid or cuboid shape (which you like).<br>
+              Formula to get 60l: (here's the formula)
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail16-w1120.jpg" alt="welding of the oil drain plug"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              I often got questions about exact dimensions and looked for them myself. I hope I've explained enough above why I shouldn't impose on you.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail17-w1120.jpg" alt="welding of axles to the tank"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Weld a thick angle on top of the tank, one in which you can make a thread.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail18-w1120.jpg" alt="welding of the footer to the tank"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              If you want your unit to be mobile, which, by the way, I recommend to you, you must wholeheartedly weld the axle to which you will attach the wheels and make a foot.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail19-w1120.jpg" alt="welding of the footer to the tank secound shot"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              The tank skeleton is ready.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail20-w1120.jpg" alt="tank painting"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              If you want to brag about your unit among other Mireks, it's nice if you still paint it to make them green out of jealousy.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail21-w1120.jpg" alt="tank painting secound shot"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Besides, the painted tank looks much better and it will be nice for you to screw the next components.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail22-w1120.jpg" alt="mounting the wheel with the tyre to the tank"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              It's time to mount the wheels...
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail23-w1120.jpg" alt="installation of the temometer"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              ...and a thermometer with an oil level indicator.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail24-w1120.jpg" alt="hole drilling"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Drill holes in the bracket, which you will drill later.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <p class="single-out gap-top-medium">Super! The tank is ready. Time for the mounting plate. This is my favorite construction stage. You're gonna need all the parts you want on this plate, so:
+          </p>
+
+          <ul class="dots">
+            <li>
+              <p>The bulkhead switch</p>
+            </li>
+            <li>
+              <p>bell switch</p>
+            </li>
+            <li>
+              <p>The filler plug</p>
+            </li>
+            <li>
+              <p>Oil filter</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="row gap-top">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail26-w1120.jpg" alt="steel plate scribing"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Draw out their shapes. That's the easiest way...
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail27-w1120.jpg" alt="cutting out holes in steel plate"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              ...and get on with cutting and drilling.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail31-w1120.jpg" alt="Greeting the cat"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              We'll need a helper for the next step. ;)
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail29-w1120.jpg" alt="profile welding to plate"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Now it's time to weld the&#32;<q>leg</q>&#32;(profile), on which the manifold will be placed. Here too, I can't give you specific dimensions, because everyone can buy different parts (with different dimensions).
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-power-pack/detail30-w1120.jpg" alt="profile welding to plate secound shot"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              * welding *
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail34-w1120.jpg" alt="sheet metal painting"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  The mounting plate should also be painted here. It is best to do it at this point, so as not to undress everything later and waste the seals.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail35-w1120.jpg" alt="plate mounting on the engine"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  Screw in the electric motor, remembering the seal.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail36-w1120.jpg" alt="screwing the sheet metal to the engine"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  Use self-contracting nuts to fix the motor.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail37-w1120.jpg" alt="installation of the bulkhead switch"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  Now it's time to mount the bulkhead switch.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail38-w1120.jpg" alt="installation of rubber hoses"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  Once everything is twisted, determine the length of the hydraulic hoses that you will have to lock in a special plant. Don't make my mistake and don't buy them before, because they are very hard to hit with size. I had to buy them twice. Not only am I not too much of a guy, but now I'm also poor.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail39-w1120.jpg" alt="pump sucker"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  If you want your unit to be always in good shape like Krzysiek Ibisz, mount a sieve on the oil suction cup.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail41-w1120.jpg" alt="Screwing the sieve to the oil filler"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  A sieve under the oil filler plug will further reduce contamination in the tank.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail25-w1120.jpg" alt="the cat in the middle of the hydraulic tank"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  Now make sure you don't have a cat in the tank. If you've established that it's empty, you can turn the mounting plate and the tank together.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail42-w1120.jpg" alt="mounting the pump with motor to the tank"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  at this stage you'll also need a helping hand from a colleague, or we have ;)
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail47-w1120.jpg" alt="screwing the rubber hose to the manifold"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  When twisting the cables to the manifold, make sure to connect them from the correct side! You can see how I did it while watching my movie. The supply line from the pump is usually (as a rule!) connected from the side where the pressure regulator is. There should be arrows on the new manifold, but if there are no arrows, just check its specifications.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail44-w1120.jpg" alt="fitting the electrical switch"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  Congratulations. You're on your last straight. Now it's time for the electrician. I've connected the motor to the star triangle, but it's not required (at least to the 5.5 kw motor). Maybe subconsciously I wanted to cure my complexes for comments under another movie. that I can't do that. 😉 Generally it's not difficult, but be careful here. No jokes! 😀
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail48-w1120.jpg" alt="pouring of oil"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  Now all you have to do is pour the oil and do the test.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="image-loading">
+                  <img src="/assets/images/projects/hydraulic-power-pack/detail45-w1120.jpg" alt="hydraulic valve explosion"/>
+                </div>
+              </div>
+              <div>
+                <p>
+                  Finally, one more friendly piece of advice. Check carefully to make sure that the parts you buy from scrap metal are suitable for use. As you could see in my film, I've ended up with an uninteresting situation. I flooded the whole workshop with oil, and by the way, I found out that washing the oil out of my hair is not an easy task. 😉
+                </p>
+              </div>
+            </div>
+
+            <section class="gap-top-medium">
+              <h1>Bright! Your own, wonderful, delicious, unique hydraulic unit ready!
+              </h1>
+
+              <div class="row">
+                <div>
+                  <div class="image-loading">
+                    <img src="/assets/images/projects/hydraulic-power-pack/detail46-w1120.jpg" alt="ready-made hydraulic power unit Approximation shot"/>
+                  </div>
+                </div>
+                <div>
+                  <p>
+                    The above article is available for free, expecting nothing in return. Still, I will be very pleased when you send me a picture of your project after building your unit, to which, as if not looking at it, I added some advice. 🙂 This will be the best return and a sign for me that what I do makes sense.
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="image-loading">
+                    <img src="/assets/images/projects/hydraulic-power-pack/thumb.jpg" srcset="/assets/images/projects/hydraulic-power-pack/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-power-pack/thumb-w768.jpg 768w, /assets/images/projects/hydraulic-power-pack/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="ready-made hydraulic power unit"/>
+                  </div>
+                </div>
+                <div>
+                  <p>
+                    If you want to support my further development, you can make a voluntary donation. I will be happy to give even 1 zloty (in words: a zloty ;)), because after deducting 18% of the tax I will still receive a dizzying 82 grosze. :D
+                    <br>
+                    At the bottom of the article there should be a button from donauts ;)
+                    <br>
+                    Thank you!
+                  </p>
+                </div>
+              </div>
+
+              <p class="gap-top">
+                <h3>Here's a video of the construction of the unit... ;)
+                </h3>
+              </p>
+
+              <div class="yt-video">
+                <div>
+                  <iframe src="https://www.youtube-nocookie.com/embed/a3s6aUMMPb8?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" title="Hydraulic power pack - DIY"></iframe>
+                </div>
+              </div>
+            </section>
+
+          </section>
+        </article>
+      </main>
+
+    {% endblock %}

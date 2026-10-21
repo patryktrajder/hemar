@@ -1,0 +1,75 @@
+@import "../variables";
+
+.opinion {
+  border: 1px solid $grey;
+  margin-bottom: 35px;
+  padding: 27px 35px 35px 35px;
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  .attachments {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    margin-top: 16px;
+    
+    .items {
+      margin-top: 8px;
+      
+      img {
+        display: inline-block;
+        width: 82px;
+        height: 54px;
+
+        & + img {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  .header {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 16px;
+
+    > * {
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    svg {
+      margin-top: -2px;
+      vertical-align: middle;
+
+      &.flag {
+        margin-left: 11px;
+        margin-right: 29px;
+        width: 27px;
+        height: 18px;
+        box-shadow: 0 0 2px 0 $silverSand;
+      }
+    }
+
+    .rating {
+      svg {
+        color: $azure;
+        width: 26px;
+        height: 26px;
+
+        & + svg {
+          margin-left: 5px;
+        }
+      }
+
+      .points {
+        margin-left: 9px;
+      }
+    }
+  }
+}

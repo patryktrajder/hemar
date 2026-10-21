@@ -1,0 +1,71 @@
+<script>
+// slider produktów
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.product-scroller').forEach((scroller) => {
+    if (scroller.dataset.productScrollerReady === 'true') return;
+    scroller.dataset.productScrollerReady = 'true';
+
+    let isMouseDown = false;
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let preventClick = false;
+
+    scroller.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return;
+
+      isMouseDown = true;
+      isDragging = false;
+      preventClick = false;
+      startX = e.pageX;
+      startScrollLeft = scroller.scrollLeft;
+    });
+
+    window.addEventListener('mousemove', function (e) {
+      if (!isMouseDown) return;
+
+      const dx = e.pageX - startX;
+
+      if (!isDragging && Math.abs(dx) > 8) {
+        isDragging = true;
+        preventClick = true;
+        scroller.classList.add('is-dragging');
+      }
+
+      if (!isDragging) return;
+
+      scroller.scrollLeft = startScrollLeft - dx;
+      e.preventDefault();
+    });
+
+    function stopDrag() {
+      if (!isMouseDown) return;
+
+      isMouseDown = false;
+      scroller.classList.remove('is-dragging');
+
+      if (isDragging) {
+        setTimeout(() => {
+          preventClick = false;
+        }, 0);
+      }
+
+      isDragging = false;
+    }
+
+    window.addEventListener('mouseup', stopDrag);
+    scroller.addEventListener('mouseleave', stopDrag);
+
+    scroller.addEventListener('click', function (e) {
+      if (preventClick) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
+    scroller.querySelectorAll('a, img').forEach((el) => {
+      el.setAttribute('draggable', 'false');
+    });
+  });
+});
+</script>

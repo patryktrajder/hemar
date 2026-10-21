@@ -1,0 +1,193 @@
+{
+  "TN01": {
+    "badge": "Zestaw DIY",
+    "badgeClass": "product-badge--physical",
+    "url": "/products/super-booster-2000/",
+    "image": "/assets/images/super-booster-2000/thumb-w320.0.jpg",
+    "alt": "Super Booster 2000",
+    "title": "<strong>Wykrawarka do rur i profili</strong>&nbsp;(Tube Notcher) – Otwornica TN01",
+    "price": "889",
+    "cents": "01"
+  },
+
+  "dWT04": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/WeldingTable_1200x800_MateuszDoniec/",
+    "image": "/assets/images/dwt04/card.jpg",
+    "alt": "projekt stołu spawalniczego",
+    "title": "Plany DXF/PDF:<br>Stół spawalniczy&nbsp;<strong>1200x800</strong>&nbsp;<br>(System Ø16/28 | Blat 10/12mm)",
+    "price": "99",
+    "cents": "00"
+  },
+
+  "dWT02": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/WeldingTable_2000x1000_MateuszDoniec/",
+    "image": "/assets/images/WeldingTable_2000x1000_MateuszDoniec/thumb-w320.jpg",
+    "alt": "projekt stołu spawalniczego",
+    "title": "Plany DXF/PDF:<br>Stół spawalniczy&nbsp;<strong>2000x1000</strong>&nbsp;<br>(System Ø16/28 | Blat 10/12/15mm)",
+    "price": "129",
+    "cents": "00"
+  },
+
+  "dWT01": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/WeldingTable_2400x1200_MateuszDoniec/",
+    "image": "/assets/images/WeldingTable_2400x1200_MateuszDoniec/thumb640.jpg",
+    "alt": "projekt stołu spawalniczego",
+    "title": "Plany DXF/PDF:<br>Stół spawalniczy&nbsp;<strong>2400x1200</strong>&nbsp;<br>(System 16/28 | Blat 12/15mm)",
+    "price": "129",
+    "cents": "00"
+  },
+
+  "dWT03": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/WeldingTable_3000x1500_MateuszDoniec/",
+    "image": "/assets/images/dwt03/card.jpg",
+    "alt": "projekt stołu spawalniczego",
+    "title": "Plany DXF/PDF:<br>Stół spawalniczy&nbsp;<strong>3000x1500</strong>&nbsp;<br>(System Ø28 | Blat 12mm)",
+    "price": "169",
+    "cents": "00"
+  },
+
+  "dWTA01": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/welding-table-tooling-kit-plans-dwta01/",
+    "image": "/assets/images/dwta01/thumb/thumb640.png",
+    "alt": "akcesoria do stołu spawalniczego pdf + dxf",
+    "title": "Plany DXF/PDF:<br>Zestaw&nbsp;<strong>podstawowych&nbsp;</strong>akcesoriów do stołu spawalniczego – dWTA01",
+    "price": "98",
+    "cents": "00"
+  },
+
+  "dWTA02": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/welding-table-tooling-kit-plans-dwta02/",
+    "image": "/assets/images/dwta02/thumb640.png",
+    "alt": "akcesoria do stołu spawalniczego pdf + dxf",
+    "title": "Plany DXF/PDF:<br>Zestaw&nbsp;<strong>profesjonalnych&nbsp;</strong>akcesoriów do stołu spawalniczego – dWTA02",
+    "price": "127",
+    "cents": "00"
+  },
+
+  "dWS02": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/welding-table-extension-plans-dws02",
+    "image": "/assets/images/dws02/card.jpg",
+    "alt": "mobilne przedłużenie stołu spawalniczego",
+    "title": "Plany DXF/PDF:<br>Mobilne przedłużenie stołu spawalniczego (1200x200 mm | 16/28) – dWS02",
+    "price": "89",
+    "cents": "00"
+  },
+
+  "dWS01": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/welding-table-extension-plans-dws01",
+    "image": "/assets/images/dws01/card.jpg",
+    "alt": "mobilne przedłużenie stołu spawalniczego",
+    "title": "Plany DXF/PDF:<br>Mobilne przedłużenie stołu spawalniczego (2400x200 mm | 16/28) – dWS01",
+    "price": "89",
+    "cents": "00"
+  },
+
+  "dWTA03": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/welding-table-tooling-kit-plans-dwta03/",
+    "image": "/assets/images/dwta03/card.jpg",
+    "alt": "Szuflada pod stół spawalniczy",
+    "title": "Plany DXF/PDF:<br>Szuflada pod stół spawalniczy – dWTA03",
+    "price": "47",
+    "cents": "00"
+  },
+
+  "RS01": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/roller-stand-rs01/",
+    "image": "/assets/images/rs01/card.jpg",
+    "alt": "Stojak rolkowy warsztatowy RS01 | Roller Stand",
+    "title": "Plany DXF/PDF: Stojak rolkowy warsztatowy RS01 | Roller Stand",
+    "price": "29",
+    "cents": "00"
+  },
+
+  "oac01": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/products/oxy-acetylene-cart/",
+    "image": "/assets/images/oac01/card.jpg",
+    "alt": "Plany DXF/PDF: Wózek na butle tlen-acetylen | Oxy-Acetylene Cart",
+    "title": "Plany DXF/PDF: Wózek na butle tlen-acetylen",
+    "price": "49",
+    "cents": "00"
+  },
+
+
+  "wtl01": {
+    "badge": "Gotowy produkt",
+    "badgeClass": "product-badge--physical",
+    "url": "/products/oxy-acetylene-cart/",
+    "image": "/assets/images/wtl01/card2.png",
+    "alt": "Plany DXF/PDF: Wózek na butle tlen-acetylen | Oxy-Acetylene Cart",
+    "title": "4/6 x Noga do stołu spawalniczego - z stopką | TRAJDER",
+    "price": "cena od 890",
+    "cents": "00"
+  },
+
+
+   "wtl02": {
+    "badge": "Gotowy produkt",
+    "badgeClass": "product-badge--physical",
+    "url": "/products/welding-table-legs01/",
+    "image": "/assets/images/wtl01/card3.png",
+    "alt": "Plany DXF/PDF: Wózek na butle tlen-acetylen | Oxy-Acetylene Cart",
+    "title": "4/6 x Noga do stołu spawalniczego - z kołem | TRAJDER",
+    "price": "Cena od 1390",
+    "cents": "00"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

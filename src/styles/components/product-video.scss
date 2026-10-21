@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Product Video Showcase
+   Blok: film / zdjęcie + tekst na stronach produktu
+   ========================================================================== */
+
+.product-video-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1180px;
+  margin: 42px auto 64px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f5f6f7;
+}
+
+/* Lewa / prawa część z filmem */
+.product-video-showcase__media {
+  min-height: 360px;
+  background: #111;
+}
+
+/* Sam film */
+.product-video-showcase__media video {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Część tekstowa */
+.product-video-showcase__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 54px;
+  background: #f5f6f7;
+  color: #101827;
+  text-align: center;
+}
+
+/* Wewnętrzny kontener tekstu */
+.product-video-showcase__content > div {
+  max-width: 420px;
+}
+
+/* Opcjonalna etykieta nad tytułem */
+.product-video-showcase__label {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1c7ed6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Tytuł */
+.product-video-showcase__title {
+  margin: 0 0 18px;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #101827;
+  text-align: center;
+}
+
+/* Opis pod tytułem */
+.product-video-showcase__text {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #263241;
+  text-align: center;
+}
+
+/* Wersja odwrócona na PC: tekst po lewej, film po prawej */
+.product-video-showcase--reverse {
+  .product-video-showcase__media {
+    order: 2;
+  }
+
+  .product-video-showcase__content {
+    order: 1;
+  }
+}
+
+/* ==========================================================================
+   Mobile / tablet
+   Na telefonie zawsze: film u góry, tekst pod spodem
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .product-video-showcase {
+    grid-template-columns: 1fr;
+    max-width: none;
+    margin: 32px auto 44px;
+    border-radius: 14px;
+  }
+
+  .product-video-showcase__media,
+  .product-video-showcase__media video {
+    min-height: 260px;
+  }
+
+  .product-video-showcase__content {
+    padding: 34px 24px 38px;
+  }
+
+  .product-video-showcase__content > div {
+    max-width: 360px;
+  }
+
+  .product-video-showcase__title {
+    margin-bottom: 14px;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .product-video-showcase__text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .product-video-showcase--reverse {
+    .product-video-showcase__media {
+      order: 1;
+    }
+
+    .product-video-showcase__content {
+      order: 2;
+    }
+  }
+}

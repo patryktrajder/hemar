@@ -1,0 +1,73 @@
+{% extends "templates/layout-de.njk" %}
+{% set tab = "about" %}
+
+{% block meta %}
+    <link rel="canonical" href="https://patryktrajder.com/de/about/"/>
+    <title>Über mich | Patryk Trajder</title>.
+{% endblock meta %}
+
+{% block vectors %}
+    {% include "vectors/arrow-right.sym" %}
+    {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <article class="centered-text">
+            <header class="gap-top">
+                <nav class="breadcrumbs">
+                    <span>
+                        <a href="/de" title="Startseite">
+                            <svg class="home icon">
+                                <use xlink:href="#icon-home"></use>.
+                            </svg>
+                        </a>
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-right"></use>.
+                        </svg>
+                    </span>
+                    <a href="/de/about/">
+                        <b>Über mich</b>
+                    </a>
+                </nav>
+                <h1>Lernen wir uns besser kennen!</h1>
+            </header>
+
+            <div class="center shrink gap-top">
+                <div class="image-loading" style="padding-top: 74.85%;">
+                    <img src="/assets/images/about/about1-w1120.jpg" alt="Meine aktuelle Position in der Werkstatt"/>
+                </div>
+            </div>
+
+            <div class="gap-top">
+                <p>
+                    Hey, ich heiße Patrick, ich bin 23 Jahre alt und bin Mechaniker. Seit ich ein Kind war, habe ich mich mit Werkstattkram beschäftigt. Ich baue verschiedene Dinge aus Stahl. Ich mag keine schematischen Lösungen. Wenn etwas dumm erscheint und funktioniert, ist es nicht dumm 😉 Ich betreibe 3 Hauptserien: Experimente, Werkzeugbau und verrückte Erfindungen.
+                </p>
+            </div>.
+
+            <div class="center shrink gap-top">.
+                <div class="image-loading ratio3to2">
+                    <img src="/assets/images/about/about2-w1120.jpg" alt="Ich mit einem Argonzylinder"/>
+                </div>
+            </div>
+
+            <div class="gap-top">
+                <p>
+                    Ich habe mich schon immer für die Welt der Maschinen, Erfindungen und verrückten Dinge interessiert. Während meine Freunde aus der Siedlung Geld für Chips sammelten, kaufte ich Halbfertigprodukte, die für pyrotechnische Projekte benötigt wurden. Ich konnte nie still sitzen und mein Kopf war voller verrückter Ideen, die nicht immer klug waren. Das Leben im Block war mir zu grau und langweilig. Als ich daher im Alter von 13 Jahren von der Stadt aufs Land zog, spürte ich die enormen Möglichkeiten, die sich vor mir auftaten.
+                </p>
+            </div>
+
+            <div class="center shrink gap-top">
+                <div class="image-loading" style="padding-top: 74.85%;">
+                    <img src="/assets/images/about/about3.jpg" alt="Meine alte Werkstatt"/>
+                </div>
+            </div>
+
+            <div class="gap-top">
+                <p>
+                    Die einzige Einschränkung war jetzt meine Vorstellungskraft und mein Geld. Als sich herausstellte, dass ich einen alten Schweinestall zur Verfügung habe, wusste ich sofort, dass ich dort keine Schweine züchten werde. Das unordentliche Zimmer habe ich aufgeräumt und begonnen, es in eine behelfsmäßige Werkstatt zu verwandeln, in der ich versuche, meine seltsamen Projekte umzusetzen, die Sie auf meinem Kanal sehen können.
+                </p>
+            </div>.
+        </article>.
+    </main>
+{% endblock %}

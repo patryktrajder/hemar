@@ -1,0 +1,26 @@
+$aliceBlue: #f4f9ff;
+$aliceBlueDark: #e5f3ff;
+$aliceBlueLight: #fafdff;
+$antiqueWhite: #fbefdf;
+$azure: #007cf0;
+$babyPowder: #fefdfa;
+$cultured: #f4f4f4;
+$darkGrey: #555;
+$eerieBlack: #051923;
+$grey: #777;
+$mediumGrey: #666;
+$onyx: #404041;
+$prussianBlue: #062738;
+$princetonOrange: #f98525;
+$silverSand: #c5c4c4;
+$subtitleColor: #999;
+$usafaBlue: #004f99;
+
+@function encodecolor($string) {
+  @if type-of($string) == "color" {
+    $hex: str-slice(ie-hex-str($string), 4);
+    $string: unquote("#{$hex}");
+  }
+  $string: "%23" + $string;
+  @return $string;
+}

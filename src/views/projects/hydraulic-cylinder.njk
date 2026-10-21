@@ -1,0 +1,837 @@
+{% extends "templates/layout.njk" %}
+{% set tab = "projects" %}
+
+{% block meta %}
+    <link rel="canonical" href="https://patryktrajder.com/projects/hydraulic-cylinder/"/>
+    <title>Jak zbudować siłownik hydrauliczny | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+    {% include "vectors/arrow-right.sym" %}
+    {% include "vectors/chevron-up.sym" %}
+    {% include "vectors/chevron-down.sym" %}
+    {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <article>
+            <section class="gap-top">
+                <header>
+                    <nav class="breadcrumbs">
+                        <span>
+                            <a href="/" title="Strona główna">
+                                <svg class="home icon">
+                                    <use xlink:href="#icon-home"></use>
+                                </svg>
+                            </a>
+                            <svg class="icon">
+                                <use xlink:href="#icon-arrow-right"></use>
+                            </svg>
+                        </span>
+                        <span>
+                            <a href="/projects/">Projekty</a>
+                            <svg class="icon">
+                                <use xlink:href="#icon-arrow-right"></use>
+                            </svg>
+                        </span>
+                        <a href="/projects/hydraulic-cylinder/">
+                            <b>Siłownik hydrauliczny</b>
+                        </a>
+                    </nav>
+                    <h1>Jak zbudować siłownik hydrauliczny</h1>
+                </header>
+                <div class="row gap-top">
+                    <div>
+                        <p>
+                            W dzisiejszym artykule / poradniku postaram się wyjaśnić kwestię budowy siłownika. Niestety podobnie jak w poprzednim projekcie miałem masę problemów z racji na brak znajomych, którzy byliby w temacie. Często pytacie mnie o koszt danego projektu więc poniżej zamieszczam podglądową listę.
+
+                        </p>
+                    </div>
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/thumb.jpg" srcset="/assets/images/projects/hydraulic-cylinder/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-cylinder/thumb-w768.jpg 768w, /assets/images/projects/hydraulic-cylinder/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="jak zbudować siłownik hydrauliczny"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expander materials shrink">
+                    <header>
+                        <p>Potrzebne materiały</p>
+                    </header>
+                    <div class="container">
+                        <ul class="dots">
+                            <li>
+                                <p>cylinder (czyli rura): Ø110x130 L550 − 400 PLN</p>
+                            </li>
+                            <li>
+                                <p>pręt powierzchownie hartowany: Ø60 L600 − 400 PLN</p>
+                            </li>
+                            <li>
+                                <p>tłok: Ø110 − 100 PLN</p>
+                            </li>
+                            <li>
+                                <p>dławica: zew. Ø115; wew.Ø60 − 150 PLN</p>
+                            </li>
+                            <li>
+                                <p>napka powrotu, króćce itd. − 50 PLN</p>
+                            </li>
+                            <li>
+                                <p>materiał na nakrętkę: Ø220 L50 − 150 PLN</p>
+                            </li>
+                            <li>
+                                <p>materiał na dekielek: Ø140 L40 − 60 PLN</p>
+                            </li>
+                            <li>
+                                <p>materiał na wymienną nasadkę: Ø70 L60 − 20 PLN</p>
+                            </li>
+                            <li>
+                                <p>uszczelniacze − 200 PLN</p>
+                            </li>
+                            <li>
+                                <p>farba, naklejki − 100 PLN</p>
+                            </li>
+
+                        </ul>
+                        <p class="single-out">łącznie 1630 PLN
+                        </p>
+                    </div>
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="#icon-chevron-down"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="expander shrink tools gap-top">
+                    <header>
+                        <p>Potrzebne narzędzia</p>
+                    </header>
+                    <div class="container">
+                        <ul class="dots">
+                            <li>
+                                <p>tokarka,</p>
+                            </li>
+                            <li>
+                                <p>oprzyrządowanie do tokarki:</p>
+                                <ul class="dots">
+                                    <li>
+                                        <p>okular,</p>
+                                    </li>
+                                    <li>
+                                        <p>wiertła z płetwą morsa,</p>
+                                    </li>
+                                    <li>
+                                        <p>nóż do gwintów zewnętrznych,</p>
+                                    </li>
+                                    <li>
+                                        <p>nóż do gwintów wewnętrzych,</p>
+                                    </li>
+                                    <li>
+                                        <p>nóż do wytaczania,</p>
+                                    </li>
+                                    <li>
+                                        <p>nóż do planowania,</p>
+                                    </li>
+                                    <li>
+                                        <p>nóż do toczenia wzdłużnego,</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>szlifierka kątowa + tarcze 1; 2,5; 4 mm,</p>
+                            </li>
+                            <li>
+                                <p>spawarka wraz z osprzętem do spawania stali czarnej,</p>
+                            </li>
+                            <li>
+                                <p>wiertarka stołowa,</p>
+                            </li>
+                            <li>
+                                <p>palnik gazowy,</p>
+                            </li>
+                            <li>
+                                <p>wkrętarka lub wiertarka,</p>
+                            </li>
+                            <li>
+                                <p>termometr laserowy</p>
+                            </li>
+                            <li>
+                                <p>gwintownik M8x1,25,</p>
+                            </li>
+                            <li>
+                                <p>gwintownik M22x1,5,</p>
+                            </li>
+                            <li>
+                                <p>pokrętło do gwintowników w zakresie M1-M10,</p>
+                            </li>
+                            <li>
+                                <p>pokrętło do gwintowników w zakresie M13-M32,</p>
+                            </li>
+                            <li>
+                                <p>fazownik / pogłebiacz stożkowy,</p>
+                            </li>
+                            <li>
+                                <p>olejarka,</p>
+                            </li>
+                            <li>
+                                <p>punktak,</p>
+                            </li>
+                            <li>
+                                <p>ściski stolarskie,</p>
+                            </li>
+                            <li>
+                                <p>dysk listkowy (papier ścierny na wiertarkę),</p>
+                            </li>
+                            <li>
+                                <p>spray niebieski,</p>
+                            </li>
+                            <li>
+                                <p>spray pomaranczowy,</p>
+                            </li>
+                            <li>
+                                <p>pilniki, młotki i inne typowe narzędzia ręczne.</p>
+                            </li>
+                        </ul>
+
+                        <p class="single-out gap-top">Narzędzia pomiarowe:</p>
+                        <ul class="dots">
+                            <li>
+                                <p>czujnik zegarowy,</p>
+                            </li>
+                            <li>
+                                <p>średnicówka zegarowa w zakresie 100-140,</p>
+                            </li>
+                            <li>
+                                <p>mikromierz 25-50,</p>
+                            </li>
+                            <li>
+                                <p>mikromierz 50-75,</p>
+                            </li>
+                            <li>
+                                <p>mikromierz 100-125,</p>
+                            </li>
+                            <li>
+                                <p>mikromierz 125-150,</p>
+                            </li>
+                            <li>
+                                <p>suwmiarka uniwersalna 0-150,</p>
+                            </li>
+                            <li>
+                                <p>suwmiarka uniwersalna 0-250,</p>
+                            </li>
+                            <li>
+                                <p>sprawdzian do gwintów.</p>
+                            </li>
+                        </ul>
+
+                        <p class="single-out gap-top">Narzędzia specjalistyczne:</p>
+                        <ul class="dots">
+                            <li>
+                                <p>podkładka śniadaniowa w kwiaty.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="#icon-chevron-down"></use>
+                        </svg>
+                    </button>
+                </div>
+                <p class="gap-top">
+                    Na wstępie chciałbym zaznaczyć, że osobiście kupiłem gotowy tłok i dławicę. Zrobiłem tak, dlatego że były tańsze niż sam materiał, który musiałbym kupić na ich wykonanie. (Wiem-dziwne) Możesz też tłumaczyć to tym, że nie potrafiłbym tego zrobić i poszedłem na łatwiznę ;D W przypadku budowy siłownika kolejność wykonywania działań do pewnego momentu nie ma znaczenia, ja jednak będę opisywał wszystko zgodnie z moim filmem.
+                </p>
+            </div>
+
+            <div class="row gap-top">
+                <div>
+                    <div class="image-loading ratio28to39">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail28-h1120.jpg" alt="cylinder siłownika hydraulicznego"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Zacznij od splanowania cylindra z dwóch stron oraz zatoczenia pod pierścień. Uwaga! Rury przeznaczone na budowę cylindrów są w środku polerowane i mają idealnie gładką oraz równą powierzchnię. Mocując rurę w tokarce do w/w obróbki musisz zawszę centrować do środka. Jeśli chodzi o zatoczenie pod pierścień musisz zrobić je na taką długość, gdzie chcesz go później mocować.(Uwaga ten zabieg nie został pokazany u mnie na filmie, bo straciłem nagranie.)
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading ratio28to39">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail27-h1120.jpg" alt="cylinder siłownika"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Pamiętaj jednak, że minimalna odległość to taka aby zmieściła się napka powrotu. W moim przypadku było to około 16cm. Fajnie by było gdyby całe to zatoczenie miało co najmniej 1 mm głębokości na stronę, tak aby pierścień mógł się potem oprzeć podczas spawania.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail1-h1120.jpg" alt="montowanie wałka do tokarki"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+
+                        Możesz teraz przejść do kolejnego kroku jakim jest toczenie pierścienia, który później przyspawasz do cylindra. Zanim zacznę opisywać jak ja to zrobiłem dodam, że możesz zrobić to w formie nakrętki gwintując cylinder oraz pierścień, dzięki czemu nie będziesz musiał nic spawać i martwić się o ewentualne odkształcenia materiału. Będzie to jednak dużo więcej pracy.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail26-h1120.jpg" alt="toczenie wałka"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Dobrze, lecimy dalej. Musisz wytoczyć zgrubnie otwór w środku, splanować i wyrównać pozostałe płaszczyzny. Na samym końcu wytocz otwór na gotowo z pomocą średnicówki.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail2-h1120.jpg" alt="pomiar średnicy"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Uwaga! W środku musi być wymiar 3-4 setki mniejszy niż ten, który zatoczyłeś wcześniej na cylindrze. Chodzi o to, aby było ciasne pasowanie. Okaże się to niesamowicie ważne podczas spawania. Unikniesz w ten sposób odkształceń (być może w tym momencie uratowałem Twój dotychczasowy projekt).
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail3-h1120.jpg" alt="robienie otworu w wałku"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Zanim wyciągniesz materiał z tokarki to mam dla Ciebie jeszcze małą wskazówkę. Natrasuj sobie przy użyciu noża tokarskiego okrąg, który będzie przecinał środek otworów montażowych. Przy dalszym trasowaniu będziesz mi bardzo wdzięczny. (Przynajmniej mam taką nadzieję. ;))
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail29-h1120.jpg" alt="trasowanie otworów w wałku"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        We wcześniej przygotowanym okręgu natrasuj otwory montażowe, ja zrobiłem 4 w równych odstępach. Do tego celu możesz podstawiać sobie liczby na suwmiarce, aż ten sam wymiar pokryje Ci się we wszystkich czterech punktach. Jak lubisz liczyć i metoda prób i błędów nie jest dla Ciebie, to możesz użyć poniższego schematu.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail30-h1120.jpg" alt="punktowanie pod wiertło"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Najpierw zmierz średnice, a nastepnie podziel go przez √2 (W zasadzie nie było to nic odkrywczego.)
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail4-h1120.jpg" alt="wiercenie otworów w wałku"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Otwory już są natrasowane, więc zabierz się za wiercenie. Hm… wiercenie. Wydaje się spoko, co nie? Właśnie nie do końca. Z racji, że kołnierz ma 5 cm grubości to raczej graniczy z cudem, że dasz radę zrobić te otwory wiertarką ręczną. (Chyba, że jesteś potomkiem Pudziana, skrzyżowanym z Hulkiem, a Twoja wiertarka, jest taka silna, że jak coś wiercisz to nie ma prądu w całej wsi.)
+                    </p>
+                </div>
+            </div>
+
+            <div class="row gap-top">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail5-h1120.jpg" alt="prezentacja gotowego pierścienia"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Dobrze się tutaj sprawdzi wiertarka stołowa, ale jeśli jej nie masz, to polecam Ci zlecenie tego komuś innemu. Twoja sprawa czy to będzie kumpel, który to zrobi za czteropak, czy jakaś firma za dwie dychy.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail7-h1120.jpg" alt="podgrzewanie pierścienia"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Gotowy pierścień przed założeniem na cylinder musisz delikatnie podgrzać tak, aby bez problemu go nałożyć. Postaraj się to zrobić w miarę możliwości równomiernie.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row gap-top">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail8-h1120.jpg" alt="zakładanie pierścienia na cylinder"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Najlepiej podgrzać pierścień trochę mocniej, aby tulej nie stanęła w połowie, bo wtedy to będziesz miał problem, serio.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail10-h1120.jpg" alt="spawanie pierścienia do cylindra"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Możesz teraz przejść do spawania. Wiem, że czytają to sami fachowcy i ogarnięte osoby, ale tak dla przypomnienia: heftujemy na krzyż i tak też spawamy. Wszystko rób możliwie jak najszybciej (tutaj czas to Twój wróg), aby nie zdążyły powstać odkształcenia. Pamiętaj, że w środku cylindra masz już wymiar na gotowo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail11-h1120.jpg" alt="szlifowanie spawów"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Ten punkt jest tylko dla tych, którzy podobnie jak ja muszą podrasować swoje sprawy szlifierką. 😉
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail12-h1120.jpg" alt="trasowanie otworu"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Kolejnym krokiem jest dokładne natrasowanie miejsca pod otwór powrotu oleju...
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail13-h1120.jpg" alt="wiercenie otworu"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        ...oraz delikatne go nawiercenie (nie przewierć do końca, ponieważ będziesz za chwilę w tym miejscu toczyć, a jak wiadomo - nóż tokarski nie lubi otworów).
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail14-h1120.jpg" alt="spawanie napki powrotu"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Następnie spawasz napkę powrotu. Jest to o tyle istotne aby zrobić to teraz, ponieważ późniejsze spawanie w tym miejscu może popsuć gwint, który za chwilę zrobisz.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail15-h1120.jpg" alt="montowanie cylindra do tokarki"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+
+                        Teraz Twoje dotychczasowe dzieło musi trafić do tokarki.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail16-h1120.jpg" alt="podpieranie detalu za pomocą kła tokarskiego"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        W filmie dokładnie pokazałem jak przygotować bazę pod okular, aby wszystko było wycentrowane do środka. Musisz wykorzystać dekielek, na którym utoczysz równą powierzchnię pod okular.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail17-h1120.jpg" alt="toczenie cylindra"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+
+                        Gdy masz już założony okular możesz przejść do robienia gwintu itd.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail18-h1120.jpg" alt="toczenie gwintu na tokarce"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        W tym momencie nie mogę podać Tobie gotowych wymiarów, ponieważ musisz przenieść je z Twojej dławicy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail19-h1120.jpg" alt="toczenie gwintu na tokarce - inne ujęcie"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Pamiętaj również aby wszystkie zakończenia robić z bardzo łagodnym wyjściem, tak aby późniejszy montaż tłoka z uszczelkami był ułatwiony.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail20-h1120.jpg" alt="mocowanie prętu tłoczyskowego do tokarki"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Cylinder gotowy, więc teraz czas na obróbkę pręta tłoczyskowego.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail22-h1120.jpg" alt="toczenie wałka"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Tutaj również przenieś wymiary z tłoczyska, które kupiłeś (każdy jest inny).
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail23-h1120.jpg" alt="toczenie gwintu na tokarce"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Zrób w nim gwint itd.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <div class="image-loading">
+                        <img src="/assets/images/projects/hydraulic-cylinder/detail25-h1120.jpg" alt="druga strona wału"/>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Z drugiej strony pręta tłoczyskowego zrób mocowanie pod akcesoria, które potrzebujesz (jest wiele różnego rodzaju zakończeń, które możesz zrobić w zależności od zapotrzebowania). Osobiście poszedłem na łatwiznę i zrobiłem zwykły otwór. ;)
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail31-h1120.jpg" alt="mocowanie dekielka do tłoczyska"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Na zdjęciu obok możesz zobaczyć przykładową, wymienną nasadkę.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail32-h1120.jpg" alt="przykręcanie dekielka"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Śruby dociskowe tzw. robaki idealnie sprawdzą się w tym miejscu. ;)
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail33-h1120.jpg" alt="przypasowanie dekielka"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Następnie zrób dekielek do cylindra.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail34-h1120.jpg" alt="toczenie głównej pokrywy cylindra"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Tocząc dekielek pamiętaj o dużej fazie pod spaw.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail35-h1120.jpg" alt="wykonanie gwintu wewnętrznego"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Żeby nie spawac dodatkowo żadnej&#32;<q>napki z gwintem</q>&#32;polecam zrobić gwint w samym dekielku. Pamiętaj jednak, że musi być on odpowiednio&#32;<q>gruby</q>&#32;aby później wkręcona redukcja nie przeszła na wylot.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail36-h1120.jpg" alt="spawanie pokrywy do siłownika hydraulicznego"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Podobnie jak przy poprzednim spawaniu, tutaj też liczy się szybkość i kolejność kładzenia spoin.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail37-h1120.jpg" alt="szlifowanie spawów"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Ja musiałem zeszlifować spaw na&#32;<q>zero</q>&#32;aby siłownik zmieścił się w mocowanie w mojej prasie.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail38-h1120.jpg" alt="montaż uszczelek"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Czas na montaż uszczelnień dławicy.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail39-h1120.jpg" alt="montaż uszczelek w tłoku"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            A teraz czas na tłoczysko. ;)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail40-h1120.jpg" alt="mocowanie dławnicy do wału"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Dławicę zamontuj na pręcie tłoczyskowym...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail41-h1120.jpg" alt="montaż dławicy"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>..i zsuń ją niżej, tak aby zrobić miejsce dla tłoka.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail42-h1120.jpg" alt="mocowanie tłoka do wału"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Teraz na pręt tłoczyskowy powinien trafić tłok.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail43-h1120.jpg" alt="składanie cylindra z prętem tłoczyskowym"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>czas na montaż prętu tłoczyskowego z tłokiem i dławicą do cylindra. Jest to nie lada wyzwanie bez specjalistycznego sprzętu...</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail44-h1120.jpg" alt="montowanie cylindra z prętem tłoczyskowym"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>ja do tego celu użyłem zwykła podkładke śniadaniową w kwiaty, dzięki której uszczelniacze znajdujące się na tłoku&#32;<q>wskoczyły</q>&#32;do cylindra</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail45-h1120.jpg" alt="montaż cylindra z prętem tłoczyskowym"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Wsuń powoli pręt tłoczyskowy do środka cylindra.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail46-h1120.jpg" alt="przykręcanie dławicy"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>aby dokręcic dławice teoretycznie potrzebujemy tzn. klucz hakowy, ja takiego nie posiadam jednak udało mi się dokręcic ten element za pomocą szczypiec hydraulicznych (nawet nazwa pasuje) tzw. żabek</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail47-h1120.jpg" alt="malowanie siłownika hydraulicznego"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Siłownik hydrauliczny jest już prawie gotowy. Zostało już tylko pomalować na ulubione kolory...</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-cylinder/detail48-h1120.jpg" alt="przyklejanie naklejek firmowych"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>...i nakleić naklejki, aby nasza praca nabrała większego profesjonalizmu! 🙂
+                        </p>
+                    </div>
+                </div>
+
+                <section class="gap-top-medium">
+                    <h1>Udało się! Budowa zakończona ;)</h1>
+
+                    <div class="row">
+                        <div>
+                            <div class="image-loading">
+                                <img src="/assets/images/projects/hydraulic-cylinder/detail50-h1120.jpg" alt="gotowy siłownik hydrauliczny"/>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                Powyższy artykuł udostępniam za darmo, nie oczekując nic w zamian. Mimo wszystko będzie mi bardzo miło, gdy po zbudowaniu swojego agregatu wyślesz mi zdjęcie z Twoim projektem, do którego jakby nie patrzeć dołożyłem kilka rad. 🙂 Będzie to najlepsze odwdzięczenie się i znak dla mnie, że to co robię ma sens.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="gap-top">
+                        <h3>Poniżej przedstawiam Tobie film z budowy siłownika ;)
+                        </h3>
+                    </p>
+
+                    <div class="yt-video">
+                        <div>
+                            <iframe src="https://www.youtube-nocookie.com/embed/T_36mR8bN5M?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" title="Siłownik hydrauliczny - budowa"></iframe>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+        </article>
+    </main>
+
+{% endblock %}

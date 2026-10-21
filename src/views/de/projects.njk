@@ -1,0 +1,135 @@
+{% extends "templates/layout-de.njk" %}
+{% set tab = "projekts" %}
+
+{% block meta %}
+    <link rel="canonical" href="https://patryktrajder.com/de/projects/"/>
+    <title>Ratgeber | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+    {% include "vectors/arrow-right.sym" %}
+    {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+
+<section class="parallax-section gap-bottom" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/assets/images/projects-banner-w1920.jpg'); 
+background-position: 90% center;"> {# jak ma skalowac sie zdjecie 0 idzie w prawo 100 idzie w lewo / 50% centruje do srodka #} 
+  
+        {# INSTRUKCJA
+            --h2-pc: 80px;     Tytuł na PC #}
+        {#  --p-pc: 32px;      Podpis na PC (wcześniej 2rem) #}
+        {#  --h2-mob: 40px;    Tytuł na telefonie #}
+        {#  --p-mob: 24px;     Podpis na telefonie #}
+       <div class="parallax-content" 
+       style="
+         --h2-pc: 80px;
+         --p-pc: 32px;
+         --h2-mob: 40px;
+         --p-mob: 24px;
+       ">
+      <h2>Lernen Sie meine Projekte besser kennen</h2> 
+    <p></p>
+  </div>
+</section> 
+
+
+
+
+    {# <section class="banner"> 
+        <div class="container centered-text">
+            <div class="image-placeholder" style="padding-top: 41.666666666%;">
+                <img src="/assets/images/projects-banner-w1920.jpg" srcset="/assets/images/projects-banner-w768.jpg 768w, /assets/images/projects-banner-w1920.jpg 1920w" alt="Blech wird mit einer Schleifmaschine geschnitten."/>
+            </div>
+            <h1>Lernen Sie meine Projekte besser kennen</h1>
+        </div>
+    </section> #}
+    <main>
+        <nav class="breadcrumbs gap-top">
+            <span>
+                <a href="/de/" title="Homepage">
+                    <svg class="home icon">
+                        <use xlink:href="#icon-home"></use>
+                    </svg>
+                </a>
+                <svg class="icon">
+                    <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+            </span>
+            <a href="/de/projects/">
+                <b>Ratgeber</b>
+            </a>
+        </nav>
+
+        {# <nav class="categories"> 
+            <a href="#my-projects" title="Meine Projekte">
+                <p>
+                    Meine Projekte
+                </p>
+            </a>
+            <a href="#your-projects" title="Ihre-Projekte">
+                <p>
+                    Deine Projekte
+                </p>
+            </a>
+        </nav> #}
+
+        <article id="my-projects" class="gap-top preview-list">
+            {#  <h1 class="gap-bottom-medium">
+                Meine Projekte  #}
+            </h1>
+
+            <section>
+                <h2>
+                    <a href="hydraulic-cylinder/" title="Hydraulikzylinder">Hydraulikzylinder - Konstruktion</a>
+                </h2>
+
+                <div class="row gap-top">
+                    <div>
+                        <p>
+                            Schauen Sie sich an, wie man einen Hydraulikzylinder baut. Ich werde es für meine Presse verwenden, und viele andere Hydraulik-bezogene Ausrüstung, die ich hoffe, in der Zukunft zu bauen. ;)
+                        </p>
+                        <p class="single-out-link">
+                            <a href="hydraulic-cylinder/" title="Hydraulik-Zylinder">Mehr Informationen...</a>
+                        </p>
+                    </div>
+                    <div>
+                        <a href="hydraulic-cylinder/" title="Hydraulikzylinder">
+                            <img src="/assets/images/projects/hydraulic-cylinder/thumb.jpg" srcset="/assets/images/projects/hydraulic-cylinder/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-cylinder/thumb-w768. jpg 768w, /assets/images/projects/hydraulic-cylinder/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="Hydraulikzylinder"/>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gap-top">
+                <h2>
+                    <a href="hydraulic-power-pack/" title="Mobiles Hydraulikaggregat - Bau">Mobiles Hydraulikaggregat - Bau</a>
+                </h2>
+                <div class="row gap-top">
+                    <div>
+                        <p>
+                            Schauen Sie sich an, wie man ein mobiles Hydraulikaggregat baut. Ich werde es für meine Presse verwenden, und viele andere Hydraulik-bezogene Ausrüstung, die ich hoffe, in der Zukunft zu bauen. Die meisten Elemente wie: Stahl, Elektromotor, Verteiler stammen aus Schrott, wodurch die Baukosten auf ein Minimum reduziert werden konnten ;)
+                        </p>
+                        <p class="single-out-link">
+                            <a href="hydraulic-power-pack/" title="Mobiles Hydraulikaggregat - Konstruktion">Mehr Informationen...</a>
+                        </p>
+                    </div>
+                    <div>
+                        <a class="image-loading" href="hydraulic-power-pack/" title="Mobiles Hydraulikaggregat - Bauausführung">
+                            <img src="/assets/images/projects/hydraulic-power-pack/thumb.jpg" srcset="/assets/images/projects/hydraulic-power-pack/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-power-pack/thumb-w768. jpg 768w, /assets/images/projects/hydraulic-power-pack/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="Mobiles Hydraulikaggregat"/>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <article id="your-projects" class="gap-top-large">
+            <h1>
+                Ihre Projekte
+            </h1>
+            <p>
+                Wenn Sie mit Ihrem Projekt prahlen wollen, schicken Sie es an&#32;<a href="mailto:patryk@trajder.com" rel="nofollow noopener" target="_blank" title="patryk@trajder.com">patryk@trajder.com</a>&#32;
+            </p>
+        </article>
+    </main>
+{% endblock %}

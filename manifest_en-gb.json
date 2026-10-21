@@ -1,0 +1,15 @@
+{
+  "lang": "en-GB",
+  "dir": "ltr",
+  "name": "Patryk Trajder",
+  "description": "xD",
+  "short_name": "Patryk Trajder",
+  "categories": ["entertainment"],
+  "scope": "https://diyfreelancer.com",
+  "start_url": "/en-gb/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#007cf0",
+  "background_color": "#007cf0",
+  "prefer_related_applications": false
+}

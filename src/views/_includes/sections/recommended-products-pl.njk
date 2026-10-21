@@ -1,0 +1,28 @@
+{% from "components/product-card-pl.njk" import productCardPl %}
+
+{% if recommendedProducts %}
+  <section class="gap-top-medium homepage-products product-anchor-section section-title-center">
+    <h1>To również Ci się przyda</h1>
+
+    <p>
+      <br>
+      <a href="/products/" title="sklep"><strong>[Zobacz wszystkie]</strong></a>
+    </p>
+
+    <div class="product-scroller">
+      <div class="product-scroller__track">
+
+        {% for productCode in recommendedProducts %}
+          {% set product = productsPl[productCode] %}
+
+          {% if product %}
+            {{ productCardPl(product) }}
+          {% else %}
+            {# Brak produktu w productsPl.json: {{ productCode }} #}
+          {% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+{% endif %}

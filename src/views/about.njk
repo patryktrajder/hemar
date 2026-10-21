@@ -1,0 +1,95 @@
+{% extends "templates/layout.njk" %}
+{% set tab = "about" %}
+
+{% block meta %}
+  <link rel="canonical" href="https://patryktrajder.com/about/"/>
+  <title>O mnie | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+  {% include "vectors/arrow-right.sym" %}
+  {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+  <main>
+    <article class="centered-text">
+      <header class="gap-top">
+        <nav class="breadcrumbs">
+          <span>
+            <a href="/" title="Strona główna">
+              <svg class="home icon">
+                <use xlink:href="#icon-home"></use>
+              </svg>
+            </a>
+            <svg class="icon">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+          </span>
+          <a href="/about/">
+            <b>O mnie</b>
+          </a>
+        </nav>
+        <h1>Poznajmy się lepiej!</h1>
+      </header>
+
+      <div class="center shrink gap-top">
+        <div class="image-loading" style="padding-top: 74.85%;">
+          <img src="/assets/images/about/about1-w1120.jpg" alt="Moje obecne stanowisko w warsztacie"/>
+        </div>
+      </div>
+
+     
+     
+     
+      <div class="gap-top">
+         <h1>Czym jest marka TRAJDER?</h1>
+        <p>
+        Cześć, jestem Patryk. Mam 30 lat i jestem konstruktorem, choć moja prawdziwa szkoła życia zaczęła się już 16 lat temu w przydomowym garażu. Miałem wtedy 14 lat, głowę pełną pomysłów i... prawie żadnych narzędzi. Jako młody wynalazca chciałem tworzyć prototypy, które ułatwiają życie, ale rynek szybko sprowadził mnie na ziemię. Profesjonalny sprzęt był nieosiągalny cenowo, a ten „budżetowy” rozpadał się w rękach.
+        </p>
+        <br>
+        <h3>Wtedy podjąłem decyzję: zacznę budować go sam.</h3>
+               <p>Lata doświadczeń i prowadzenie kanału na YouTube otworzyły mi oczy na smutną prawdę. Rynek zalewają narzędzia niskiej jakości, a „lokalne marki” to często te same masowe wydmuszki, tylko pomalowane na inny kolor.</p>
+            <br>
+            <h3>Postanowiłem wyjść przed szereg.</h3>
+            <p>Marka TRAJDER powstała z buntu przeciwko bylejakości. Projektuję narzędzia tak, jak robiło się to kiedyś – z porządnych, grubych materiałów, z myślą o całym życiu użytkowania, a nie tylko o okresie gwarancji.</p>
+            <br>
+            <h3>Dzielę się wiedzą, nie tylko żelastwem.</h3>
+            <p>Swoją pasję do projektowania przekuwam w profesjonalne plany budowy (pliki DXF i PDF), które znajdziesz w moim sklepie. Pomagam hobbystom przeskoczyć barierę drogiego sprzętu, a dużym firmom dostarczam spersonalizowane, pancerne rozwiązania.</p>
+            <br>
+            <h3>TRAJDER to nie tylko projekty i narzędzia. To nowa kultura warsztatowa, gdzie jakość spotyka się z Twoją pasją tworzenia.</h3>
+      </div>
+     
+     
+    
+  
+
+      <div class="center shrink gap-top">
+        <div class="image-loading ratio3to2">
+          <img src="/assets/images/about/about2-w1120.jpg" alt="Ja z butlą z argonem"/>
+        </div>
+      </div>
+
+      <div class="gap-top">
+        <p>
+          Od zawsze interesował mnie świat maszyn i wynalazków.
+           Podczas gdy koledzy z osiedla zbierali kasę na chipsy, ja kupowałem półprodukty potrzebne do wykonywania pierwszych projektów.
+            Nigdy nie mogłem usiedzieć w miejscu i miałem głowę pełną szalonych pomysłów. Życie w bloku było dla mnie zbyt szare i nudne.
+             Dlatego gdy w wieku 13 lat przeprowadziłem się z miasta na wieś, poczułem ogrom otwierających się przede mną możliwości.
+        </p>
+      </div>
+
+      <div class="center shrink gap-top">
+        <div class="image-loading" style="padding-top: 74.85%;">
+          <img src="/assets/images/about/about3.jpg" alt="Mój stary warsztat"/>
+        </div>
+      </div>
+
+      <div class="gap-top">
+        <p>
+          Jedynym ograniczeniem stała się tylko wyobraźnia. Gdy okazało się, że mam do dyspozycji starą chlewnię od razu wiedziałem, że nie będę tam hodował świń. Zagracone pomieszczenie posprzątałem i zacząłem pomału przekształcać w warsztat.
+        </p>
+      </div>
+    </article>
+  </main>
+{% endblock %}

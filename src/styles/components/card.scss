@@ -1,0 +1,69 @@
+$cardBackground: white;
+
+.card {
+  width: 100%;
+  max-width: 20rem;
+  padding: 1px 3px 5px 3px;
+
+  > div {
+    background: $cardBackground;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 -1px 0px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    height: 25rem;
+    overflow: hidden;
+
+    &.placeholder.tmp {
+      background: #004f99;
+      border-radius: 10px;
+      color: white;
+      height: 180px;
+      width: 314px;
+    }
+
+    a.thumb {
+      border-radius: 10px;
+      box-shadow: 0px 0px 0.35rem rgba(0, 0, 0, 0.5);
+      display: block;
+
+      img {
+        pointer-events: none;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      min-height: 0;
+      padding: 0.75rem 1rem 1rem 1rem;
+
+      h5 {
+        flex: 1;
+        overflow: hidden;
+        text-align: justify;
+      }
+
+      > div {
+        box-shadow: 0 0 2rem 1.5rem $cardBackground;
+        margin: 0 -1rem;
+        padding: 1.125rem 1rem 0 1rem;
+
+        hr {
+          margin: 0;
+        }
+      }
+
+      .link {
+        color: $azure;
+        display: block;
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
+.card + .card {
+  margin-left: 2.5rem;
+}

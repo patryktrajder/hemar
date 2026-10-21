@@ -1,0 +1,837 @@
+{% extends "templates/layout-en-gb.njk" %}
+{% set tab = "projects" %}
+
+{% block meta %}
+  <link rel="canonical" href="https://patryktrajder.com/en-gb/projects/hydraulic-cylinder/"/>
+  <title>How to build a hydraulic cylinder | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+  {% include "vectors/arrow-right.sym" %}
+  {% include "vectors/chevron-up.sym" %}
+  {% include "vectors/chevron-down.sym" %}
+  {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+  <main>
+    <article>
+      <section class="gap-top">
+        <header>
+          <nav class="breadcrumbs">
+            <span>
+              <a href="/en-gb/" title="Homepage">
+                <svg class="home icon">
+                  <use xlink:href="#icon-home"></use>
+                </svg>
+              </a>
+              <svg class="icon">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </span>
+            <span>
+              <a href="/en-gb/projects/">Projects</a>
+              <svg class="icon">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </span>
+            <a href="/en-gb/projects/hydraulic-cylinder/">
+              <b>Hydraulic cylinder</b>
+            </a>
+          </nav>
+          <h1>How to build a hydraulic cylinder</h1>
+        </header>
+        <div class="row gap-top">
+          <div>
+            <p>
+              In today's article / guide I will try to explain the construction of the actuator. Unfortunately, as in the previous project, I had a lot of problems due to the lack of friends who would be in the subject. You often ask me about the cost of a given project, so the list is listed below.
+            </p>
+          </div>
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/thumb.jpg" srcset="/assets/images/projects/hydraulic-cylinder/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-cylinder/thumb-w768.jpg 768w, /assets/images/projects/hydraulic-cylinder/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="hydraulic cylinder"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="expander materials shrink">
+          <header>
+            <p>The materials needed</p>
+          </header>
+          <div class="container">
+            <ul class="dots">
+              <li>
+                <p>cylinder (i.e. tube): Ø110x130 L550 - 400 PLN</p>
+              </li>
+              <li>
+                <p>Surface hardened rod: Ø60 L600 - 400 PLN</p>
+              </li>
+              <li>
+                <p>piston: Ø110 - 100 PLN</p>
+              </li>
+              <li>
+                <p>glove: external Ø115; internal Ø60 - 150 PLN</p>
+              </li>
+              <li>
+                <p>the return note, the ferrules and so on. - 50 PLN</p>
+              </li>
+              <li>
+                <p>nut material: Ø220 L50 - 150 PLN</p>
+              </li>
+              <li>
+                <p>
+                  material on a decal: Ø140 L40 - 60 PLN</p>
+              </li>
+              <li>
+                <p>material for replaceable cap: Ø70 L60 - 20 PLN</p>
+              </li>
+              <li>
+                <p>sealers - 200 PLN</p>
+              </li>
+              <li>
+                <p>paint, stickers - 100 PLN</p>
+              </li>
+            </ul>
+            <p class="single-out">
+              1630 PLN in total
+            </p>
+          </div>
+          <button>
+            <svg class="icon">
+              <use xlink:href="#icon-chevron-down"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="expander shrink tools gap-top">
+          <header>
+            <p>Needed tools</p>
+          </header>
+          <div class="container">
+            <ul class="dots">
+              <li>
+                <p>lathe,</p>
+              </li>
+              <li>
+                <p>lathe tooling:</p>
+                <ul class="dots">
+                  <li>
+                    <p>eyepiece for lathe</p>
+                  </li>
+                  <li>
+                    <p>walrus fin bits,</p>
+                  </li>
+                  <li>
+                    <p>external thread knife,</p>
+                  </li>
+                  <li>
+                    <p>a female thread cutter,</p>
+                  </li>
+                  <li>
+                    <p>a boring knife,</p>
+                  </li>
+                  <li>
+                    <p>planning knife,</p>
+                  </li>
+                  <li>
+                    <p>a longitudinal rolling knife,</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Angle grinder + discs 1; 2,5; 4 mm,</p>
+              </li>
+              <li>
+                <p>welding machine with welding equipment for welding black steel,</p>
+              </li>
+              <li>
+                <p>a table-top drill,</p>
+              </li>
+              <li>
+                <p>gas burner,</p>
+              </li>
+              <li>
+                <p>a screwdriver or a drill,</p>
+              </li>
+              <li>
+                <p>laser thermometer</p>
+              </li>
+              <li>
+                <p>M8x1.25 taps,</p>
+              </li>
+              <li>
+                <p>M22x1.5 taps,</p>
+              </li>
+              <li>
+                <p>knob for M1-M10 range of taps,</p>
+              </li>
+              <li>
+                <p>knob for M13-M32 range of taps,</p>
+              </li>
+              <li>
+                <p>bevel / cone penetrator,</p>
+              </li>
+              <li>
+                <p>oiler,</p>
+              </li>
+              <li>
+                <p>punch,</p>
+              </li>
+              <li>
+                <p>woodworking clamps,</p>
+              </li>
+              <li>
+                <p>a flap disc (sandpaper for the drill),</p>
+              </li>
+              <li>
+                <p>Blue spray,</p>
+              </li>
+              <li>
+                <p>Orange spray,</p>
+              </li>
+              <li>
+                <p>files, hammers and other typical hand tools.</p>
+              </li>
+            </ul>
+
+            <p class="single-out gap-top">Measuring tools:</p>
+            <ul class="dots">
+              <li>
+                <p>detector,</p>
+              </li>
+              <li>
+                <p>Diameter dial in the range 100-140,</p>
+              </li>
+              <li>
+                <p>meter 25-50,</p>
+              </li>
+              <li>
+                <p>meter 50-75,</p>
+              </li>
+              <li>
+                <p>meter 100-125,</p>
+              </li>
+              <li>
+                <p>meter 125-150,</p>
+              </li>
+              <li>
+                <p>
+                  universal slide calliper 0-150,</p>
+              </li>
+              <li>
+                <p>
+                  universal slide calliper 0-250,</p>
+              </li>
+              <li>
+                <p>thread check.</p>
+              </li>
+            </ul>
+
+            <p class="single-out gap-top">Specialist tools:</p>
+            <ul class="dots">
+              <li>
+                <p>a breakfast pad with flowers.</p>
+              </li>
+            </ul>
+          </div>
+          <button>
+            <svg class="icon">
+              <use xlink:href="#icon-chevron-down"></use>
+            </svg>
+          </button>
+        </div>
+
+        <p class="gap-top">
+          At the beginning, I would like to point out that I personally bought a ready-made piston and gland. I did so because they were cheaper than the material I would have to buy to make them. (I know-weird) You can also explain it by the fact that I couldn't do it and I went for the easy way ;) , In the case of building an actuator, the order of actions until a certain moment does not matter, but I will describe everything according to my film.
+        </p>
+      </div>
+
+      <div class="row gap-top">
+        <div>
+          <div class="image-loading ratio28to39">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail28-h1120.jpg" alt="cylinder pipe"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Start by spanking the cylinder on both sides and sinking under the ring. Attention! The pipes intended for the construction of the cylinders are polished inside and have a perfectly smooth and even surface. When you mount a pipe in a lathe for the above mentioned machining, you must always centre inwards. When it comes to the ring groove, you have to make it as long as you want to clamp it later.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading ratio28to39">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail27-h1120.jpg" alt="cylinder pipe"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Remember, however, that the minimum distance is such that it will fit the return encounter. In my case it was about 16cm. It would be nice if the whole bay was at least 1mm deep per side, so that the ring could then resist during welding. (Note that this treatment shouldn't be shown in my film, because I lost the recording)
+
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail1-h1120.jpg" alt="shaft mounted to the lathe"/>
+          </div>
+        </div>
+        <div>
+          <p>
+
+            You can now move on to the next step, which is rolling the ring, which you later weld to the cylinder. Before I start describing how I did it, I will add that you can do it in the form of a nut by threading the cylinder and the ring, so you will not have to weld anything and worry about bending the material. But it will be much more work.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail26-h1120.jpg" alt="Turning shaft"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Okay, let's go. You need to roll a rough hole in the middle, spit and level the other planes. At the very end, you'll have to roll the hole with a diameter gauge.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail2-h1120.jpg" alt="diameter measurement"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Attention! There must be a dimension 3-4 hundreds smaller inside than the one you've sunk on the cylinder before. The idea is to have a tight fit. This will turn out to be extremely important when welding. This way you will avoid deformations (maybe at this point I saved your previous design).
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail3-h1120.jpg" alt="shaft hole"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Before you take the material out of the lathe, I still have a little tip for you. Use a lathe knife to strike a circle that will cut through the centre of the mounting holes. You will be very grateful to me for further routing. (at least I hope so ;))
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail29-h1120.jpg" alt="scribing holes in the shaft"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            in a pre-prepared circle, press the mounting holes, I did 4 at equal intervals. For this purpose, you can place the numbers on the slide caliper until the same dimension coincides at all four points. If you like to count and the trial and error method is not for you, you can use the diagram below.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail30-h1120.jpg" alt="scribing holes"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            First calculate the radius and then the length of the circle. Once you find out what the length of the circle is, simply divide it by 4. (basically it was nothing revealing)
+
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail4-h1120.jpg" alt="drilling shaft"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            The holes are already pressed, so get on with the drilling. Hm... drilling. Seems cool, doesn't it? Not exactly. Because the collar is 5 cm thick, it's rather bordering on a miracle that you can make these holes with a hand drill (unless you're a descendant of Pudzian, crossed with the Hulk, and your drill is so strong that if you're drilling something, there's no electricity in the whole village)
+          </p>
+        </div>
+      </div>
+
+      <div class="row gap-top">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail5-h1120.jpg" alt="presentation of the finished ring"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            A table-top drill will work well here, but if you don't have one, I recommend that you give it to somebody else. It's your business whether it's gonna be a buddy who'll do it for four packs or some company for two dimes.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail7-h1120.jpg" alt="Heating ring"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            The finished ring must be gently warmed up before putting it on the cylinder. Try to do it as evenly as possible.
+          </p>
+        </div>
+      </div>
+
+      <div class="row gap-top">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail8-h1120.jpg" alt="putting the ring on the cylinder"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            It's best to heat the ring a little harder so that the sleeve doesn't stand halfway, because then you'll have a problem, seriously.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail10-h1120.jpg" alt="welding cylinder"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            You can go to welding now. I know that it is read by professionals and people, but just as a reminder: we are hefting crosswise and so are we welding. Do everything as quickly as possible (here time is your enemy) so that no deformations can occur. Remember that in the middle of the cylinder you already have the dimension ready.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail11-h1120.jpg" alt="weld grinding"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            This point is only for those who, like me, need to do their job with the sander 😉.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail12-h1120.jpg" alt="scribing of hole"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            The next step is to carefully press the place under the oil return opening
+
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail13-h1120.jpg" alt="hole drilling"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            and gently drill it (do not drill to the end, because you will be rolling here in a moment, and as you know a turning knife does not like holes)
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail14-h1120.jpg" alt="nut welding"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Then you weld the return tip. This is all the more important to do now, because later welding here may spoil the thread that you are about to do.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail15-h1120.jpg" alt="mounting cylinder to lathe"/>
+          </div>
+        </div>
+        <div>
+          <p>
+
+            Now your work must go to the lathe.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail16-h1120.jpg" alt="pressing down on a lathe horse"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            In the film I showed exactly how to prepare the base for the eyepiece so that everything is centred inside. You have to use the lid, on which you will make an even base for the eyepiece.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail17-h1120.jpg" alt="cylinder turning"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Once you've worn your glasses, you can go to threading, etc.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail18-h1120.jpg" alt="thread turning"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            at this point, I can't give you the ready dimensions because you have to move them from your gland.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail19-h1120.jpg" alt="thread turning - another shot"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Remember also to make all endings with a very gentle exit, so that subsequent mounting of the piston with gaskets is easier.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail20-h1120.jpg" alt="shaft mounting"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            So now it's time to process the piston rod.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail22-h1120.jpg" alt="roller rolling"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Here also move the dimensions from the piston rod you bought (each is different).
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail23-h1120.jpg" alt="thread turning"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            Make a thread in it.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="image-loading">
+            <img src="/assets/images/projects/hydraulic-cylinder/detail25-h1120.jpg" alt="other side of the roller"/>
+          </div>
+        </div>
+        <div>
+          <p>
+            On the other side of the piston rod do the fastening for the accessories you need (there are many different kinds of endings you can do, depending on your needs) I went for an easy one and made an ordinary hole ;)
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail31-h1120.jpg" alt="mounting of the lid to the piston rod"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              In the picture next to it you can see an example of an interchangeable cap,
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail32-h1120.jpg" alt="Screwing lid"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              The pressure screws, so called worms, will work perfectly here ;)
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail33-h1120.jpg" alt="lid fitting"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              in the next step, we're going to make a barrel sticker
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail34-h1120.jpg" alt="rolling of the main cylinder cover"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              rolling the decal, let's remember the big phase under the weld
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail35-h1120.jpg" alt="making an internal thread"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              in order not to weld any&#32;<q>threaded pins</q>&#32;additionally, I recommend to make a thread in the lid itself, but remember that it must be sufficiently&#32;<q>thick</q>&#32;so that later the screwed-in reduction does not go through
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail36-h1120.jpg" alt="welding of the cover to the hydraulic cylinder"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              as in the previous welding, here we do it crosswise and as fast as possible
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail37-h1120.jpg" alt="weld grinding"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              I personally had to grind the weld to&#32;<q>zero</q>&#32;for the actuator to fit into my press,
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail38-h1120.jpg" alt="fitting of gaskets"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              time for installation of gland seals</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail39-h1120.jpg" alt="fitting of gaskets in piston"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              and piston rods ;)
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail40-h1120.jpg" alt="mounting of the gland to the shaft"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Mount the gland on the piston rod...
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail41-h1120.jpg" alt="installation of a shaft gland"/>
+            </div>
+          </div>
+          <div>
+            <p>..and slide it down to make room for the piston.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail42-h1120.jpg" alt="mounting of the piston to the shaft"/>
+            </div>
+          </div>
+          <div>
+            <p>
+              Screw the piston to the piston rod
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail43-h1120.jpg" alt="mounting of the pre-piece to the cylinder"/>
+            </div>
+          </div>
+          <div>
+            <p>time to mount the piston rod with piston and gland to the cylinder. This is quite a challenge without special equipment...</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail44-h1120.jpg" alt="mounting of the pre-piece to the cylinder"/>
+            </div>
+          </div>
+          <div>
+            <p>I used an ordinary breakfast pad in the flowers to make the sealants on the piston "jump" into the cylinder</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail45-h1120.jpg" alt="mounting of the pre-piece to the cylinder another shot"/>
+            </div>
+          </div>
+          <div>
+            <p>Slide the bar slowly into the cylinder</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail46-h1120.jpg" alt="Screwing cap gland"/>
+            </div>
+          </div>
+          <div>
+            <p>in order to tighten the glands we theoretically need a hook wrench, but I do not have such a wrench I managed to tighten this element with hydraulic pliers (even the name fits) so-called "frogs</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail47-h1120.jpg" alt="painting of the cylinder"/>
+            </div>
+          </div>
+          <div>
+            <p>The hydraulic cylinder is almost ready. All that's left is to paint in your favourite colours...</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="image-loading">
+              <img src="/assets/images/projects/hydraulic-cylinder/detail48-h1120.jpg" alt="gluing of stickers"/>
+            </div>
+          </div>
+          <div>
+            <p>..and stick stickers to make our work more professional! 🙂</p>
+          </div>
+        </div>
+
+        <section class="gap-top-medium">
+          <h1>Rightly completed</h1>
+
+          <div class="row">
+            <div>
+              <div class="image-loading">
+                <img src="/assets/images/projects/hydraulic-cylinder/detail50-h1120.jpg" alt="presentation of the finished cylinder"/>
+              </div>
+            </div>
+            <div>
+              <p>
+                The above article is available for free, expecting nothing in return. Still, I will be very pleased when you send me a picture of your project after building your unit, to which, as if not looking at it, I added some advice. 🙂 This will be the best return and a sign for me that what I do makes sense.
+              </p>
+            </div>
+          </div>
+
+          <p class="gap-top">
+            <h3>I'm presenting to you below a film about the construction of the actuator ;)
+            </h3>
+          </p>
+
+          <div class="yt-video">
+            <div>
+              <iframe src="https://www.youtube-nocookie.com/embed/T_36mR8bN5M?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" title="How to make a hydraulic cylinder - DIY"></iframe>
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </article>
+  </main>
+
+{% endblock %}

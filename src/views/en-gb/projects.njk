@@ -1,0 +1,132 @@
+{% extends "templates/layout-en-gb.njk" %}
+{% set tab = "projects" %}
+
+{% block meta %}
+  <link rel="canonical" href="https://patryktrajder.com/en-gb/projects/"/>
+  <title>Guides | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+  {% include "vectors/arrow-right.sym" %}
+  {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+
+<section class="parallax-section gap-bottom" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/assets/images/projects-banner-w1920.jpg'); 
+background-position: 80% center;"> {# jak ma skalowac sie zdjecie 0 idzie w prawo 100 idzie w lewo / 50% centruje do srodka #} 
+  
+        {# INSTRUKCJA
+            --h2-pc: 80px;     Tytuł na PC #}
+        {#  --p-pc: 32px;      Podpis na PC (wcześniej 2rem) #}
+        {#  --h2-mob: 40px;    Tytuł na telefonie #}
+        {#  --p-mob: 24px;     Podpis na telefonie #}
+       <div class="parallax-content" 
+       style="
+         --h2-pc: 80px;
+         --p-pc: 32px;
+         --h2-mob: 40px;
+         --p-mob: 24px;
+       ">
+      <h2>Get to know my projects better</h2> 
+    <p></p>
+  </div>
+</section> 
+
+
+  {#  <section class="banner"> 
+    <div class="container centered-text">
+      <div class="image-placeholder" style="padding-top: 41.666666666%;">
+        <img src="/assets/images/projects-banner-w1920.jpg" srcset="/assets/images/projects-banner-w768.jpg 768w, /assets/images/projects-banner-w1920.jpg 1920w" alt="Sheet metal being cut with a grinder."/>
+      </div>
+      <h1>Get to know my projects better</h1>
+    </div>
+  </section> #}
+  <main>
+    <nav class="breadcrumbs gap-top">
+      <span>
+        <a href="/en-gb/" title="Homepage">
+          <svg class="home icon">
+            <use xlink:href="#icon-home"></use>
+          </svg>
+        </a>
+        <svg class="icon">
+          <use xlink:href="#icon-arrow-right"></use>
+        </svg>
+      </span>
+      <a href="/en-gb/projects/">
+        <b>Guides</b>
+      </a>
+    </nav>
+    {#  <nav class="categories"> 
+      <a href="#my-projects" title="My projects">
+        <p>
+          My projects
+        </p>
+      </a>
+      <a href="#your-projects" title="Your projects">
+        <p>
+          Your projects
+        </p>
+      </a>
+    </nav> #}
+
+    <article id="my-projects" class="gap-top preview-list">
+      <h1 class="gap-bottom-medium">
+        My projects
+      </h1>
+
+      <section>
+        <h2>
+          <a href="hydraulic-cylinder/" title="Hydraulic cylinder ">Hydraulic cylinder - Construction</a>
+        </h2>
+
+        <div class="row gap-top">
+          <div>
+            <p>
+              Check how to make a hydraulic cylinder. I will use it for my press, and many other hydraulics related equipment that I hope to build in the future. ;)
+            </p>
+            <p class="single-out-link">
+              <a href="hydraulic-cylinder/" title="Hydraulic cylinder">More information...</a>
+            </p>
+          </div>
+          <div>
+            <a href="hydraulic-cylinder/" title="Hydraulic cylinder">
+              <img src="/assets/images/projects/hydraulic-cylinder/thumb.jpg" srcset="/assets/images/projects/hydraulic-cylinder/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-cylinder/thumb-w768.jpg 768w, /assets/images/projects/hydraulic-cylinder/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="Hydraulic cylinder"/>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="gap-top">
+        <h2>
+          <a href="hydraulic-power-pack/" title="Mobile Hydraulic Power Unit - Construction">Mobile Hydraulic Power Unit - Construction</a>
+        </h2>
+        <div class="row gap-top">
+          <div>
+            <p>
+              Check how to make a mobile hydraulic unit. I will use it for my press, and many other hydraulics-related equipment that I hope to build in the future. Most of the elements such as: steel, electric motor, manifold come from scrap metal, which allowed to reduce construction costs to a minimum ;)
+            </p>
+            <p class="single-out-link">
+              <a href="hydraulic-power-pack/" title="Mobile Hydraulic Power Unit - Construction">More information...</a>
+            </p>
+          </div>
+          <div>
+            <a class="image-loading" href="hydraulic-power-pack/" title="Mobile Hydraulic Power Unit - Construction">
+              <img src="/assets/images/projects/hydraulic-power-pack/thumb.jpg" srcset="/assets/images/projects/hydraulic-power-pack/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-power-pack/thumb-w768.jpg 768w, /assets/images/projects/hydraulic-power-pack/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="Mobile hydraulic power unit"/>
+            </a>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="your-projects" class="gap-top-large">
+      <h1>
+        Your projects
+      </h1>
+      <p>
+        If you want to boast about your project, send it to&#32;<a href="mailto:bragger@trajder.com" rel="nofollow noopener" target="_blank" title="bragger@trajder.com">bragger@trajder.com</a>&#32;xD
+      </p>
+    </article>
+  </main>
+{% endblock %}

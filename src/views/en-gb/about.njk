@@ -1,0 +1,89 @@
+{% extends "templates/layout-en-gb.njk" %}
+{% set tab = "about" %}
+
+{% block meta %}
+  <link rel="canonical" href="https://patryktrajder.com/en-gb/about/"/>
+  <title>About me | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+  {% include "vectors/arrow-right.sym" %}
+  {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+  <main>
+    <article class="centered-text">
+      <header class="gap-top">
+        <nav class="breadcrumbs">
+          <span>
+            <a href="/en-gb/" title="Homepage">
+              <svg class="home icon">
+                <use xlink:href="#icon-home"></use>
+              </svg>
+            </a>
+            <svg class="icon">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+          </span>
+          <a href="/en-gb/about/">
+            <b>About me</b>
+          </a>
+        </nav>
+        <h1>Let's get to know each other better!</h1>
+      </header>
+
+      <div class="center shrink gap-top">
+        <div class="image-loading" style="padding-top: 74.85%;">
+          <img src="/assets/images/about/about1-w1120.jpg" alt="My current workstation"/>
+        </div>
+      </div>
+
+      
+      <div class="gap-top">
+  <h1>What is the TRAJDER Brand?</h1>
+  <p>
+    Hi, I’m Patryk. I’m 30 years old and a mechanical designer by trade, though my real-world education began 16 years ago in a backyard garage. I was only 14 then, with a head full of ideas and... almost no tools. As a young inventor, I wanted to build prototypes that made life easier, but the market quickly brought me back to earth. Professional equipment was financially out of reach, and the "budget" options literally fell apart in my hands.
+  </p>
+  <br>
+  <h3>That’s when I made a choice: I’ll build it myself.</h3>
+  <p>Years of experience and running my YouTube channel opened my eyes to a sad truth. The market is flooded with low-quality tools, and many "local brands" are often just mass-produced shells, simply painted a different color.</p>
+  <br>
+  <h3>I decided to break the mold.</h3>
+  <p>The TRAJDER brand was born out of a rebellion against mediocrity. I design tools the way they used to be made – using heavy-duty, high-grade materials, built to last a lifetime, not just until the warranty expires.</p>
+  <br>
+  <h3>I share knowledge, not just hardware.</h3>
+  <p>I turn my passion for engineering into professional build plans (DXF & PDF files) available in my shop. I help hobbyists bypass the barrier of expensive equipment, and I provide large companies with customized, heavy-duty solutions.</p>
+  <br>
+  <h3>TRAJDER is more than just projects and tools. It’s a new workshop culture where quality meets your passion for creating.</h3>
+</div>
+
+      <div class="center shrink gap-top">
+        <div class="image-loading ratio3to2">
+          <img src="/assets/images/about/about2-w1120.jpg" alt="Me with an argon bottle"/>
+        </div>
+      </div>
+
+      <div class="gap-top">
+        <p>
+  I’ve always been fascinated by the world of machinery and inventions. 
+  While the other kids in the neighborhood were saving up for snacks, I was spending every penny on raw materials for my first projects. 
+  I could never sit still; my head was constantly buzzing with wild ideas. Life in an apartment block felt too grey and restrictive for me. 
+  That’s why, when I moved from the city to the countryside at age 13, I finally saw a vast horizon of possibilities opening up before me.
+</p>
+      </div>
+
+      <div class="center shrink gap-top">
+        <div class="image-loading" style="padding-top: 74.85%;">
+          <img src="/assets/images/about/about3.jpg" alt="My old workshop"/>
+        </div>
+      </div>
+
+      <div class="gap-top">
+        <p>
+  My imagination became the only limit. When I found out I had an old pigsty at my disposal, I knew right away that I wouldn’t be raising pigs there. I cleared out the cluttered space and slowly began transforming it into my very first workshop.
+</p>
+      </div>
+    </article>
+  </main>
+{% endblock %}

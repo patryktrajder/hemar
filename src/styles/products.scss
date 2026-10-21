@@ -1,0 +1,151 @@
+/* =========================================================
+     SKLEP - MINIMUM, ŻEBY STOPKA NIE WISIAŁA ZA WYSOKO
+  ========================================================= */
+
+  .products-page-main {
+    min-height: calc(100vh - 11.75rem - 315px);
+  }
+
+  @media (max-width: 899px) {
+    .products-page-main {
+      min-height: calc(100vh - 7rem - 315px);
+    }
+  }
+
+  /* =========================================================
+     ZAKŁADKI SKLEPU
+
+     Osobne klasy dla sklepu.
+     Wygląd bazuje na zakładkach z kart produktu,
+     ale nie używa ich klas.
+  ========================================================= */
+
+  .product-shop-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin: 0 0 3.25rem 0;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .product-shop-tabs__button {
+    appearance: none;
+    flex: 1 1 220px;
+    max-width: 270px;
+    min-width: 220px;
+    min-height: 54px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.95rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+
+    border: 1px solid #2b2b2b;
+    background: #ffffff;
+    color: #111111;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
+  .product-shop-tabs__button:focus,
+  .product-shop-tabs__button:active {
+    outline: none;
+  }
+
+  .product-shop-tabs__button.is-active {
+    background: #007CF0;
+    color: #ffffff;
+    border-color: #007CF0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+@media (hover: hover) and (pointer: fine) {
+  .product-shop-tabs__button:not(.is-active):hover {
+    background: #e8f3ff;
+    color: #005eb8;
+    border-color: #007CF0;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 124, 240, 0.10);
+  }
+
+  .product-shop-tabs__button.is-active:hover {
+    background: #0066c7;
+    color: #ffffff;
+    border-color: #0066c7;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+}
+
+  /* =========================================================
+     FILTROWANIE KART PRODUKTÓW
+  ========================================================= */
+
+  .product-shop-item {
+    display: contents;
+  }
+
+  .product-shop-item[hidden] {
+    display: none !important;
+  }
+
+
+
+.products-page-main .product-cards-container {
+  justify-content: flex-start;
+}
+
+  .product-shop-empty {
+    margin: 2rem auto;
+    max-width: 34rem;
+    color: #555555;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* =========================================================
+     RESPONSYWNOŚĆ ZAKŁADEK
+  ========================================================= */
+
+  @media (max-width: 900px) {
+    .product-shop-tabs__button {
+      flex: 1 1 calc(50% - 0.9rem);
+      min-width: 0;
+      max-width: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .product-shop-tabs {
+      gap: 0.65rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .product-shop-tabs__button {
+      flex: 1 1 100%;
+      width: 100%;
+      max-width: none;
+      min-width: 0;
+      min-height: 50px;
+      padding: 0.9rem 1rem;
+    }
+  }

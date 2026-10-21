@@ -1,0 +1,194 @@
+@import "reset";
+@import "variables";
+@import "base";
+@import "layout";
+@import "products";
+@import "components/banner";
+@import "components/card";
+@import "components/cookies-notice";
+@import "components/expander";
+@import "components/footer";
+@import "components/gallery";
+@import "components/header";
+@import "components/language-dropdown";
+@import "components/opinion";
+@import "components/product-details";
+@import "components/slider";
+@import "components/specification";
+@import "components/tabs";
+@import "components/parallax";
+@import "components/navigation";
+@import "components/youtube-popup";
+@import "components/product-video";
+@import "components/purchase-panel";
+
+
+b {
+  font-weight: 700;
+}
+
+p {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+svg.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 0;
+  width: 1em;
+
+  &.facebook {
+    color: #4267b2;
+  }
+
+  &.youtube {
+    color: #ff0000;
+  }
+}
+
+ul.dots {
+  margin-left: 2rem;
+
+  > li {
+    list-style-type: disc;
+
+    > ul.dots {
+      > li {
+        list-style-type: circle;
+      }
+    }
+  }
+}
+
+.breadcrumbs {
+  margin-bottom: 1rem;
+  text-align: start;
+
+  a {
+    color: $azure;
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  > * {
+    margin-bottom: 1rem;
+  }
+
+  
+  .icon {
+    color: slategrey;
+    font-size: 1rem;
+    margin: 0 0.25rem -2px;
+
+    &.home {
+      color: $azure;
+      font-size: 1.5rem;
+      margin: 0 0 -5px;
+    }
+  }
+
+  .breadcrumb-full {
+    display: inline; 
+  }
+
+  .breadcrumb-short {
+    display: none; 
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumb-full {
+      display: none; 
+    }
+    .breadcrumb-short {
+      display: inline; 
+    }
+    
+    // To doda odrobinę miejsca pod okruszkami na telefonie
+    padding-bottom: 0.25rem; 
+  }
+} // Ta klamra zamyka teraz poprawnie całe .breadcrumbs
+
+.categories {
+  margin: -1rem 0 0 -1rem;
+  max-width: 100%;
+
+  &.gap-top {
+    margin-top: 1rem;
+  }
+
+  > a {
+    background-color: $aliceBlue;
+    color: $azure;
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin: 1rem 0 0 1rem;
+    max-width: 100%;
+    padding: 1rem;
+    text-align: justify;
+
+    &:hover {
+      background-color: #eff4f9;
+      color: $usafaBlue;
+    }
+  }
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.preview-list {
+  > section {
+    background: $aliceBlue;
+    padding: 1rem;
+
+    > h4 {
+      color: $subtitleColor;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.single-out {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.single-out-link {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+
+  &:hover {
+    color: $azure;
+  }
+}
+
+.yt-video {
+  margin: 3rem auto;
+  max-width: 50rem;
+
+  > div {
+    position: relative;
+    padding-top: 56.25%; // 16:9 ratio
+
+    iframe {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

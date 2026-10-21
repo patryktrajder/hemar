@@ -1,0 +1,47 @@
+{
+  "name": "patryktrajder.com",
+  "version": "1.0.0",
+  "description": "Youtuber's portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "acc": "gulp acc",
+    "clean": "gulp clean",
+    "dev": "gulp dev",
+    "dist": "gulp dist",
+    "eleventy": "eleventy",
+    "start": "http-server dist",
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakubJanowski/patryktrajder.com.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Jakub Janowski",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JakubJanowski/patryktrajder.com/issues"
+  },
+  "homepage": "https://github.com/JakubJanowski/patryktrajder.com#readme",
+  "private": true,
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "html-minifier": "^4.0.0",
+    "http-server": "^0.12.3",
+    "merge-stream": "^2.0.0",
+    "path": "^0.12.7",
+    "readline-sync": "^1.4.10",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0",
+    "webpack-stream": "^6.1.1"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,82 @@
+.parallax-section {
+  /* 1. Wyrwanie z kontenera na pełną szerokość ekranu (od brzegu do brzegu) */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 400px; 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; /* Wymusza pokrycie całego tła */
+  /* Środkowanie tekstu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* padding wewnątrz, żeby na małych ekranach tekst nie dotykał krawędzi szybki */
+  padding: 0 20px;
+  
+
+.parallax-content {
+    h2 {
+      font-size: var(--h2-pc, 5rem); 
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffffff; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      line-height: 1.1; 
+      
+      sup {
+        position: relative;
+        font-size: 0.4em;
+        top: -1em;
+      }
+    }
+
+    p {
+      font-size: var(--p-pc, 2rem);
+      font-weight: 500;
+      color: #e0e0e0;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+      text-align: center; 
+    }
+  }
+
+/* ========== WERSJA MOBILNA (DLA WSZYSTKICH TELEFONÓW) ========== */
+  @media only screen and (max-width: 768px) {
+    /* Trzymamy sensowną wysokość na małym ekranie */
+    height: 350px; 
+    
+    /* Skalowanie czcionki, aby zmieściła się na wąskim ekranie */
+    @media only screen and (max-width: 768px) {
+    height: 350px; 
+    
+    .parallax-content {
+      h2 { 
+        font-size: var(--h2-mob, 2.5rem); 
+        letter-spacing: 1px;
+      }
+      p { 
+        font-size: var(--p-mob, 1.5rem); 
+        padding: 0 10px;
+        text-align: center !important; 
+      }
+    }
+  }
+    /* UWAGA: Nie wyłączamy tu paralaksy! Na Androidzie będzie działać */
+  }
+
+  /* ========== BRAMKA BEZPIECZEŃSTWA TYLKO DLA iOS (IPHONE / IPAD) ========== */
+  /* Ten warunek wykrywa silnik Apple Safari. Android go całkowicie zignoruje. */
+  @supports (-webkit-touch-callout: none) {
+    .parallax-section {
+      background-attachment: scroll; /* Wyłączamy zepsuty efekt tylko dla iphone */
+    }
+  }
+}

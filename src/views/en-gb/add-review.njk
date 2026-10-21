@@ -1,0 +1,1418 @@
+{% extends "templates/layout-en-gb.njk" %}
+{% set tab = "add-review" %}
+
+{% block meta %}
+  <link rel="canonical" href="https://patryktrajder.com/en-gb/add-review/"/>
+  <meta name="description" content="Add a review for a TRAJDER project or product. Your feedback helps other customers decide if the project is right for their workshop.">
+  <title>Add a review | TRAJDER</title>
+{% endblock meta %}
+
+{% block vectors %}
+  {% include "vectors/arrow-right.sym" %}
+  {% include "vectors/home.sym" %}
+  {% include "vectors/close.sym" %}
+{% endblock %}
+
+{% block body %}
+
+<style>
+  .review-page {
+    background:
+      linear-gradient(135deg, rgba(0,124,240,.045), transparent 34%),
+      linear-gradient(315deg, rgba(249,133,37,.055), transparent 34%),
+      #f5f6f8;
+    padding: 34px 0 72px;
+  }
+
+  .review-wrap {
+    width: min(980px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .review-page .breadcrumbs {
+    margin-bottom: 48px;
+  }
+
+  .review-hero {
+    max-width: 860px;
+    margin-bottom: 30px;
+  }
+
+  .review-hero h1 {
+    margin: 0;
+    color: #08111f;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: .01em;
+  }
+
+  .review-logo-word {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    letter-spacing: .045em;
+    white-space: nowrap;
+    font-size: .78em;
+  }
+
+  .review-logo-word sup {
+    color: #0056b3;
+    font-size: .28em;
+    position: relative;
+    top: -1.05em;
+    margin-left: 3px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .review-lead {
+    max-width: 720px;
+    margin: 20px 0 0;
+    color: #445063;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .review-card {
+    border: 1px solid rgba(8,17,31,.1);
+    border-radius: 20px;
+    background: rgba(255,255,255,.94);
+    box-shadow: 0 24px 58px rgba(8,17,31,.08);
+    padding: clamp(22px, 3vw, 34px);
+  }
+
+  .review-form {
+    display: grid;
+    gap: 18px;
+  }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .review-field {
+    display: grid;
+    gap: 8px;
+  }
+
+  .review-field--full {
+    grid-column: 1 / -1;
+  }
+
+  .review-label {
+    color: #08111f;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 800;
+  }
+
+  .review-required {
+    color: #e53935;
+    font-weight: 900;
+  }
+
+  .review-required--hidden {
+    display: none;
+  }
+
+  .review-input,
+  .review-select,
+  .review-textarea {
+    width: 100%;
+    border: 1px solid #cfd5dd;
+    border-radius: 12px;
+    background: #fff;
+    color: #08111f;
+    font: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .18s ease, box-shadow .18s ease;
+  }
+
+  .review-input,
+  .review-select {
+    min-height: 52px;
+    padding: 0 16px;
+  }
+
+  .review-select {
+    cursor: pointer;
+  }
+
+  .review-select:invalid {
+    color: #778191;
+  }
+
+  .review-select option {
+    color: #08111f;
+  }
+
+  .review-textarea {
+    min-height: 156px;
+    padding: 15px 16px;
+    resize: vertical;
+  }
+
+  .review-input::placeholder,
+  .review-textarea::placeholder {
+    color: #778191;
+  }
+
+  .review-input:focus,
+  .review-select:focus,
+  .review-textarea:focus {
+    border-color: #f98525;
+    box-shadow: 0 0 0 4px rgba(249,133,37,.13);
+  }
+
+  .review-form.was-validated .review-input:invalid,
+  .review-form.was-validated .review-select:invalid,
+  .review-form.was-validated .review-textarea:invalid {
+    border-color: #e53935;
+    box-shadow: 0 0 0 4px rgba(229,57,53,.10);
+  }
+
+  .review-field-error {
+    display: none;
+    margin: -2px 0 0;
+    color: #e53935;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .review-form.was-validated .review-input:invalid ~ .review-field-error,
+  .review-form.was-validated .review-select:invalid ~ .review-field-error,
+  .review-form.was-validated .review-textarea:invalid ~ .review-field-error {
+    display: block;
+  }
+
+  .review-stars {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+    padding: 13px 14px;
+    border: 1px solid #cfd5dd;
+    border-radius: 12px;
+    background: #fff;
+    transition: border-color .18s ease, box-shadow .18s ease;
+  }
+
+  .review-stars input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .review-stars label {
+    cursor: pointer;
+    color: #c8ced7;
+    font-size: 31px;
+    line-height: 1;
+    transition: color .16s ease, transform .16s ease;
+  }
+
+  .review-stars label:hover,
+  .review-stars label:hover ~ label,
+  .review-stars input:checked ~ label {
+    color: #f98525;
+  }
+
+  .review-stars label:hover {
+    transform: translateY(-1px);
+  }
+
+  .review-rating-note,
+  .review-error {
+    margin: -4px 0 0;
+    color: #687384;
+    font-size: 13px;
+  }
+
+  .review-error {
+    display: none;
+    color: #e53935;
+    font-weight: 700;
+  }
+
+  .review-form.was-validated .review-rating-field.is-invalid .review-stars {
+    border-color: #e53935;
+    box-shadow: 0 0 0 4px rgba(229,57,53,.10);
+  }
+
+  .review-form.was-validated .review-rating-field.is-invalid .review-error {
+    display: block;
+  }
+
+  .review-upload-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .review-upload-box {
+    display: grid;
+    place-items: center;
+    min-height: 132px;
+    border: 1.5px dashed #bfc7d2;
+    border-radius: 15px;
+    background:
+      linear-gradient(135deg, rgba(0,86,179,.055), transparent 42%),
+      linear-gradient(315deg, rgba(0,124,240,.035), transparent 46%),
+      #fff;
+    text-align: center;
+    padding: 22px;
+    cursor: pointer;
+    transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease, background .18s ease;
+  }
+
+  .review-upload-box:hover {
+    border-color: #0056b3;
+    box-shadow: 0 16px 36px rgba(0,86,179,.11);
+    transform: translateY(-1px);
+  }
+
+  .review-upload-box.is-dragover {
+    border-color: #0056b3;
+    background:
+      linear-gradient(135deg, rgba(0,86,179,.13), transparent 42%),
+      linear-gradient(315deg, rgba(0,124,240,.08), transparent 46%),
+      #f3f8ff;
+    box-shadow: 0 18px 40px rgba(0,86,179,.16);
+    transform: translateY(-1px);
+  }
+
+  .review-upload-box.is-dragover .review-upload-icon {
+    background: #0056b3;
+  }
+
+  .review-upload-icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: #08111f;
+    color: #fff;
+    transition: background .18s ease;
+  }
+
+  .review-upload-icon svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    stroke: currentColor;
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+
+  .review-upload-title {
+    display: block;
+    color: #08111f;
+    font-weight: 800;
+    font-size: 15px;
+  }
+
+  .review-upload-text {
+    display: block;
+    margin-top: 5px;
+    color: #687384;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .review-upload-text-mobile {
+    display: none;
+  }
+
+  .review-file-help {
+    margin: 8px 0 0;
+    color: #4b5668;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .review-file-message {
+    display: none;
+    margin-top: 9px;
+    padding: 10px 12px;
+    border: 1px solid rgba(0,86,179,.14);
+    border-radius: 10px;
+    background: rgba(0,86,179,.07);
+    color: #0056b3;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .review-file-message.is-visible {
+    display: block;
+  }
+
+  .review-file-message.is-error {
+    border-color: rgba(229,57,53,.16);
+    background: rgba(229,57,53,.07);
+    color: #e53935;
+  }
+
+  .review-file-list {
+    display: grid;
+    gap: 8px;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .review-file-list:empty {
+    display: none;
+  }
+
+  .review-file-item {
+    display: grid;
+    grid-template-columns: 44px 1fr 34px;
+    gap: 10px;
+    align-items: center;
+    min-height: 54px;
+    padding: 7px;
+    border: 1px solid #d9dee6;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .review-file-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 9px;
+    object-fit: cover;
+    background: #f0f2f5;
+  }
+
+  .review-file-info {
+    min-width: 0;
+  }
+
+  .review-file-name {
+    display: block;
+    overflow: hidden;
+    color: #08111f;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .review-file-size {
+    display: block;
+    margin-top: 3px;
+    color: #687384;
+    font-size: 12px;
+  }
+
+  .review-file-remove {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: #f1f3f6;
+    color: #08111f;
+    cursor: pointer;
+    transition: background .18s ease, color .18s ease, transform .18s ease;
+  }
+
+  .review-file-remove svg {
+    display: block;
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    stroke: currentColor;
+  }
+
+  .review-file-remove:hover {
+    background: #e53935;
+    color: #fff;
+    transform: scale(1.04);
+  }
+
+  .review-consents {
+    display: grid;
+    gap: 11px;
+    margin-top: 2px;
+  }
+
+  .review-consent-item {
+    display: grid;
+    gap: 5px;
+  }
+
+  .review-check {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 8px 10px;
+    margin: 0 -10px;
+    border-radius: 10px;
+    color: #303b4c;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .review-check input {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: #f98525;
+  }
+
+  .review-check b {
+    color: #e53935;
+    font-weight: 800;
+  }
+
+  .review-consent-error {
+    display: none;
+    margin: -2px 0 0 30px;
+    color: #e53935;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .review-form.was-validated .review-consent-item.is-invalid .review-check {
+    background: rgba(229,57,53,.06);
+  }
+
+  .review-form.was-validated .review-consent-item.is-invalid .review-check span {
+    color: #e53935;
+    font-weight: 700;
+  }
+
+  .review-form.was-validated .review-consent-item.is-invalid input {
+    outline: 2px solid #e53935;
+    outline-offset: 2px;
+  }
+
+  .review-form.was-validated .review-consent-item.is-invalid .review-consent-error {
+    display: block;
+  }
+
+  .review-form-alert {
+    display: none;
+    margin: 4px 0 -2px;
+    padding: 11px 13px;
+    border-radius: 10px;
+    background: rgba(229,57,53,.07);
+    color: #e53935;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .review-form-alert.is-visible {
+    display: block;
+  }
+
+  .review-submit {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 999px;
+    background: #f98525;
+    color: #fff;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+
+  .review-submit:hover {
+    background: #ee771b;
+    box-shadow: 0 16px 34px rgba(249,133,37,.28);
+    transform: translateY(-1px);
+  }
+
+  .review-submit:disabled {
+    cursor: wait;
+    opacity: .86;
+    transform: none;
+  }
+
+  .review-mail-note {
+    margin: 18px 0 0;
+    color: #5c6879;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .review-mail-note a {
+    color: #007cf0;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .review-mail-note a:hover {
+    text-decoration: underline;
+  }
+
+  .review-hidden {
+    display: none !important;
+  }
+
+  .review-submit-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    place-items: center;
+    padding: 20px;
+    background: rgba(8,17,31,.42);
+    backdrop-filter: blur(5px);
+  }
+
+  .review-submit-overlay.is-visible {
+    display: grid;
+  }
+
+  .review-submit-modal {
+    width: min(430px, 100%);
+    border-radius: 20px;
+    background: #fff;
+    padding: 34px 28px;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(8,17,31,.22);
+  }
+
+  .review-submit-spinner {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 18px;
+    border: 4px solid rgba(0,86,179,.14);
+    border-top-color: #0056b3;
+    border-radius: 50%;
+    animation: reviewSpin .85s linear infinite;
+  }
+
+  .review-submit-ok {
+    display: none;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #16a34a;
+    color: #fff;
+    font-size: 34px;
+    font-weight: 900;
+  }
+
+  .review-submit-overlay.is-success .review-submit-spinner {
+    display: none;
+  }
+
+  .review-submit-overlay.is-success .review-submit-ok {
+    display: grid;
+  }
+
+  .review-submit-overlay.is-error .review-submit-spinner {
+    display: none;
+  }
+
+  .review-submit-overlay.is-error .review-submit-ok {
+    display: grid;
+    background: #e53935;
+  }
+
+  .review-submit-modal h2 {
+    margin: 0 0 10px;
+    color: #08111f;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .review-submit-modal p {
+    margin: 0;
+    color: #445063;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .review-submit-home {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    margin-top: 22px;
+    padding: 0 22px;
+    border-radius: 999px;
+    background: #f98525;
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .review-submit-home:hover {
+    background: #ee771b;
+  }
+
+  @keyframes reviewSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .review-page {
+      padding-top: 24px;
+    }
+
+    .review-wrap {
+      width: min(100% - 24px, 980px);
+    }
+
+    .review-page .breadcrumbs {
+      margin-bottom: 34px;
+    }
+
+    .review-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .review-card {
+      border-radius: 17px;
+      padding: 20px;
+    }
+
+    .review-hero h1 {
+      font-size: clamp(30px, 9vw, 40px);
+    }
+
+    .review-lead {
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .review-stars label {
+      font-size: 29px;
+    }
+
+    .review-upload-text-desktop {
+      display: none;
+    }
+
+    .review-upload-text-mobile {
+      display: block;
+    }
+
+    .review-submit-modal {
+      padding: 30px 22px;
+    }
+
+    .review-submit-modal h2 {
+      font-size: 23px;
+    }
+  }
+</style>
+
+<main class="review-page">
+  <div class="review-wrap">
+
+    <nav class="breadcrumbs">
+      <span>
+        <a href="/en-gb/" title="Home">
+          <svg class="home icon">
+            <use xlink:href="#icon-home"></use>
+          </svg>
+        </a>
+        <svg class="icon">
+          <use xlink:href="#icon-arrow-right"></use>
+        </svg>
+      </span>
+      <a href="/en-gb/add-review/">Add a review</a>
+    </nav>
+
+    <header class="review-hero">
+      <h1>
+        Add a review for a&nbsp;<span class="review-logo-word">TRAJDER<sup>&copy;</sup></span>&nbsp;product
+      </h1>
+
+      <p class="review-lead">
+        Thank you for purchasing a TRAJDER project or product. Your review helps other customers
+        decide whether the project is right for their workshop.
+      </p>
+    </header>
+
+    <section class="review-card" aria-label="Add a review form">
+
+      <form class="review-form" action="https://formspree.io/f/xojblvno" method="POST" enctype="multipart/form-data" novalidate>
+
+        <input class="review-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+
+        <input type="hidden" name="form" value="Add a TRAJDER review - EN">
+        <input type="hidden" name="consent_version" value="review-consents-v1-en">
+        <input type="hidden" name="form_page" value="https://patryktrajder.com/en-gb/add-review/">
+
+        <div class="review-grid">
+
+          <div class="review-field">
+            <label class="review-label" for="review-name">
+              Name or nickname <span class="review-required">*</span>
+            </label>
+            <input
+              class="review-input"
+              id="review-name"
+              name="name_or_nickname"
+              type="text"
+              placeholder="E.g. Mark / DriftZone"
+              required>
+            <p class="review-field-error">Name or nickname is required.</p>
+          </div>
+
+          <div class="review-field">
+            <label class="review-label" for="review-email">
+              Email <span class="review-required">*</span>
+            </label>
+            <input
+              class="review-input"
+              id="review-email"
+              name="email"
+              type="email"
+              placeholder="your@email.com"
+              required>
+            <p class="review-field-error">Email is required. Please enter a valid email address.</p>
+          </div>
+
+          <div class="review-field review-field--full">
+            <label class="review-label" for="review-product">
+              Product this review is about <span class="review-required">*</span>
+            </label>
+
+            <select class="review-select" id="review-product" name="product" required>
+              <option value="" selected disabled>Select a product</option>
+              <option value="Welding Table 1200×800">Welding Table 1200×800</option>
+              <option value="Welding Table 2000×1000">Welding Table 2000×1000</option>
+              <option value="Welding Table 2400×1200">Welding Table 2400×1200</option>
+              <option value="Welding Table 3000×1500">Welding Table 3000×1500</option>
+              <option value="dWTA01 Accessory Set">dWTA01 Accessory Set</option>
+              <option value="dWTA02 Accessory Set">dWTA02 Accessory Set</option>
+              <option value="Under-table drawer dWTA03">Under-table drawer dWTA03</option>
+              <option value="Tube Notcher / Super Booster 2000">Tube Notcher / Super Booster 2000</option>
+              <option value="Other TRAJDER product">Other TRAJDER product</option>
+            </select>
+
+            <p class="review-field-error">Product selection is required.</p>
+          </div>
+
+          <div class="review-field review-field--full review-rating-field">
+            <span class="review-label">
+              Rating <span class="review-required">*</span>
+            </span>
+
+            <div class="review-stars" aria-label="Select a rating">
+              <input type="radio" id="star-5" name="rating" value="5" required>
+              <label for="star-5" title="5/5">★</label>
+
+              <input type="radio" id="star-4" name="rating" value="4">
+              <label for="star-4" title="4/5">★</label>
+
+              <input type="radio" id="star-3" name="rating" value="3">
+              <label for="star-3" title="3/5">★</label>
+
+              <input type="radio" id="star-2" name="rating" value="2">
+              <label for="star-2" title="2/5">★</label>
+
+              <input type="radio" id="star-1" name="rating" value="1">
+              <label for="star-1" title="1/5">★</label>
+            </div>
+
+            <p class="review-rating-note">Click the number of stars you want to give.</p>
+            <p class="review-error">Please select a rating before sending your review.</p>
+          </div>
+
+          <div class="review-field review-field--full">
+            <label class="review-label" for="review-text">
+              Review text <span class="review-required">*</span>
+            </label>
+            <textarea
+              class="review-textarea"
+              id="review-text"
+              name="review"
+              placeholder="Write briefly what you bought, how the build or assembly went, and whether the project met your expectations."
+              required></textarea>
+            <p class="review-field-error">Review text is required.</p>
+          </div>
+
+          <div class="review-field review-field--full">
+            <label class="review-label" for="review-files">Photos of your build</label>
+
+            <input
+              class="review-upload-input"
+              id="review-files"
+              name="photos[]"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              multiple>
+
+            <label class="review-upload-box" for="review-files">
+              <span>
+                <span class="review-upload-icon" aria-hidden="true">
+                  <svg focusable="false">
+                    <use href="#icon-close" xlink:href="#icon-close"></use>
+                  </svg>
+                </span>
+                <span class="review-upload-title">Add build photos</span>
+                <span class="review-upload-text review-upload-text-desktop">
+                  Click here or drag and drop photos into this area. You can add up to 5 photos.
+                </span>
+                <span class="review-upload-text review-upload-text-mobile">
+                  Click here to choose photos. You can add up to 5 photos.
+                </span>
+              </span>
+            </label>
+
+            <p class="review-file-help">
+              JPG, PNG or WEBP. Horizontal, well-lit photos work best.
+            </p>
+
+            <div class="review-file-message" id="review-file-message" aria-live="polite"></div>
+
+            <ul class="review-file-list" id="review-file-list" aria-label="Selected photos"></ul>
+          </div>
+
+        </div>
+
+        <div class="review-consents">
+
+          <div class="review-consent-item" id="review-opinion-consent-item">
+            <label class="review-check">
+              <input
+                id="review-opinion-consent"
+                type="checkbox"
+                name="review_publication_consent"
+                value="YES - customer agrees to publish the review on patryktrajder.com and trajder.com"
+                required>
+              <span>
+                I agree to have my review published on patryktrajder.com and trajder.com.
+                <b>*</b>
+              </span>
+            </label>
+            <p class="review-consent-error">
+              Please agree to the publication of your review.
+            </p>
+          </div>
+
+          <div class="review-consent-item" id="review-photo-consent-item">
+            <label class="review-check">
+              <input
+                id="review-photo-consent"
+                type="checkbox"
+                name="photo_publication_consent"
+                value="YES - customer agrees to publish submitted build photos on patryktrajder.com, trajder.com and in TRAJDER promotional materials">
+              <span>
+                I agree to have the submitted build photos published on patryktrajder.com, trajder.com and in TRAJDER promotional materials.
+                <b id="review-photo-required" class="review-required--hidden">*</b>
+              </span>
+            </label>
+            <p class="review-consent-error">
+              You added photos, so please agree to their publication.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="review-form-alert" id="review-form-alert">
+          Please complete the fields marked in red.
+        </p>
+
+        <button class="review-submit" type="submit">
+          Send review →
+        </button>
+
+      </form>
+
+      <p class="review-mail-note">
+        Having trouble with the form? Send your review directly to:&nbsp;<a href="mailto:trajder.sklep@gmail.com">trajder.sklep@gmail.com</a>
+      </p>
+
+    </section>
+
+  </div>
+
+  <div class="review-submit-overlay" id="review-submit-overlay" aria-hidden="true">
+    <div class="review-submit-modal" role="status" aria-live="polite">
+      <div class="review-submit-spinner" id="review-submit-spinner"></div>
+      <div class="review-submit-ok" id="review-submit-ok">✓</div>
+
+      <h2 id="review-submit-title">Sending your review...</h2>
+      <p id="review-submit-text">
+        Please do not close this page.
+      </p>
+
+      <a class="review-submit-home" id="review-submit-home" href="/en-gb/" hidden>
+        Back to homepage
+      </a>
+    </div>
+  </div>
+</main>
+
+<script>
+  (() => {
+    const MAX_FILES = 5;
+
+    const form = document.querySelector('.review-form');
+    const formAlert = document.querySelector('#review-form-alert');
+
+    const fileInput = document.querySelector('#review-files');
+    const uploadBox = document.querySelector('.review-upload-box');
+    const fileList = document.querySelector('#review-file-list');
+    const fileMessage = document.querySelector('#review-file-message');
+
+    const opinionConsent = document.querySelector('#review-opinion-consent');
+    const opinionConsentItem = document.querySelector('#review-opinion-consent-item');
+
+    const photoConsent = document.querySelector('#review-photo-consent');
+    const photoConsentItem = document.querySelector('#review-photo-consent-item');
+    const photoRequired = document.querySelector('#review-photo-required');
+
+    const ratingField = document.querySelector('.review-rating-field');
+    const ratingInputs = document.querySelectorAll('input[name="rating"]');
+
+    const submitOverlay = document.querySelector('#review-submit-overlay');
+    const submitTitle = document.querySelector('#review-submit-title');
+    const submitText = document.querySelector('#review-submit-text');
+    const submitHome = document.querySelector('#review-submit-home');
+
+    if (
+      !form ||
+      !formAlert ||
+      !fileInput ||
+      !uploadBox ||
+      !fileList ||
+      !fileMessage ||
+      !opinionConsent ||
+      !opinionConsentItem ||
+      !photoConsent ||
+      !photoConsentItem ||
+      !photoRequired ||
+      !ratingField ||
+      !submitOverlay ||
+      !submitTitle ||
+      !submitText ||
+      !submitHome
+    ) return;
+
+    const submitButton = form.querySelector('.review-submit');
+
+    let selectedFiles = [];
+    let previewUrls = [];
+    let dragDepth = 0;
+
+    const fileKey = (file) => `${file.name}_${file.size}_${file.lastModified}`;
+
+    const isFileDrag = (event) => {
+      const types = event.dataTransfer && Array.from(event.dataTransfer.types || []);
+      return types.includes('Files');
+    };
+
+    const formatFileSize = (bytes) => {
+      if (bytes < 1024 * 1024) {
+        return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+      }
+
+      return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+    };
+
+    const showFileMessage = (message, type = 'info') => {
+      fileMessage.textContent = message;
+      fileMessage.classList.add('is-visible');
+      fileMessage.classList.toggle('is-error', type === 'error');
+    };
+
+    const hideFileMessage = () => {
+      fileMessage.textContent = '';
+      fileMessage.classList.remove('is-visible');
+      fileMessage.classList.remove('is-error');
+    };
+
+    const syncInputFiles = () => {
+      const dataTransfer = new DataTransfer();
+
+      selectedFiles.forEach(file => {
+        dataTransfer.items.add(file);
+      });
+
+      fileInput.files = dataTransfer.files;
+    };
+
+    const updatePhotoConsent = () => {
+      const hasFiles = selectedFiles.length > 0;
+
+      photoConsent.required = hasFiles;
+      photoRequired.classList.toggle('review-required--hidden', !hasFiles);
+
+      if (!hasFiles) {
+        photoConsent.checked = false;
+      }
+    };
+
+    const validateRating = () => {
+      const hasRating = Array.from(ratingInputs).some(input => input.checked);
+      ratingField.classList.toggle('is-invalid', !hasRating);
+      return hasRating;
+    };
+
+    const validateConsents = () => {
+      const opinionInvalid = !opinionConsent.checked;
+      const photoInvalid = photoConsent.required && !photoConsent.checked;
+
+      opinionConsentItem.classList.toggle('is-invalid', opinionInvalid);
+      photoConsentItem.classList.toggle('is-invalid', photoInvalid);
+
+      return !opinionInvalid && !photoInvalid;
+    };
+
+    const validateFormVisual = () => {
+      updatePhotoConsent();
+
+      const hasRating = validateRating();
+      const hasConsents = validateConsents();
+      const nativeValid = form.checkValidity();
+
+      const isValid = nativeValid && hasRating && hasConsents;
+
+      formAlert.classList.toggle('is-visible', !isValid);
+
+      return isValid;
+    };
+
+    const renderFileList = () => {
+      previewUrls.forEach(url => URL.revokeObjectURL(url));
+      previewUrls = [];
+
+      fileList.innerHTML = '';
+
+      selectedFiles.forEach((file, index) => {
+        const previewUrl = URL.createObjectURL(file);
+        previewUrls.push(previewUrl);
+
+        const item = document.createElement('li');
+        item.className = 'review-file-item';
+
+        const img = document.createElement('img');
+        img.className = 'review-file-thumb';
+        img.src = previewUrl;
+        img.alt = '';
+
+        const info = document.createElement('span');
+        info.className = 'review-file-info';
+
+        const name = document.createElement('span');
+        name.className = 'review-file-name';
+        name.textContent = file.name;
+
+        const size = document.createElement('span');
+        size.className = 'review-file-size';
+        size.textContent = formatFileSize(file.size);
+
+        const remove = document.createElement('button');
+        remove.className = 'review-file-remove';
+        remove.type = 'button';
+        remove.setAttribute('aria-label', `Remove photo ${file.name}`);
+        remove.innerHTML = `
+          <svg aria-hidden="true" focusable="false">
+            <use href="#icon-close" xlink:href="#icon-close"></use>
+          </svg>
+        `;
+
+        remove.addEventListener('click', () => {
+          selectedFiles.splice(index, 1);
+          syncInputFiles();
+          updatePhotoConsent();
+          renderFileList();
+
+          if (selectedFiles.length < MAX_FILES) {
+            hideFileMessage();
+          }
+
+          if (form.classList.contains('was-validated')) {
+            validateFormVisual();
+          }
+        });
+
+        info.appendChild(name);
+        info.appendChild(size);
+
+        item.appendChild(img);
+        item.appendChild(info);
+        item.appendChild(remove);
+
+        fileList.appendChild(item);
+      });
+    };
+
+    const addFiles = (newFiles) => {
+      const allChosenFiles = Array.from(newFiles || []);
+      const imageFiles = allChosenFiles.filter(file => file.type.startsWith('image/'));
+
+      if (!imageFiles.length) {
+        syncInputFiles();
+
+        if (allChosenFiles.length) {
+          showFileMessage('You can only add photo files: JPG, PNG or WEBP.', 'error');
+        }
+
+        return;
+      }
+
+      const existingKeys = new Set(selectedFiles.map(fileKey));
+      const uniqueFiles = imageFiles.filter(file => !existingKeys.has(fileKey(file)));
+
+      if (!uniqueFiles.length) {
+        syncInputFiles();
+        showFileMessage('These photos are already added to the form.', 'info');
+        return;
+      }
+
+      const freeSlots = MAX_FILES - selectedFiles.length;
+
+      if (freeSlots <= 0) {
+        syncInputFiles();
+        showFileMessage(`You have added the maximum number of photos (${MAX_FILES}). You can send more photos to trajder.sklep@gmail.com.`, 'info');
+        return;
+      }
+
+      const filesToAdd = uniqueFiles.slice(0, freeSlots);
+      selectedFiles = [...selectedFiles, ...filesToAdd];
+
+      syncInputFiles();
+      updatePhotoConsent();
+      renderFileList();
+
+      if (uniqueFiles.length > freeSlots) {
+        showFileMessage(`Only ${freeSlots} photos were added because the form accepts a maximum of ${MAX_FILES}. You can send more photos to trajder.sklep@gmail.com.`, 'info');
+      } else if (selectedFiles.length >= MAX_FILES) {
+        showFileMessage(`You have added the maximum number of photos (${MAX_FILES}). You can send more photos to trajder.sklep@gmail.com.`, 'info');
+      } else {
+        hideFileMessage();
+      }
+
+      if (form.classList.contains('was-validated')) {
+        validateFormVisual();
+      }
+    };
+
+    const scrollToFirstInvalid = () => {
+      const firstInvalid =
+        form.querySelector('.review-input:invalid, .review-select:invalid, .review-textarea:invalid') ||
+        form.querySelector('.review-rating-field.is-invalid') ||
+        form.querySelector('.review-consent-item.is-invalid');
+
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    };
+
+    const showSendingOverlay = () => {
+      submitOverlay.classList.add('is-visible');
+      submitOverlay.classList.remove('is-success', 'is-error');
+      submitOverlay.setAttribute('aria-hidden', 'false');
+
+      submitTitle.textContent = 'Sending your review...';
+      submitText.textContent = 'Please do not close this page.';
+      submitHome.hidden = true;
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+    };
+
+    const showSuccessOverlay = () => {
+      submitOverlay.classList.add('is-success');
+      submitOverlay.classList.remove('is-error');
+
+      submitTitle.textContent = 'Thank you! Your review has been sent.';
+      submitText.textContent = 'Your review has been submitted for manual verification. If you added photos, they have also been uploaded.';
+      submitHome.hidden = false;
+    };
+
+    const showErrorOverlay = () => {
+      submitOverlay.classList.add('is-error');
+      submitOverlay.classList.remove('is-success');
+
+      submitTitle.textContent = 'The review could not be sent';
+      submitText.textContent = 'Please try again in a moment or send your review directly to trajder.sklep@gmail.com.';
+      submitHome.hidden = true;
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send review →';
+      }
+
+      setTimeout(() => {
+        submitOverlay.classList.remove('is-visible', 'is-error');
+        submitOverlay.setAttribute('aria-hidden', 'true');
+      }, 4200);
+    };
+
+    const resetFormAfterSuccess = () => {
+      form.reset();
+      form.classList.remove('was-validated');
+
+      selectedFiles = [];
+      syncInputFiles();
+      updatePhotoConsent();
+      renderFileList();
+      hideFileMessage();
+
+      opinionConsentItem.classList.remove('is-invalid');
+      photoConsentItem.classList.remove('is-invalid');
+      ratingField.classList.remove('is-invalid');
+      formAlert.classList.remove('is-visible');
+    };
+
+    fileInput.addEventListener('change', () => {
+      addFiles(fileInput.files);
+    });
+
+    uploadBox.addEventListener('dragenter', (event) => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      dragDepth += 1;
+      uploadBox.classList.add('is-dragover');
+    });
+
+    uploadBox.addEventListener('dragover', (event) => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      event.dataTransfer.dropEffect = 'copy';
+      uploadBox.classList.add('is-dragover');
+    });
+
+    uploadBox.addEventListener('dragleave', (event) => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      dragDepth = Math.max(0, dragDepth - 1);
+
+      if (dragDepth === 0) {
+        uploadBox.classList.remove('is-dragover');
+      }
+    });
+
+    uploadBox.addEventListener('drop', (event) => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      dragDepth = 0;
+      uploadBox.classList.remove('is-dragover');
+      addFiles(event.dataTransfer.files);
+    });
+
+    document.addEventListener('dragover', (event) => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+    });
+
+    document.addEventListener('drop', (event) => {
+      if (!isFileDrag(event)) return;
+
+      if (!uploadBox.contains(event.target)) {
+        event.preventDefault();
+        uploadBox.classList.remove('is-dragover');
+        dragDepth = 0;
+      }
+    });
+
+    ratingInputs.forEach(input => {
+      input.addEventListener('change', () => {
+        if (form.classList.contains('was-validated')) {
+          validateFormVisual();
+        }
+      });
+    });
+
+    opinionConsent.addEventListener('change', () => {
+      if (form.classList.contains('was-validated')) {
+        validateFormVisual();
+      }
+    });
+
+    photoConsent.addEventListener('change', () => {
+      if (form.classList.contains('was-validated')) {
+        validateFormVisual();
+      }
+    });
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+
+      form.classList.add('was-validated');
+      syncInputFiles();
+
+      const isValid = validateFormVisual();
+
+      if (!isValid) {
+        scrollToFirstInvalid();
+        return;
+      }
+
+      showSendingOverlay();
+
+      try {
+        const formData = new FormData(form);
+
+        const responsePromise = fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        const minLoadingTime = new Promise(resolve => setTimeout(resolve, 1200));
+
+        const [response] = await Promise.all([responsePromise, minLoadingTime]);
+
+        if (!response.ok) {
+          throw new Error('Formspree error');
+        }
+
+        showSuccessOverlay();
+        resetFormAfterSuccess();
+
+      } catch (error) {
+        showErrorOverlay();
+      }
+    });
+
+    window.addEventListener('beforeunload', () => {
+      previewUrls.forEach(url => URL.revokeObjectURL(url));
+    });
+  })();
+</script>
+
+{% endblock %}

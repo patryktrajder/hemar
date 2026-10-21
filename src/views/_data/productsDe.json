@@ -1,0 +1,121 @@
+{
+  "TN01": {
+    "badge": "DIY-Bausätze",
+    "badgeClass": "product-badge--physical",
+    "url": "/de/products/super-booster-2000/",
+    "image": "/assets/images/super-booster-2000/thumb-w320.0.jpg",
+    "alt": "Super Booster 2000",
+    "title": "<strong>Rohr- und Profilnotcher</strong><br>Super Booster 2000 – TN01",
+    "price": "189",
+    "cents": "01",
+    "currency": "€"
+  },
+
+  "dWT04": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/WeldingTable_1200x800_MateuszDoniec/",
+    "image": "/assets/images/dwt04/card.jpg",
+    "alt": "Schweißtisch Baupläne",
+    "title": "DXF/PDF-Baupläne:<br>Schweißtisch&nbsp;<strong>1200x800</strong><br>(System Ø16/28 | Platte 10/12mm)",
+    "price": "24",
+    "cents": "00",
+    "currency": "€"
+  },
+
+  "dWT02": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/WeldingTable_2000x1000_MateuszDoniec/",
+    "image": "/assets/images/WeldingTable_2000x1000_MateuszDoniec/thumb-w320.jpg",
+    "alt": "Schweißtisch Baupläne",
+    "title": "DXF/PDF-Baupläne:<br>Schweißtisch&nbsp;<strong>2000x1000</strong><br>(System Ø16/28 | Platte 10/12/15mm)",
+    "price": "35",
+    "cents": "00",
+    "currency": "€"
+  },
+
+  "dWT01": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/WeldingTable_2400x1200_MateuszDoniec/",
+    "image": "/assets/images/WeldingTable_2400x1200_MateuszDoniec/thumb640.jpg",
+    "alt": "Schweißtisch Baupläne",
+    "title": "DXF/PDF-Baupläne:<br>Schweißtisch&nbsp;<strong>2400x1200</strong><br>(System Ø16/28 | Platte 10/12/15mm)",
+    "price": "35",
+    "cents": "00",
+    "currency": "€"
+  },
+
+  "dWT03": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/WeldingTable_3000x1500_MateuszDoniec/",
+    "image": "/assets/images/dwt03/card.jpg",
+    "alt": "Schweißtisch Baupläne",
+    "title": "DXF/PDF-Baupläne:<br>Schweißtisch&nbsp;<strong>3000x1500</strong><br>(System Ø28 | Platte 12/15mm)",
+    "price": "47",
+    "cents": "00",
+    "currency": "€"
+  },
+
+  "dWTA01": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/welding-table-tooling-kit-plans-dwta01/",
+    "image": "/assets/images/dwta01/thumb/thumb640.png",
+    "alt": "Schweißtisch Zubehör Baupläne",
+    "title": "DXF/PDF-Baupläne:<br><strong>Basis</strong>-Zubehörset für Schweißtische<br>(System Ø16/28 | 10/12/15mm)",
+    "price": "30",
+    "cents": "00",
+    "currency": "€"
+  },
+
+  "dWTA02": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/welding-table-tooling-kit-plans-dwta02/",
+    "image": "/assets/images/dwta02/thumb640.png",
+    "alt": "Profi Schweißtisch Zubehör Baupläne",
+    "title": "DXF/PDF-Baupläne:<br><strong>Profi</strong>-Zubehörset für Schweißtische<br>(System Ø16/28 | 10/12/15mm)",
+    "price": "35",
+    "cents": "00",
+    "currency": "€"
+  },
+
+  "dWS02": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/welding-table-extension-plans-dws02/",
+    "image": "/assets/images/dws02/card.jpg",
+    "alt": "Schweißtisch Erweiterung Baupläne",
+    "title": "DXF/PDF-Baupläne:<br>Mobile Schweißtisch-Erweiterung&nbsp;<strong>1200x200 mm</strong><br>(System Ø16/28 | 12/15mm)",
+    "price": "21",
+    "cents": "00",
+    "currency": "€"
+  },
+
+  "dWS01": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/welding-table-extension-plans-dws01/",
+    "image": "/assets/images/dws01/card.jpg",
+    "alt": "Schweißtisch Erweiterung Baupläne",
+    "title": "DXF/PDF-Baupläne:<br>Mobile Schweißtisch-Erweiterung&nbsp;<strong>2400x200 mm</strong><br>(System Ø16/28 | 12/15mm)",
+    "price": "21",
+    "cents": "00",
+    "currency": "€"
+  },
+
+  "dWTA03": {
+    "badge": "PDF + DXF",
+    "badgeClass": "product-badge--pdf-dxf",
+    "url": "/en-gb/products/welding-table-tooling-kit-plans-dwta03/",
+    "image": "/assets/images/dwta03/card.jpg",
+    "alt": "Schublade unter dem Schweißtisch Baupläne",
+    "title": "DXF/PDF-Baupläne:<br>Schublade unter dem Schweißtisch – dWTA03",
+    "price": "12",
+    "cents": "00",
+    "currency": "€"
+  }
+}

@@ -1,0 +1,195 @@
+{% extends "templates/layout-de.njk" %}
+{% set tab = "home" %}
+
+{% block meta %}
+    <link rel="canonical" href="https://patryktrajder.com/de/"/>
+    <title>Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+    {% include "vectors/arrow-left.sym" %}
+    {% include "vectors/arrow-right.sym" %}
+{% endblock %}
+
+{% block body %}
+    <div class="banner sliding-banner">
+        <div class="container slider">
+            <div class="wrapper">
+                <div class="items">
+                    <div class="image-placeholder" style="padding-top: 38.020833333%;">
+                        <img draggable="false" src="/assets/images/banner1-h730.jpg" alt="Erste Folie"/>
+                    </div>
+                    <div class="image-placeholder" style="padding-top: 38.020833333%;">
+                        <img draggable="false" src="/assets/images/banner2-h730.jpg" alt="Zweite Folie"/>
+                    </div>
+                </div>
+            </div>
+            <ul></ul>
+            <button class="arrow left" aria-label="Vorherige Folie">
+                <svg class="icon">
+                    <use xlink:href="#icon-arrow-left"></use>
+                </svg>
+            </button>
+            <button class="arrow right" aria-label="Nächste Folie">
+                <svg class="icon">
+                    <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <article class="centered-text gap-top-medium">
+            <section>
+                <h1>Kurz zum Kanal</h1>
+                <p>
+                    Die Hauptidee des Kanals ist es, eine Serie mit verrückten Erfindungen und Experimenten zu starten. Ich wollte eine coole Werkstatt einrichten, aber ich konnte es mir in so jungen Jahren (ich habe mit 14 angefangen) nicht leisten, teure Geräte zu kaufen. Also beschloss ich, sie selbst zu bauen. Man könnte sagen, dass es ein bisschen halbherzig ist, um es auf den Punkt zu bringen. Allerdings hat es mir so viel Spaß gemacht, meine eigenen Werkzeuge zu bauen, dass ich nicht davon ablassen werde und auf meinem Kanal werden Sie sowohl verrückte Erfindungen als auch Bauwerkzeuge finden, die ich in anderen Serien verwende. Die Serie vom Werkzeugbau können Sie hier sehen:
+                </p>
+                <div class="yt-video">
+                    <div>
+                        <iframe src="https://www.youtube-nocookie.com/embed/a3s6aUMMPb8?rel=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" title="Hydraulikaggregat - DIY"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Wenn es um&#32;<q>verrückte Erfindungen</q>
+                    geht, ist mein Kopf voller Ideen, aber bisher habe ich meine gesamte Freizeit damit verbracht, zu lernen, wie man Werkzeuge aufnimmt, zusammensetzt und baut. Was ich mache, ist eine Kombination meiner beiden größten Leidenschaften, nämlich das Aufnehmen und das Selbermachen in jeder Angelegenheit (beides wird von der Welt mehr oder weniger gebraucht 😉 ). Wenn Sie mehr über mich wissen wollen&#32;<a href="about/" title="Über mich">klicken Sie hier</a>.
+                </p>
+            </section>
+            <section class="gap-top-medium">
+                <h1>Neueste Produkte</h1>
+                <div class="regular slider">
+                    <div class="wrapper">
+                        <div class="items">
+                            <div class="card">
+                                <div>
+                                    <a class="thumb image-loading" draggable="false" href="products/super-booster-2000/" title="Super Booster 2000">
+                                        <img draggable="false" src="/assets/images/super-booster-2000/thumb-w320.jpg" alt="Super Booster 2000">
+                                    </a>
+                                    <div class="container">
+                                        <h4>
+                                            <a draggable="false" href="products/super-booster-2000/" title="Super Booster 2000">Super Booster 2000</a>
+                                        </h4>
+                                        <h5>Sind Sie, wie ich, ein großer Fan der Rohr-/Profilbearbeitung beim Schweißen? Basteln Sie gerne, bauen Sie gerne Buggys, Go-Karts, Geländer, Zäune oder andere Konstellationen aus Rohren oder Profilen? Wenn ja, dann möchte ich Ihnen ein Gerät vorstellen, das Ihnen die Arbeit wirklich erleichtern kann 😉.</h5>
+                                        <div><hr></div>
+                                        <a class="link" draggable="false" href="products/super-booster-2000/" title="Super Booster 2000">Zum Angebot</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="placeholder tmp" style="background: #f98525;">
+                                    <div style="display: flex; align-items: center; height: 100%;">
+                                        <p style="width: 100%;">Mehr Produkte in Kürze...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="arrow left" aria-label="Vorherige Folie">
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-left"></use>
+                        </svg>
+                    </button>
+                    <button class="arrow right" aria-label="Nächste Folie">
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+{# {% set reviewsLang = "de" %}
+{% set reviewsHeading = "Ausgewählte Bewertungen" %}
+{% set reviewsIntro = "Sehen Sie, wie TRAJDER-Projekte und Produkte in echten Werkstätten funktionieren." %}
+{% set reviewsInitialVisible = 3 %}
+{% set reviewsRevealBatches = [5, 5, 10] %}
+
+{% set productReviews = [
+  "TN01-005-de",
+  "dWT01-002-pl",
+   "TN01-003-en",
+   "dWT01-001-pl",
+   "dWS01-001-pl",
+   "TN01-004-en",
+   "TN01-005-en",
+   "TN01-001-pl",
+   "TN01-002-pl",
+   "dWTA01-001-pl"
+] %}
+
+{% include "sections/product-reviews.njk" %}
+{% include "scripts/product-reviews.njk" %} #}
+
+
+
+
+
+
+
+
+
+
+
+            <section class="gap-top-medium">
+                <h1>Neueste Ratgeber</h1>
+                <div class="regular slider">
+                    <div class="wrapper">
+                        <div class="items">
+                            <div class="card">
+                                <div>
+                                    <a class="thumb image-loading" draggable="false" href="projects/hydraulic-cylinder/" title="Wie man einen Hydraulikzylinder baut"><img draggable="false" src="/assets/images/projects/hydraulic-cylinder/thumb-w320.jpg" alt="Hydraulikzylinder"/></a>
+                                    <div class="container">
+                                        <h4>
+                                            <a draggable="false" href="projects/hydraulic-cylinder/" title="Wie baue ich einen Hydraulikzylinder">Wie baue ich einen Hydraulikzylinder</a>
+                                        </h4>
+                                        <h5>Im heutigen Artikel / Anleitung werde ich versuchen, den Bau des Antriebs zu erklären. Leider hatte ich, wie schon beim letzten Projekt, viele Probleme, weil ich keine Freunde hatte, die sich mit dem Thema befassen wollten. Da ich oft nach den Kosten für ein bestimmtes Projekt gefragt werde, ist die Liste unten aufgeführt.</h5>
+                                        <div><hr></div>
+                                        <a class="link" draggable="false" href="projects/hydraulic-cylinder/" title="So bauen Sie einen Hydraulikzylinder">Zum Artikel</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div>
+                                    <a class="thumb image-loading" draggable="false" href="projects/hydraulic-power-pack/" title="Mobiles Hydraulikaggregat"><img draggable="false" src="/assets/images/projects/hydraulic-power-pack/thumb-w320.jpg" alt="Mobiles Hydraulikaggregat"></a>
+                                    <div class="container">
+                                        <h4>
+                                            <a draggable="false" href="projects/hydraulic-power-pack/" title="Mobiles Hydraulikaggregat">Hydraulikaggregat</a>
+                                        </h4>
+                                        <h5>Schauen Sie sich an, wie man ein mobiles Hydraulikaggregat baut. Ich werde es für meine Presse verwenden, und viele andere hydraulikbezogene Geräte, die ich hoffentlich in der Zukunft bauen werde. Die meisten Elemente wie: Stahl, Elektromotor, Verteiler stammen aus Schrott, wodurch ich die Baukosten auf ein Minimum reduzieren konnte ;)</h5>
+                                        <div><hr></div>
+                                        <a class="link" draggable="false" href="projects/hydraulic-power-pack/" title="Mobiles Hydraulikaggregat">Zum Artikel</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="placeholder tmp">
+                                    <div style="display: flex; align-items: center; height: 100%;">
+                                        <p style="width: 100%;">Mehr Projekte demnächst...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="arrow left" aria-label="Vorherige Folie">
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-left"></use>
+                        </svg>
+                    </button>
+                    <button class="arrow right" aria-label="Nächste Folie">
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </article>
+    </main>
+{% endblock %}

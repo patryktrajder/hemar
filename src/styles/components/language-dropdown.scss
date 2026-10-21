@@ -1,0 +1,35 @@
+.language-dropdown {
+  color: inherit;
+  font-size: 1.5rem;
+  margin: auto;
+  text-align: left;
+  width: fit-content;
+
+  > button.current {
+    color: inherit;
+
+    > .flag {
+      margin-right: 0.5rem;
+    }
+  }
+
+  svg {
+    &:not(.arrow) {
+      -webkit-filter: drop-shadow(0 0 5px white);
+      filter: drop-shadow(0 0 5px white);
+    }
+  }
+
+  > .list {
+    height: 0;
+    margin: 0.25rem -0.25rem -0.25rem -0.5rem;
+    overflow: hidden;
+    position: absolute;
+    transition-duration: 0.2s;
+
+    > * {
+      display: block;
+      padding: 0 0.5rem 0.5rem;
+    }
+  }
+}

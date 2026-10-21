@@ -1,0 +1,32 @@
+{% macro productCardPl(product) %}
+  <div class="product-card">
+    <a href="{{ product.url }}" class="product-image-link">
+      <span class="product-badge-wrap product-badge-wrap--right">
+        <span class="product-badge {{ product.badgeClass }}">{{ product.badge }}</span>
+      </span>
+
+      <img src="{{ product.image }}" alt="{{ product.alt }}"/>
+    </a>
+
+    <div class="product-card-content">
+      <a href="{{ product.url }}" class="product-title">
+        {{ product.title | safe }}
+      </a>
+
+      <div class="product-price">
+        <div class="price">
+          <h3>
+            <span class="value">{{ product.price }}</span>,<span class="cents">{{ product.cents }}</span>
+            <span class="currency">zł</span>
+          </h3>
+        </div>
+      </div>
+
+      <a href="{{ product.url }}" class="product-link">Więcej informacji...</a>
+
+      <div class="cart-action-row">
+        <a href="{{ product.url }}" class="btn-dwt">Sprawdź</a>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

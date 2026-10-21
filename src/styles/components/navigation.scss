@@ -1,0 +1,739 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.product-page-anchor-nav {
+  --product-anchor-offset: 90px;
+}
+
+.product-page-anchor-nav .product-anchor-section {
+  scroll-margin-top: var(--product-anchor-offset);
+}
+
+.product-page-anchor-nav .product-review-jump {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.45rem 0 1.2rem 0;
+  text-decoration: none;
+  color: #111827;
+  transition: opacity 0.2s ease;
+}
+
+.product-page-anchor-nav .product-review-jump:hover {
+  opacity: 0.75;
+}
+
+.product-page-anchor-nav .product-review-jump__stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.12rem;
+}
+
+.product-page-anchor-nav .product-review-jump__stars .icon {
+  width: 18px;
+  height: 18px;
+  color: #f5b301;
+  fill: currentColor;
+}
+
+.product-page-anchor-nav .product-review-jump__score {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.product-page-anchor-nav .product-review-jump__dot {
+  color: #9ca3af;
+}
+
+.product-page-anchor-nav .product-review-jump__count {
+  font-size: 0.98rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.product-page-anchor-nav .product-section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0 0 3.25rem 0;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.product-page-anchor-nav .product-section-nav__link {
+  flex: 1 1 220px;
+  max-width: 270px;
+  min-width: 220px;
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  border: 1px solid #2b2b2b;
+  background: #ffffff;
+  color: #111111;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-sizing: border-box;
+
+   /* usuwa niebieski/jasny błysk po tapnięciu na mobile */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* po kliknięciu / focusie ma zostać biały */
+.product-page-anchor-nav .product-section-nav__link:focus,
+.product-page-anchor-nav .product-section-nav__link:active,
+.product-page-anchor-nav .product-section-nav__link:visited {
+  background: #ffffff;
+  color: #111111;
+  border-color: #2b2b2b;
+  transform: none;
+  box-shadow: none;
+  outline: none;
+}
+
+/* dodatkowe zabezpieczenie dla mobile highlight */
+.product-page-anchor-nav .product-section-nav__link,
+.product-page-anchor-nav .product-section-nav__link * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* hover tylko tam, gdzie faktycznie jest myszka */
+@media (hover: hover) and (pointer: fine) {
+  .product-page-anchor-nav .product-section-nav__link:hover {
+    background: #007CF0;
+    color: #ffffff;
+    border-color: #007CF0;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+}
+
+
+.product-page-anchor-nav .product-anchor-section {
+  margin-bottom: 3.5rem;
+}
+
+
+
+
+
+/* ===== NAGŁÓWKI SEKCJI ===== */
+.product-page-anchor-nav .product-anchor-section > h1 {
+  position: relative; /* baza pod pseudo-element */
+  display: inline-block; /* marker tylko pod tekstem */
+  margin: 0 0 2rem 0;
+  padding-bottom: 0.32rem; /* trochę więcej miejsca między tekstem a markerem */
+  font-size: 2rem; /* MNIEJSZA czcionka */
+  line-height: 1.05; /* ciaśniej i czytelniej */
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #111a2e;
+}
+
+/* ===== NIEBIESKIE PODKREŚLENIE ===== */
+.product-page-anchor-nav .product-anchor-section > h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0.02rem; /* OPUSZCZONE NIŻEJ */
+  height: 0.18em; /* CIEŃSZE */
+  background: #007CF0; /* TWÓJ ciemniejszy niebieski */
+  opacity: 0.9;
+  z-index: -1;
+  transform: rotate(-1deg) skewX(-10deg); /* delikatniejszy efekt */
+  border-radius: 0.18em;
+}
+
+
+.product-page-anchor-nav .product-anchor-section h3 {
+  margin: 1.7rem 0 0.65rem 0; /* mniejszy odstęp nad i pod */
+  font-size: 1.35rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #111a2e;
+}
+
+
+
+.product-page-anchor-nav .product-anchor-section {
+ max-width: 100%;
+ width: 100%;
+}
+  // max-width: 920px;  tekst nie rozlewa się za szeroko
+
+
+.product-page-anchor-nav .product-anchor-section p,
+.product-page-anchor-nav .product-anchor-section li {
+  font-size: 1.03rem; /* lekko spokojniejszy rozmiar */
+  line-height: 1.6; /* mniej powietrza niż wcześniej */
+  color: #243041; /* spokojniejszy kolor niż czysta czerń */
+}
+
+.product-page-anchor-nav .product-anchor-section p {
+  margin: 0 0 0.8rem 0; /* mniejszy odstęp między akapitami */
+}
+
+/* ===== LISTY W SEKCJACH ===== */
+.product-page-anchor-nav .product-anchor-section ul {
+  margin: 0.65rem 0 1.1rem 0; /* TU ZMIENIŁEM: mniej sztucznego odsunięcia całej listy */
+  padding-left: 1.35rem; /* TU ZMIENIŁEM: lepsze miejsce na bullet */
+}
+
+.product-page-anchor-nav .product-anchor-section li {
+  margin-bottom: 0.32rem; /* TU ZMIENIŁEM: trochę więcej oddechu między punktami */
+  padding-left: 0.15rem; /* TU DODAŁEM: tekst nie siedzi tak blisko bulletu */
+}
+
+/* ===== BOLDY W LISTACH MNIEJ AGRESYWNE ===== */
+.product-page-anchor-nav .product-anchor-section li b,
+.product-page-anchor-nav .product-anchor-section li strong {
+  font-weight: 600; /* TU DODAŁEM: było optycznie za ciężko, teraz będzie lżej */
+  color: #111a2e; /* TU DODAŁEM: nadal wyraźne, ale nie tak agresywne */
+}
+
+/* ===== IMPORTANT INFORMATION BOX ===== */
+.product-page-anchor-nav .product-note {
+  max-width: 920px;
+  margin: 1.8rem 0 0 0;
+  padding: 1rem 1.2rem;
+  background: #f5f9ff; /* jasne niebieskie tło */
+  border-radius: 6px;
+}
+
+.product-page-anchor-nav .product-note__title {
+  margin: 0 0 0.45rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111a2e;
+}
+
+.product-page-anchor-nav .product-note p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* ===== PODSUMOWANIE OPINII ===== */
+.product-page-anchor-nav .product-opinions-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem; /* TU ZMIENIŁEM: trochę ciaśniej */
+  margin: 0.3rem 0 1.6rem 0; /* TU ZMIENIŁEM: lepszy odstęp nad i pod */
+  padding-bottom: 0.95rem; /* TU ZMIENIŁEM: delikatnie większy oddech */
+  border-bottom: 1px solid #e7eaf0; /* TU ZMIENIŁEM: subtelniejsza linia */
+}
+
+.product-page-anchor-nav .product-opinions-summary__stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.12rem;
+}
+
+.product-page-anchor-nav .product-opinions-summary__stars .icon {
+  width: 18px;
+  height: 18px;
+  color: #f5b301;
+  fill: currentColor;
+}
+
+.product-page-anchor-nav .product-opinions-summary__score {
+  font-size: 1rem; /* TU ZMIENIŁEM: minimalnie spokojniej */
+  font-weight: 800;
+  color: #111a2e;
+  line-height: 1;
+}
+
+.product-page-anchor-nav .product-opinions-summary__text {
+  color: #6b7280;
+  font-size: 0.95rem; /* TU ZMIENIŁEM: lekko spokojniejszy tekst pomocniczy */
+}
+
+
+/* ===== POJEDYNCZA OPINIA ===== */
+.product-page-anchor-nav .product-opinion-card {
+  margin-bottom: 1.2rem; /* TU ZMIENIŁEM: trochę więcej oddechu pod opinią */
+  padding: 1.2rem 0 1.1rem 0; /* TU ZMIENIŁEM: bardziej elegancki pionowy spacing */
+  border-bottom: 1px solid #e7eaf0; /* TU ZMIENIŁEM: delikatniejsza linia */
+}
+
+.product-page-anchor-nav .product-opinion-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* TU ZMIENIŁEM: flaga nie idzie już na skraj prawej */
+  gap: 0.55rem; /* TU ZMIENIŁEM: mały odstęp między nazwą a flagą */
+  margin-bottom: 0.35rem;
+}
+
+.product-page-anchor-nav .product-opinion-card__header strong {
+  font-size: 1rem;
+  color: #111827;
+}
+
+.product-page-anchor-nav .product-opinion-card .flag.icon {
+  width: 18px; /* TU ZMIENIŁEM: trochę mniejsza flaga */
+  height: 13px;
+  flex-shrink: 0;
+  margin-top: 1px; /* TU DODAŁEM: lepsze optyczne wyrównanie do tekstu */
+}
+
+.product-page-anchor-nav .product-opinion-card__stars {
+  display: inline-flex;
+  gap: 0.12rem;
+  margin-bottom: 0.6rem;
+}
+
+.product-page-anchor-nav .product-opinion-card__stars .icon {
+  width: 18px;
+  height: 18px;
+  color: #f5b301;
+  fill: currentColor;
+}
+
+.product-page-anchor-nav .product-opinion-card p {
+  margin: 0;
+  color: #243041; /* TU ZMIENIŁEM: spójny kolor z głównym tekstem */
+  line-height: 1.72; /* TU ZMIENIŁEM: trochę więcej elegancji i lekkości */
+  max-width: 860px; /* TU DODAŁEM: opinia nie rozlewa się za szeroko */
+}
+
+@media (max-width: 900px) {
+  .product-page-anchor-nav .product-section-nav__link {
+    flex: 1 1 calc(50% - 0.9rem);
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-page-anchor-nav {
+    --product-anchor-offset: 90px;
+  }
+
+  .product-page-anchor-nav .product-section-nav {
+    gap: 0.65rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .product-page-anchor-nav .product-section-nav__link {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    min-height: 50px;
+    padding: 0.9rem 1rem;
+  }
+
+  .product-page-anchor-nav .product-review-jump {
+    width: 100%;
+  }
+}
+
+.product-page-anchor-nav .product-upsell-title {
+  margin: 3rem 0 1.4rem 0;
+  font-size: 2.1rem;
+  line-height: 1.15;
+  font-weight: 500;
+  color: #111a2e;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   OPINIE + ZDJĘCIA W OPINIACH
+   HOME ONLY - działa tylko w .homepage-reviews
+========================================= */
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card {
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 0 1.1rem 0;
+  border-bottom: 1px solid #e7eaf0;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__author-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.32rem;
+  line-height: 1.4;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__author {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__author strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__meta {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card .flag.icon {
+  width: 20px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-left: 0.1rem;
+  margin-top: 0;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__rating-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.14rem;
+  margin-bottom: 0;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__stars .icon {
+  width: 18px;
+  height: 18px;
+  color: #f5b301;
+  fill: currentColor;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__score {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__product {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-card__text,
+.product-page-anchor-nav .homepage-reviews .product-opinion-card p {
+  margin: 0;
+  color: #243041;
+  line-height: 1.72;
+  max-width: 860px;
+}
+
+/* ===== GALERIA ZDJĘĆ W OPINII ===== */
+.product-page-anchor-nav .homepage-reviews .product-opinion-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-gallery__item {
+  width: 120px;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-opinion-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== LIGHTBOX ===== */
+.product-page-anchor-nav .homepage-reviews .product-review-lightbox[hidden] {
+  display: none;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-review-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-review-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.product-page-anchor-nav .homepage-reviews .product-review-lightbox__dialog {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  max-width: 1100px;
+  max-height: 90vh;
+  margin: 4vh auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-review-lightbox__dialog img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.product-page-anchor-nav .homepage-reviews .product-review-lightbox__close {
+  position: absolute;
+  top: -44px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+  .product-page-anchor-nav .homepage-reviews .product-opinion-card__author {
+    font-size: 1.2rem;
+  }
+
+  .product-page-anchor-nav .homepage-reviews .product-opinion-card__meta,
+  .product-page-anchor-nav .homepage-reviews .product-opinion-card__product {
+    font-size: 0.9rem;
+  }
+
+  .product-page-anchor-nav .homepage-reviews .product-opinion-card__stars .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .product-page-anchor-nav .homepage-reviews .product-opinion-gallery__item {
+    width: 96px;
+  }
+
+  .product-page-anchor-nav .homepage-reviews .product-review-lightbox__dialog {
+    margin: 12vh auto 0 auto;
+  }
+
+  .product-page-anchor-nav .homepage-reviews .product-review-lightbox__dialog img {
+    max-height: 78vh;
+  }
+}
+
+.section-title-center {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   HOME - SEKCJE PRODUKTÓW Z PRZESUWANIEM
+========================================= */
+
+.product-page-anchor-nav .homepage-products {
+  margin-bottom: 3.2rem;
+}
+
+/* centrowanie nagłówka sekcji */
+.product-page-anchor-nav .section-title-center {
+  text-align: center;
+}
+
+.product-page-anchor-nav .section-title-center > h1 {
+  display: inline-block;
+}
+
+.product-page-anchor-nav .section-title-center > p {
+  max-width: 860px;
+  margin: 0 auto 1.6rem auto;
+  text-align: center;
+}
+
+/* nowy prosty poziomy scroller */
+.product-page-anchor-nav .homepage-products .product-scroller {
+  width: calc(100% + 24px);
+  margin-right: -24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+  scroll-snap-type: none;
+  scroll-behavior: smooth;
+  scroll-padding-left: 0;
+  scroll-padding-right: 1rem;
+  padding-bottom: 0.35rem;
+}
+
+.product-page-anchor-nav .homepage-products .product-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.product-page-anchor-nav .homepage-products .product-scroller.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+
+
+/* track kart */
+.product-page-anchor-nav .homepage-products .product-scroller__track {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  width: max-content;
+  padding-right: 1rem; /* ważne: pozwala dojechać do końca ostatniej karty */
+}
+
+/* karta w scrollerze */
+.product-page-anchor-nav .homepage-products .product-scroller__track .product-card {
+  flex: 0 0 292px;
+  width: 292px;
+  max-width: 292px;
+  scroll-snap-align: start;
+}
+
+/* zabezpieczenie pod drag */
+.product-page-anchor-nav .homepage-products .product-card,
+.product-page-anchor-nav .homepage-products .product-card * {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.product-page-anchor-nav .homepage-products .product-card img {
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* stare strzałki wyłączone */
+.product-page-anchor-nav .homepage-products .arrow,
+.product-page-anchor-nav .homepage-products .arrow.left,
+.product-page-anchor-nav .homepage-products .arrow.right {
+  display: none !important;
+}
+
+/* desktop */
+@media (min-width: 1025px) {
+  .product-page-anchor-nav .homepage-products .product-scroller__track .product-card {
+    flex: 0 0 300px;
+    width: 300px;
+    max-width: 300px;
+  }
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .product-page-anchor-nav .homepage-products .product-scroller__track .product-card {
+    flex: 0 0 280px;
+    width: 280px;
+    max-width: 280px;
+  }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  .product-page-anchor-nav .homepage-products {
+    margin-bottom: 2.4rem;
+  }
+
+  .product-page-anchor-nav .section-title-center > p {
+    margin-bottom: 1.2rem;
+  }
+
+  .product-page-anchor-nav .homepage-products .product-scroller {
+    padding-bottom: 0.2rem;
+    scroll-snap-type: x proximity;
+  }
+
+  .product-page-anchor-nav .homepage-products .product-scroller__track {
+    gap: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .product-page-anchor-nav .homepage-products .product-scroller__track .product-card {
+    flex: 0 0 248px;
+    width: 248px;
+    max-width: 248px;
+  }
+}
+
+
+.product-page-anchor-nav .homepage-products {
+  width: 100%;
+  max-width: 100%;
+  overflow: clip;
+}
+
+
+.product-page-anchor-nav .homepage-products .product-scroller {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+/* track może być szeroki tylko wewnątrz scrollera */
+.product-page-anchor-nav .homepage-products .product-scroller__track {
+  display: flex;
+  width: max-content;
+  max-width: none;
+}

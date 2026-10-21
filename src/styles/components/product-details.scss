@@ -1,0 +1,238 @@
+@import "../variables.scss";
+
+.product-details {
+  .assembly-difficulty {
+    margin-top: 1.1rem;
+      margin-right: -1rem;
+
+    > * {
+      display: inline-block;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+    }
+
+    > span:first-of-type {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      text-align: justify;
+    }
+
+    svg {
+      margin-bottom: -6px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+.availability p {
+    text-align: left !important; 
+    margin: 0.5rem 0 0 0 !important;
+    line-height: 1.4;
+}
+
+.green-text {
+    color: #289b38;
+    font-weight: 700;
+}
+
+.nobreak-block {
+    display: inline-block;
+    color: #333;
+}
+
+.green-text {
+    color: #289b38;
+    font-weight: 600;
+}
+
+.nowrap-text {
+    color: #333;
+    white-space: nowrap !important;
+}
+
+  .contact {
+    margin-left: -1rem;
+
+    > a,
+    > div {
+      display: inline-block;
+      vertical-align: bottom;
+
+      &.email {
+        svg {
+          font-size: 1.25rem;
+          margin-top: -2px;
+          margin-bottom: -4px;
+        }
+      }
+
+      &.messenger {
+        svg {
+          margin-bottom: -0.2rem;
+          font-size: 1rem;
+        }
+      }
+
+      &.phone {
+        svg {
+          margin-bottom: -2px;
+          font-size: 1rem;
+        }
+
+        .number {
+          display: none;
+        }
+
+        :not(.invisible) {
+          &:hover,
+          &.hold {
+            .text {
+              display: none;
+            }
+
+            .number {
+              display: inline-block;
+            }
+          }
+
+          &.hold {
+            box-shadow: 0 2px 3px rgba($princetonOrange, 1),
+              0 -1px 0px rgba($princetonOrange, 0.1);
+          }
+        }
+
+        .invisible {
+          display: block;
+          height: 0;
+          visibility: collapse;
+          margin-top: 0;
+          overflow: hidden;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      svg {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .option {
+      background: $cultured;
+      border-radius: 10px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 -1px 0px rgba(0, 0, 0, 0.03);
+      display: inline-block;
+      margin: 1rem 0 0 1rem;
+      max-width: calc(100% - 1rem);
+      padding: 0.45rem 1rem 0.55rem 1rem;
+      position: relative;
+
+      &::before {
+        background: black;
+        border-radius: 10px;
+        content: "";
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      &:hover::before {
+        opacity: 0.05;
+      }
+
+      &:active::before {
+        opacity: 0.1;
+      }
+    }
+  }
+
+  .note-asterisk {
+    font-size: 1.5rem;
+    margin-left: 2px;
+  }
+
+  .note {
+    margin-top: 2rem;
+    font-size: 1rem;
+
+    & + .note {
+      margin-top: 0.75rem;
+    }
+  }
+
+  .options {
+    margin-top: 2rem;
+
+    .checkbox.row {
+      margin: -1.5rem 0 0 -1rem;
+
+      > * {
+        flex-basis: 50px;
+        margin-left: 1rem;
+      }
+
+      p {
+        text-align: left;
+      }
+
+      .icon {
+        color: $grey;
+        cursor: pointer;
+        flex-basis: auto;
+        flex-grow: 0;
+        font-size: 2rem;
+
+        &:hover {
+          color: $darkGrey;
+        }
+
+        &:active {
+          color: black;
+        }
+      }
+    }
+  }
+
+ .price {
+  h3 {
+    color: #007CF0;
+    font-weight: 600;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: baseline;
+
+     span.cents {
+      font-size: 0.8em;
+    }
+
+    .currency {
+      font-weight: 400;
+      font-size: 0.9em;
+      margin-left: 8px; /* Zwiększamy odstęp z lewej strony (od groszy) */
+      margin-right: 6px;
+    }
+
+    .tax-info {
+      color: #777;
+      font-weight: 400;
+      font-size: 0.65em;
+      margin-left: 8px;
+    }
+  }
+}
+
+  .tip {
+    color: $grey;
+    margin-top: 1rem;
+  }
+}
+
+.btn-dwt.disabled-btn {
+    background-color: #d3d3d3 !important;
+    color: #888 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+  }

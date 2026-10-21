@@ -1,0 +1,863 @@
+{% extends "templates/layout-de.njk" %}
+{% set tab = "projekte" %}
+
+{% block meta %}
+    <link rel="canonical" href="https://patryktrajder.com/de/projects/hydraulic-power-pack/"/>
+    <title>Wie man eine mobile Hydraulikeinheit baut | Patryk Trajder</title>
+{% endblock meta %}
+
+{% block vectors %}
+    {% include "vectors/arrow-right.sym" %}
+    {% include "vectors/chevron-up.sym" %}
+    {% include "vectors/chevron-down.sym" %}
+    {% include "vectors/home.sym" %}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <article>
+            <section class="gap-top">
+                <header>
+                    <nav class="breadcrumbs">
+                        <span>
+                            <a href="/de-gb/" title="Homepage">
+                                <svg class="home icon">
+                                    <use xlink:href="#icon-home"></use>
+                                </svg>
+                            </a>
+                            <svg class="icon">
+                                <use xlink:href="#icon-arrow-right"></use>
+                            </svg>
+                        </span>
+                        <span>
+                            <a href="/de/projects/">Projekte</a>
+                            <svg class="icon">
+                                <use xlink:href="#icon-arrow-right"></use>
+                            </svg>
+                        </span>
+                        <a href="/de/projects/hydraulic-power-pack/">
+                            <b>Hydraulik-Aggregat</b>
+                        </a>
+                    </nav>
+                    <h1>Wie baue ich ein mobiles Hydraulikaggregat</h1>
+                </header>
+                <div class="row">
+                    <div>
+                        <p>
+                            Als ich mit dem Bau des Aggregats begann, hatte ich keine Ahnung von Hydraulik. Ich nahm an, dass es ein sehr einfaches Thema sei. Ich merkte schnell, dass ich selbst für eine so scheinbar einfache Konstruktion wieder einmal (schrecklich!) Mathe brauche, was ich in der Schule nicht lernen wollte, weil ich dachte&#32;<q>das bringt mir sowieso nichts</q>. Das Sammeln von Erfahrungen in diesem Bereich war für mich extrem schwierig, da ich keine Freunde in der Branche hatte und kaum Zugang zu Informationen. Nach ausgiebiger Recherche im Internet und in Büchern war ich nach 2-3 Wochen bereit, mit der Arbeit zu beginnen. Aufgrund der Informationen und Erkenntnisse, die ich gewonnen habe, gebe ich Ihnen&#32;<q>auf einem Teller</q>&#32;Ich hoffe, dass Sie mit meinen Tipps bewaffnet und mit dem Kopf im Nacken dieses geheime Wissen in 10 Minuten erlangen werden 🙂 Ich hoffe auch, dass Sie unnötige Ausgaben, Unfälle vermeiden und Zeit sparen werden. Die meisten der Ratschläge sind&#32;<q>aus dem Leben gegriffen</q>&#32;und basieren auf meinen Fehlern. Ich übernehme keine Verantwortung für das, was Sie in Ihrer eigenen Werkstatt tun, also seien Sie vorsichtig - mit Klempnern ist nicht zu spaßen 😀 .
+                        </p>
+                    </div>
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/thumb.jpg" srcset="/assets/images/projects/hydraulic-power-pack/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-power-pack/thumb-w768. jpg 768w, /assets/images/projects/hydraulic-power-pack/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="fertiges Hydraulikaggregat"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expander materials shrink">
+                    <header>
+                        <p>Die benötigten Materialien</p>
+                    </header>
+                    <div class="container">
+                        <ul class="dots">
+                            <li>
+                                <p>Elektromotor,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Hydraulikpumpe,</p>
+                            </li>
+                            <li>
+                                <p>Klingelschalter,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Klauenkupplung,</p>
+                            </li>
+                            <li>
+                                <p>Der Teiler,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    die Hydraulikleitungen,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Bleche (für den Behälterbau),</p>
+                            </li>
+                            <li>
+                                <p>Thermometer mit Ölstandsanzeige,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Räder,</p>
+                            </li>
+                            <li>
+                                <p>Ablassschraube,</p>
+                            </li>
+                            <li>
+                                <p>Rinde einfüllen,</p>
+                            </li>
+                            <li>
+                                <p>Einen Ölfilter,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    einen Trennwandschalter,</p>
+                            </li>
+                            <li>
+                                <p>Ein Netzsauger,</p>
+                            </li>
+                            <li>
+                                <p>Manometer,</p>
+                            </li>
+                            <li>
+                                <p>Elektrischer Schalter,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Hydrauliköl,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Aufkleber und Farbe 😉</p>>
+                            </li>
+                        </ul>
+                    </div>
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="#icon-chevron-down"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="expander shrink tools gap-top">
+                    <header>
+                        <p>Die benötigten Werkzeuge</p>
+                    </header>
+                    <div class="container">
+                        <ul class="dots">
+                            <li>
+                                <p>Tooker,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Drehmaschinenwerkzeuge:</p>
+                                <ul class="dots">
+                                    <li>
+                                        <p>
+                                            Walrossflossenbohrer,</p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            ein Bohrmesser,</p>
+                                    </li>
+                                    <li>
+                                        <p>Planungsmesser,</p>
+                                    </li>
+                                    <li>
+                                        <p>Das Längsrollmesser,</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>
+                                    Winkelschleifer + Scheiben 1; 2,5; 4 mm,</p>
+                            </li>
+                            <li>
+                                <p>Schweißmaschine mit Schweißeinrichtung für schwarzen Stahl,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Tischbohrmaschine,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Gasbrenner,</p>
+                            </li>
+                            <li>
+                                <p>Ein Schraubendreher oder eine Bohrmaschine,</p>
+                            </li>
+                            <li>
+                                <p>Schrauber M10x1,50</p>
+                            </li>
+                            <li>
+                                <p>Gewindeschneidkluppe im Bereich M1-M10,</p>
+                            </li>
+                            <li>
+                                <p>Phasier-/Kegeleindringkörper,</p>
+                            </li>
+                            <li>
+                                <p>Ein Öler,</p>
+                            </li>
+                            <li>
+                                <p>Punkt,</p>
+                            </li>
+                            <li>
+                                <p>Konstitutionsklammern,</p>
+                            </li>
+                            <li>
+                                <p>Schleifscheibe (Schleifpapier für den Bohrer),</p>
+                            </li>
+                            <li>
+                                <p>Spray blau,</p>
+                            </li>
+                            <li>
+                                <p>Orangenspray,</p>
+                            </li>
+                            <li>
+                                <p>Motoren, Hämmer und andere typische Handwerkzeuge.</p>
+                            </li>
+                        </ul>
+
+                        <p class="single-out gap-top">Werkzeuge:</p>
+                        <ul class="dots">
+                            <li>
+                                <p>Detektor,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Universal-Schieblehre 0-150,</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Universal-Schieblehre 0-250,</p>
+                            </li>
+                        </ul>
+
+                        <p class="single-out gap-top">Spezialwerkzeuge:</p>
+                        <ul class="dots">
+                            <li>
+                                <p>Abzieher für Hydraulikschläuche</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="#icon-chevron-down"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="gap-top">
+                    Am besten beginnen Sie mit der Arbeit, indem Sie den Elektromotor an die Pumpe anschließen. Das ist eine sehr einfache Aufgabe, wenn Sie ein größeres Budget haben, denn es gibt fertige Teile für diesen Zweck. Sie müssen einen Motor mit Flanschbefestigung, eine Glockenkupplung, eine Klauenkupplung und eine Pumpe kaufen. Achten Sie jedoch darauf, dass alle Teile miteinander kompatibel sind.
+                </p>
+
+                <div class="row gap-top">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail1-m1120.jpg" alt="zeigt den Elektromotor"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Für mein Projekt habe ich einen gebrauchten Motor verwendet, den ich auf dem Schrott gefunden habe. Den Glockenschalter habe ich selbst angefertigt, da der originale nicht zu meinem Motor passen würde. Glücklicherweise konnte ich die originale Kupplung verwenden.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail4-m1120.jpg" alt="Teile zum Bau der Pumpe"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Bei der Auswahl einer Pumpe und eines Motors müssen Sie sich zunächst überlegen, wofür Sie sie einsetzen wollen. Das ist wichtig wegen der erwarteten Parameter, d.h. Arbeitsdruck und Literleistung pro Minute. Der erste Parameter betrifft die Leistung und der zweite den Kolbenhub.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail3-m1120.jpg" alt="Überprüfung, ob die Teile passen"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Wenn Sie z. B. ein Pressaggregat verwenden wollen, sollten Sie eine Pumpe mit einem möglichst hohen Maximaldruck und einem möglichst geringen Durchfluss pro Minute kaufen. Auf diese Weise erhalten Sie einen langsamen, präzisen Betrieb und gleichzeitig eine hohe Leistung. Bei einer Schaufel ist das Gegenteil der Fall - Sie benötigen einen sehr schnellen Kolbenhub, bei relativ geringer Leistung.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail5-m1120.jpg" alt="Überprüfung, ob die Teile passen"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Mein Aggregat soll sowohl die Presse als auch die Schieferplatte bedienen, also bin ich einen Kompromiss eingegangen und habe mich für die Parameter dazwischen entschieden; aber wie man weiß,&#32;<q>wenn etwas für alles gut ist, dann ist es für nichts gut</q>.😉 .
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail6-m1120.jpg" alt="Fertige Pumpen- und Motorbaugruppe"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Denken Sie auch daran, dass mit steigenden Leistungsparametern oder Litern pro Minute direkt proportional der Bedarf an der Größe des Elektromotors steigt. Um die Sache zu vereinfachen, stelle ich eine von mir verwendete mathematische Formel vor:
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/wzory.jpg" alt="Berechnungen"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Für die Ausfahrgeschwindigkeit<br>Für die Leistung in Tonnen, die wir bekommen werden<br>Welche Art von Motor brauchen wir (wird demnächst den Artikel ergänzen)
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="single-out">Der schwierigste Teil liegt hinter Ihnen. Um zum nächsten Bauabschnitt überzugehen, benötigen Sie die folgenden Teile:
+                    </p>
+
+                    <ul class="dots">
+                        <li>
+                            <p>Tankbauplan</p>
+                        </li>
+                        <li>
+                            <p>
+                                Räder</p>
+                        </li>
+                        <li>
+                            <p>Ölablassschraube</p>
+                        </li>
+                        <li>
+                            <p>Blauer Lack, Aufkleber ;)
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="row gap-top">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail7-m1120.jpg" alt="Gasbrenner"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Sobald Sie die oben genannten Elemente haben, können Sie mit dem Bau des Tanks fortfahren. Vergessen Sie nicht, alle Komponenten vorzumontieren.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail9-m1120.jpg" alt="Sauerstoffbrenner schneiden"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Um einen Tank zu konstruieren, müssen Sie einige Werte kennen:
+                            <br>
+                            Das Fassungsvermögen Ihres Tanks (oder aller zu versorgenden Tanks) bei maximaler Ausdehnung.
+                            <br>
+                            Hierfür können Sie ein Muster verwenden: π(d/2)&#178;-l, wobei:
+                            <br>d - Innendurchmesser des Zylinders
+                            <br>l - Länge des Zylinders
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail13-w1120.jpg" alt="Schweißen des Öltanks"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Wenn Sie wissen, dass Sie z. B. 20 l Öl für die Zylinder und Kabel selbst benötigen, empfehle ich Ihnen, diesen Wert mindestens dreimal zu erhöhen. Warum?
+                            <br>
+                            Ich werde es Ihnen erklären.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="single-out">Erstens:</p>
+
+                    <p class="indent">
+                        Befestigen Sie den Saugnapf der Pumpe nicht am Boden des Tanks, damit er keinen Schmutz vom Boden ansaugt.</p>
+
+                    <p class="single-out">
+                        Zweitens:</p>
+
+                    <p class="indent">Das Öl erwärmt sich, während das Gerät läuft, und es wird mehr Öl vorhanden sein. Wenn mehr Öl vorhanden ist, erwärmt es sich länger.</p>
+
+                    <p class="single-out">Drittes:</p>
+
+                    <p class="indent">
+                        Auch ein neuer Antrieb verursacht einen leichten Ölverlust. Je größer der Vorrat ist, desto seltener muss er nachgefüllt werden.</p>
+
+                    <p class="single-out">Viertens:</p>
+
+                    <p class="indent">Zukunftsdenken - wenn Sie irgendwann einen größeren Aktor anschließen wollen, müssen Sie den Tank nicht nacharbeiten.</p>
+
+                    <p class="gap-top">
+                        Natürlich ist ein großer Tank nicht nur ein Vorteil, sondern auch ein Nachteil. Wie Sie sich leicht vorstellen können, wird ein größerer Tank schwerer und damit weniger mobil sein. Außerdem braucht er mehr Öl, um zu funktionieren, so dass die Stückkosten für den Kauf von Öl höher sind.
+                    </p>
+                </div>
+
+                <div class="row gap-top">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail14-w1120.jpg" alt="Schweißen von Verstärkungen am Öltank"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Wenn Sie das Fassungsvermögen Ihres Tanks bereits kennen, ist der nächste Schritt die Berechnung seiner Größe. Für den Tank selbst können Sie Ihren alten Flüssiggastank verwenden. Ich persönlich empfehle eine solche Lösung nicht, wenn Sie sich nicht damit auskennen. Ich meine natürlich Ihre Sicherheit. (Das Aufschneiden des Tanks kann mit dem Aufschneiden eines Pilzes verglichen werden. Anscheinend kann man einen giftigen Pilz essen, aber nur einmal. Das gilt auch für Sie.) Die Formel für einen zylindrischen 60l-Tank:
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail15-w1120.jpg" alt="Schweißverstärkungen"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Wenn Sie jedoch erkannt haben, dass die Verwendung eines Flüssiggastanks Sie für den Darwin-Award nominieren könnte, empfehle ich Ihnen, einen Tank mit einer Quader- oder Quaderform zu bauen (die Ihnen gefällt).<br>
+                            Formel um 60l zu erhalten: (hier ist die Formel)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail16-w1120.jpg" alt="Schweißen der Ölablassschraube"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Ich habe oft Fragen nach den genauen Maßen bekommen und selbst danach gesucht. Ich hoffe, ich habe oben genug erklärt, warum ich mich Ihnen nicht aufdrängen sollte.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail17-w1120.jpg" alt="Verschweißen der Achsen mit dem Tank"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Schweißen Sie oben auf den Tank einen dicken Winkel, in den Sie ein Gewinde einbringen können.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail18-w1120.jpg" alt="Anschweißen des Fußteils an den Tank"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Wenn Sie Ihr Gerät mobil machen wollen, was ich Ihnen übrigens empfehle, müssen Sie die Achse, an der Sie die Räder befestigen werden, unbedingt verschweißen und einen Fuß anfertigen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail19-w1120.jpg" alt="Anschweißen des Fußes an den Tank - zweite Aufnahme"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Das Skelett des Tanks ist fertig.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail20-w1120.jpg" alt="Tanklackierung"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Wenn Sie mit Ihrer Einheit vor anderen Mireks prahlen wollen, ist es schön, wenn Sie sie noch lackieren, damit sie aus Neid grün werden.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail21-w1120.jpg" alt="tank painting secound shot"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Außerdem sieht der lackierte Tank viel besser aus und man kann die nächsten Komponenten schön anschrauben.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail22-w1120.jpg" alt="Montage des Rades mit dem Reifen am Tank"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Es ist an der Zeit, die Räder zu montieren...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail23-w1120.jpg" alt="Einbau des Temometers"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            ...und ein Thermometer mit einer Ölstandsanzeige.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail24-w1120.jpg" alt="Lochbohrung"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Bohren Sie Löcher in die Halterung, die Sie später bohren werden.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="single-out gap-top-medium">Super! Der Tank ist fertig. Zeit für die Montageplatte. Das ist meine liebste Bauphase. Sie brauchen alle Teile, die Sie auf dieser Platte haben wollen, also:
+                    </p>
+
+                    <ul class="dots">
+                        <li>
+                            <p>Der Trennwandschalter</p>
+                        </li>
+                        <li>
+                            <p>Glockenschalter</p>
+                        </li>
+                        <li>
+                            <p>Der Einfüllstopfen</p>
+                        </li>
+                        <li>
+                            <p>Ölfilter</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="row gap-top">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail26-w1120.jpg" alt="Stahlplatte anreißen"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Zeichnen Sie die Formen auf. Das ist der einfachste Weg...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail27-w1120.jpg" alt="Löcher in Stahlplatte ausschneiden"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            ...und weiter geht's mit dem Schneiden und Bohren.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail31-w1120.jpg" alt="Begrüßung der Katze"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Für den nächsten Schritt brauchen wir noch einen Helfer ;)
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail29-w1120.jpg" alt="Profil auf Platte schweißen"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Jetzt ist es an der Zeit, das&#32;<q>Bein</q>&#32;(Profil) zu schweißen, auf das der Verteiler gesetzt wird. Auch hier kann ich Ihnen keine konkreten Maße nennen, da jeder andere Teile (mit anderen Maßen) kaufen kann.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="image-loading">
+                            <img src="/assets/images/projects/hydraulic-power-pack/detail30-w1120.jpg" alt="Profilschweißen auf Platte zweite Aufnahme"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            <p>Schweißen.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail34-w1120.jpg" alt="blechlackierung"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Auch hier sollte das Montageblech lackiert werden. Am besten machen Sie das an dieser Stelle, damit Sie später nicht alles ausziehen und die Dichtungen verschwenden.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail35-w1120.jpg" alt="Plattenmontage am Motor"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Schrauben Sie den Elektromotor ein, denken Sie dabei an die Dichtung.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail36-w1120.jpg" alt="Verschraubung des Blechs mit dem Motor"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Befestigen Sie den Motor mit selbstklemmenden Muttern.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail37-w1120.jpg" alt="Einbau des Schottschalters"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Nun ist es an der Zeit, den Schottschalter zu montieren.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail38-w1120.jpg" alt="Montage der Gummischläuche"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Wenn alles verdreht ist, bestimmen Sie die Länge der Hydraulikschläuche, die Sie in einer speziellen Anlage abschließen müssen. Machen Sie nicht meinen Fehler und kaufen Sie sie nicht vorher, denn sie sind sehr schwer mit der Größe zu treffen. Ich musste sie zweimal kaufen. Nicht nur, dass ich kein großer Kerl bin, jetzt bin ich auch noch arm.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail39-w1120.jpg" alt="pumpsauger"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Wenn Sie möchten, dass Ihr Aggregat immer gut in Schuss ist, wie Krzysiek Ibisz, montieren Sie ein Sieb auf den Ölsauger.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail41-w1120.jpg" alt="Verschraubung des Siebs am Öleinfüllstutzen"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Ein Sieb unter der Öleinfüllschraube reduziert die Verschmutzung im Tank weiter.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail25-w1120.jpg" alt="die Katze in der Mitte des Hydrauliktanks"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Stellen Sie nun sicher, dass Sie keine Katze im Tank haben. Wenn Sie festgestellt haben, dass er leer ist, können Sie die Montageplatte und den Tank zusammen drehen.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail42-w1120.jpg" alt="Montage der Pumpe mit Motor am Tank"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        In diesem Stadium brauchen Sie auch die helfende Hand eines Kollegen, oder wir haben ;)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail47-w1120.jpg" alt="Verschraubung des Gummischlauches mit dem Verteiler"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Achten Sie beim Anschrauben der Kabel an den Krümmer darauf, dass Sie diese von der richtigen Seite anschließen! Wie ich das gemacht habe, können Sie in meinem Film sehen. Die Zuleitung von der Pumpe wird (in der Regel!) von der Seite angeschlossen, wo der Druckregler ist. Auf dem neuen Verteiler sollten Pfeile zu sehen sein, aber wenn keine Pfeile zu sehen sind, prüfen Sie einfach die Spezifikationen.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail44-w1120.jpg" alt="Einbau des elektrischen Schalters"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Herzlichen Glückwunsch! Sie sind auf der Zielgeraden. Jetzt ist es Zeit für den Elektriker. Ich habe den Motor an das Sterndreieck angeschlossen, aber das ist nicht nötig (zumindest bei dem 5,5-kW-Motor). Vielleicht wollte ich unbewusst meine Komplexe für die Kommentare unter einem anderen Film heilen. dass ich das nicht kann 😉 Grundsätzlich ist es nicht schwierig, aber hier ist Vorsicht geboten. Keine Witze! 😀 .
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail48-w1120.jpg" alt="Gießen von Öl"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Jetzt müssen Sie nur noch das Öl einfüllen und den Test durchführen.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <div class="image-loading">
+                                        <img src="/assets/images/projects/hydraulic-power-pack/detail45-w1120.jpg" alt="Hydraulikventil-Explosion"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Zum Schluss noch ein freundlicher Ratschlag. Prüfen Sie sorgfältig, ob die Teile, die Sie aus dem Schrott kaufen, für die Verwendung geeignet sind. Wie Sie in meinem Film sehen konnten, bin ich in eine uninteressante Situation geraten. Ich habe die ganze Werkstatt mit Öl geflutet, und nebenbei habe ich festgestellt, dass es gar nicht so einfach ist, das Öl aus den Haaren zu waschen 😉 .
+                                    </p>
+                                </div>
+                            </div>
+
+                            <section class="gap-top-medium">
+                                <h1>Aufgepasst! Ihre eigene, wunderbare, köstliche, einzigartige Hydraulikeinheit ist fertig!
+                                </h1>
+
+                                <div class="row">
+                                    <div>
+                                        <div class="image-loading">
+                                            <img src="/assets/images/projects/hydraulic-power-pack/detail46-w1120.jpg" alt="Fertiges Hydraulikaggregat Annäherungsbild"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            Den obigen Artikel stelle ich kostenlos zur Verfügung, ohne eine Gegenleistung zu erwarten. Dennoch werde ich mich sehr freuen, wenn Sie mir nach dem Bau Ihres Gerätes ein Bild von Ihrem Projekt schicken, zu dem ich, als ob ich es nicht gesehen hätte, einige Ratschläge hinzugefügt habe 🙂 Das wird die beste Gegenleistung sein und ein Zeichen für mich, dass das, was ich tue, Sinn macht.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div>
+                                        <div class="image-loading">
+                                            <img src="/assets/images/projects/hydraulic-power-pack/thumb.jpg" srcset="/assets/images/projects/hydraulic-power-pack/thumb-w320.jpg 320w, /assets/images/projects/hydraulic-power-pack/thumb-w768. jpg 768w, /assets/images/projects/hydraulic-power-pack/thumb.jpg 1280w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 70em) calc((100vw - 6.5em) / 2), calc(63.5em / 2)" alt="fertiges Hydraulikaggregat"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            Wenn Sie meine weitere Entwicklung unterstützen wollen, können Sie eine freiwillige Spende tätigen. Ich gebe gerne auch nur 1 Zloty (in Worten: einen Zloty ;)), denn nach Abzug von 18% der Steuer erhalte ich immer noch schwindelerregende 82 Grosze. :D
+                                            <br>
+                                            Am Ende des Artikels sollte es einen Button von donauts geben ;)
+                                            <br>
+                                            Dankeschön!
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p class="gap-top">
+                                    <h3>Hier ist ein Video von der Konstruktion des Gerätes... ;)
+                                    </h3>
+                                </p>
+
+                                <div class="yt-video">
+                                    <div>
+                                        <iframe src="https://www.youtube-nocookie.com/embed/a3s6aUMMPb8?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" title="Hydraulikaggregat - DIY"></iframe>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </section>
+                    </article>
+                </main>
+
+            {% endblock %}

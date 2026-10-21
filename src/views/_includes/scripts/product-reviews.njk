@@ -1,0 +1,93 @@
+<script>
+/** OPINIE - zdjęcia w opiniach + pokaż więcej */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('[data-reviews-section]').forEach((reviewsSection) => {
+    if (reviewsSection.dataset.reviewsReady === 'true') return;
+    reviewsSection.dataset.reviewsReady = 'true';
+
+    const cards = Array.from(reviewsSection.querySelectorAll('.js-review-card'));
+    const showMoreButton = reviewsSection.querySelector('[data-reviews-show-more]');
+    const showMoreWrap = reviewsSection.querySelector('[data-reviews-show-more-wrap]');
+
+    const batchesRaw = reviewsSection.getAttribute('data-reviews-batches') || '5,5,10';
+    const batches = batchesRaw
+      .split(',')
+      .map((item) => Number(item.trim()))
+      .filter((number) => number > 0);
+
+    let clickCount = 0;
+
+    function getRevealCount() {
+      if (!batches.length) return 10;
+
+      if (clickCount < batches.length) {
+        return batches[clickCount];
+      }
+
+      return batches[batches.length - 1];
+    }
+
+    function updateShowMoreButton() {
+      if (!showMoreButton || !showMoreWrap) return;
+
+      const hiddenCount = cards.filter((card) => card.hidden).length;
+
+      if (hiddenCount <= 0) {
+        showMoreWrap.style.display = 'none';
+        return;
+      }
+
+      showMoreWrap.style.display = '';
+    }
+
+    if (showMoreButton) {
+      showMoreButton.addEventListener('click', function () {
+        const hiddenCards = cards.filter((card) => card.hidden);
+        const revealCount = getRevealCount();
+
+        hiddenCards.slice(0, revealCount).forEach((card) => {
+          card.hidden = false;
+        });
+
+        clickCount += 1;
+        updateShowMoreButton();
+      });
+
+      updateShowMoreButton();
+    }
+
+    const lightbox = reviewsSection.querySelector('#product-review-lightbox');
+    const lightboxImage = reviewsSection.querySelector('#product-review-lightbox-image');
+
+    if (!lightbox || !lightboxImage) return;
+
+    reviewsSection.querySelectorAll('.product-opinion-gallery__item').forEach((button) => {
+      button.addEventListener('click', function () {
+        const fullImage = this.getAttribute('data-full');
+        if (!fullImage) return;
+
+        lightboxImage.src = fullImage;
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lightbox.querySelectorAll('[data-close-review-lightbox]').forEach((element) => {
+      element.addEventListener('click', function () {
+        lightbox.hidden = true;
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !lightbox.hidden) {
+        lightbox.hidden = true;
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+      }
+    });
+  });
+});
+/** OPINIE */
+</script>
